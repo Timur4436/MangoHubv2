@@ -1,79 +1,312 @@
-local teleport6 = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
+local Mangohub = Instance.new("ScreenGui")
+local Frame23 = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local TextButton_2 = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+local TextButton_3 = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
+local TextLabel = Instance.new("TextLabel")
+local UITextSizeConstraint_4 = Instance.new("UITextSizeConstraint")
+local UICorner_4 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+local UITextSizeConstraint_5 = Instance.new("UITextSizeConstraint")
+local TextLabel_3 = Instance.new("TextLabel")
+local UITextSizeConstraint_6 = Instance.new("UITextSizeConstraint")
+local TextLabel_4 = Instance.new("TextLabel")
+local UITextSizeConstraint_7 = Instance.new("UITextSizeConstraint")
+local GodMode = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local UITextSizeConstraint_8 = Instance.new("UITextSizeConstraint")
+local ImageButton = Instance.new("ImageButton")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local TextButton_4 = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local UITextSizeConstraint_9 = Instance.new("UITextSizeConstraint")
+local TextButton_5 = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local UITextSizeConstraint_10 = Instance.new("UITextSizeConstraint")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local TextButton_6 = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local UITextSizeConstraint_11 = Instance.new("UITextSizeConstraint")
+local TextButton_7 = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
+local UICorner_9 = Instance.new("UICorner")
+local UICorner_10 = Instance.new("UICorner")
 local framesped = Instance.new("Frame")
 local RunSpeed = Instance.new("TextBox")
-local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local UITextSizeConstraint_12 = Instance.new("UITextSizeConstraint")
 local ChangeSpeed = Instance.new("TextButton")
 local Clear = Instance.new("TextButton")
 local NormalSpeed = Instance.new("TextButton")
-local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
-local UICorner_2 = Instance.new("UICorner")
-local Title = Instance.new("TextLabel")
-local UICorner_3 = Instance.new("UICorner")
-local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
-local Frame23 = Instance.new("Frame")
-local TextButton_2 = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local UITextSizeConstraint_4 = Instance.new("UITextSizeConstraint")
-local TextButton_3 = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local UITextSizeConstraint_5 = Instance.new("UITextSizeConstraint")
-local TextButton_4 = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local UITextSizeConstraint_6 = Instance.new("UITextSizeConstraint")
-local TextLabel = Instance.new("TextLabel")
-local UITextSizeConstraint_7 = Instance.new("UITextSizeConstraint")
-local UICorner_7 = Instance.new("UICorner")
-local TextLabel_2 = Instance.new("TextLabel")
-local UITextSizeConstraint_8 = Instance.new("UITextSizeConstraint")
-local TextLabel_3 = Instance.new("TextLabel")
-local UITextSizeConstraint_9 = Instance.new("UITextSizeConstraint")
-local TextLabel_4 = Instance.new("TextLabel")
-local UITextSizeConstraint_10 = Instance.new("UITextSizeConstraint")
-local GodMode = Instance.new("TextButton")
-local UICorner_8 = Instance.new("UICorner")
-local UITextSizeConstraint_11 = Instance.new("UITextSizeConstraint")
-local ImageButton = Instance.new("ImageButton")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local TextButton_5 = Instance.new("TextButton")
-local UICorner_9 = Instance.new("UICorner")
-local UITextSizeConstraint_12 = Instance.new("UITextSizeConstraint")
-local TextButton_6 = Instance.new("TextButton")
-local UICorner_10 = Instance.new("UICorner")
 local UITextSizeConstraint_13 = Instance.new("UITextSizeConstraint")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
-local TextButton_7 = Instance.new("TextButton")
 local UICorner_11 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local UICorner_12 = Instance.new("UICorner")
 local UITextSizeConstraint_14 = Instance.new("UITextSizeConstraint")
+local teleport6 = Instance.new("Frame")
+local UICorner_13 = Instance.new("UICorner")
+local TextButton_8 = Instance.new("TextButton")
 
 --Properties:
 
-teleport6.Name = "teleport6"
-teleport6.Parent = game.StarterGui.Mango hub
-teleport6.BackgroundColor3 = Color3.fromRGB(243, 255, 7)
-teleport6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-teleport6.BorderSizePixel = 0
-teleport6.Position = UDim2.new(0, 43, 0, 691)
-teleport6.Size = UDim2.new(0.216122314, 0, 0.0721271411, 0)
+Mangohub.Name = "Mango hub"
+Mangohub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Mangohub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-UICorner.Parent = teleport6
+Frame23.Name = "Frame23"
+Frame23.Parent = Mangohub
+Frame23.BackgroundColor3 = Color3.fromRGB(242, 255, 0)
+Frame23.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame23.BorderSizePixel = 100
+Frame23.Position = UDim2.new(0.577484369, 0, 0.0745721236, 0)
+Frame23.Size = UDim2.new(0.339124382, 0, 0.566014647, 0)
 
-TextButton.Parent = teleport6
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 2)
+TextButton.Parent = Frame23
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 166, 11)
 TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0, 0, 0.203389823, 0)
-TextButton.Size = UDim2.new(0, 311, 0, 34)
+TextButton.Position = UDim2.new(0.20154871, 0, 0.32818377, 0)
+TextButton.Size = UDim2.new(0.729508221, 0, 0.0863930956, 0)
 TextButton.Font = Enum.Font.Roboto
-TextButton.Text = "Mango steal up"
+TextButton.Text = "Fly"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
 
+UICorner.Parent = TextButton
+
+UITextSizeConstraint.Parent = TextButton
+UITextSizeConstraint.MaxTextSize = 40
+
+TextButton_2.Parent = Frame23
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 150, 3)
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0.201548815, 0, 0.454917043, 0)
+TextButton_2.Size = UDim2.new(0.729508221, 0, 0.0863930956, 0)
+TextButton_2.Font = Enum.Font.Roboto
+TextButton_2.Text = "Noclip"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
+UICorner_2.Parent = TextButton_2
+
+UITextSizeConstraint_2.Parent = TextButton_2
+UITextSizeConstraint_2.MaxTextSize = 40
+
+TextButton_3.Parent = Frame23
+TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 137, 3)
+TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.BorderSizePixel = 0
+TextButton_3.Position = UDim2.new(0.201548815, 0, 0.591913164, 0)
+TextButton_3.Size = UDim2.new(0.729508221, 0, 0.0863930956, 0)
+TextButton_3.Font = Enum.Font.Roboto
+TextButton_3.Text = "High jump"
+TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.TextScaled = true
+TextButton_3.TextSize = 14.000
+TextButton_3.TextWrapped = true
+
+UICorner_3.Parent = TextButton_3
+
+UITextSizeConstraint_3.Parent = TextButton_3
+UITextSizeConstraint_3.MaxTextSize = 40
+
+TextLabel.Parent = Frame23
+TextLabel.BackgroundColor3 = Color3.fromRGB(3, 213, 255)
+TextLabel.BackgroundTransparency = 0.940
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.25967741, 0, 0, 0)
+TextLabel.Size = UDim2.new(0.368852466, 0, 0.18574515, 0)
+TextLabel.ZIndex = 2
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.Text = "Mango"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+UITextSizeConstraint_4.Parent = TextLabel
+UITextSizeConstraint_4.MaxTextSize = 65
+
+UICorner_4.CornerRadius = UDim.new(0, 20)
+UICorner_4.Parent = Frame23
+
+TextLabel_2.Parent = Frame23
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(3, 213, 255)
+TextLabel_2.BackgroundTransparency = 0.940
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.53951782, 0, 0.0228811316, 0)
+TextLabel_2.Size = UDim2.new(0.389344275, 0, 0.149028093, 0)
+TextLabel_2.ZIndex = 2
+TextLabel_2.Font = Enum.Font.SciFi
+TextLabel_2.Text = "Hub"
+TextLabel_2.TextColor3 = Color3.fromRGB(158, 66, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+UITextSizeConstraint_5.Parent = TextLabel_2
+UITextSizeConstraint_5.MaxTextSize = 69
+
+TextLabel_3.Parent = Frame23
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0.343548298, 0, 0.199535981, 0)
+TextLabel_3.Size = UDim2.new(0.395491809, 0, 0.0820734426, 0)
+TextLabel_3.Font = Enum.Font.SpecialElite
+TextLabel_3.Text = "V.1.0.2"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+UITextSizeConstraint_6.Parent = TextLabel_3
+UITextSizeConstraint_6.MaxTextSize = 38
+
+TextLabel_4.Parent = Frame23
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.BorderSizePixel = 0
+TextLabel_4.Position = UDim2.new(0.0161290318, 0, 0.00928074215, 0)
+TextLabel_4.Size = UDim2.new(0.284836054, 0, 0.0561555102, 0)
+TextLabel_4.Font = Enum.Font.SpecialElite
+TextLabel_4.Text = "By timurgam7"
+TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+
+UITextSizeConstraint_7.Parent = TextLabel_4
+UITextSizeConstraint_7.MaxTextSize = 19
+
+GodMode.Name = "GodMode"
+GodMode.Parent = Frame23
+GodMode.BackgroundColor3 = Color3.fromRGB(255, 140, 0)
+GodMode.BorderColor3 = Color3.fromRGB(27, 42, 53)
+GodMode.Position = UDim2.new(0.199503586, 0, 0.706131458, 0)
+GodMode.Size = UDim2.new(0.728016376, 0, 0.0973242223, 0)
+GodMode.Font = Enum.Font.Roboto
+GodMode.Text = "godmode: off"
+GodMode.TextColor3 = Color3.fromRGB(0, 0, 0)
+GodMode.TextScaled = true
+GodMode.TextSize = 14.000
+GodMode.TextWrapped = true
+
+UICorner_5.Parent = GodMode
+
+UITextSizeConstraint_8.Parent = GodMode
+UITextSizeConstraint_8.MaxTextSize = 45
+
+ImageButton.Parent = Frame23
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.873210609, 0, 0.00863930862, 0)
+ImageButton.Size = UDim2.new(0.127049178, 0, 0.19654429, 0)
+ImageButton.Image = "rbxassetid://132008631609491"
+
+UIAspectRatioConstraint.Parent = ImageButton
+UIAspectRatioConstraint.AspectRatio = 0.681
+
+TextButton_4.Parent = Frame23
+TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 166, 11)
+TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.BorderSizePixel = 0
+TextButton_4.Position = UDim2.new(0.210267484, 0, 0.844382524, 0)
+TextButton_4.Size = UDim2.new(0.715163946, 0, 0.0928725749, 0)
+TextButton_4.Font = Enum.Font.Roboto
+TextButton_4.Text = "Invisible"
+TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.TextScaled = true
+TextButton_4.TextSize = 14.000
+TextButton_4.TextWrapped = true
+
+UICorner_6.Parent = TextButton_4
+
+UITextSizeConstraint_9.Parent = TextButton_4
+UITextSizeConstraint_9.MaxTextSize = 43
+
+TextButton_5.Parent = Frame23
+TextButton_5.BackgroundColor3 = Color3.fromRGB(255, 166, 11)
+TextButton_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.BorderSizePixel = 0
+TextButton_5.Position = UDim2.new(0.461262524, 0, 0.954533696, 0)
+TextButton_5.Size = UDim2.new(0.157786891, 0, 0.0604751669, 0)
+TextButton_5.Font = Enum.Font.Roboto
+TextButton_5.Text = "visible"
+TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.TextScaled = true
+TextButton_5.TextSize = 14.000
+TextButton_5.TextWrapped = true
+
+UICorner_7.Parent = TextButton_5
+
+UITextSizeConstraint_10.Parent = TextButton_5
+UITextSizeConstraint_10.MaxTextSize = 28
+
+UIAspectRatioConstraint_2.Parent = Frame23
+UIAspectRatioConstraint_2.AspectRatio = 1.054
+
+TextButton_6.Parent = Frame23
+TextButton_6.BackgroundColor3 = Color3.fromRGB(255, 166, 11)
+TextButton_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.BorderSizePixel = 0
+TextButton_6.Position = UDim2.new(0.0155954827, 0, 0.185635239, 0)
+TextButton_6.Size = UDim2.new(0.30737704, 0, 0.0928725749, 0)
+TextButton_6.Font = Enum.Font.Roboto
+TextButton_6.Text = "Instant Steal"
+TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.TextScaled = true
+TextButton_6.TextSize = 14.000
+TextButton_6.TextWrapped = true
+
+UICorner_8.Parent = TextButton_6
+
+UITextSizeConstraint_11.Parent = TextButton_6
+UITextSizeConstraint_11.MaxTextSize = 43
+
+TextButton_7.Parent = Mangohub
+TextButton_7.BackgroundColor3 = Color3.fromRGB(255, 255, 8)
+TextButton_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_7.BorderSizePixel = 0
+TextButton_7.Position = UDim2.new(0.187630296, 0, 0.0831295848, 0)
+TextButton_7.Size = UDim2.new(0, -102, 0, 81)
+TextButton_7.Font = Enum.Font.SourceSans
+TextButton_7.Text = "."
+TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_7.TextSize = 14.000
+
+ImageLabel.Parent = TextButton_7
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.116052814, 0, 0.0293398537, 0)
+ImageLabel.Size = UDim2.new(0, 84, 0, 78)
+ImageLabel.Image = "rbxassetid://117078130894295"
+ImageLabel.ImageColor3 = Color3.fromRGB(245, 255, 64)
+
+UICorner_9.CornerRadius = UDim.new(0, 20)
+UICorner_9.Parent = ImageLabel
+
+UICorner_10.CornerRadius = UDim.new(0, 20)
+UICorner_10.Parent = TextButton_7
+
 framesped.Name = "framesped"
-framesped.Parent = game.StarterGui.Mango hub
+framesped.Parent = Mangohub
 framesped.BackgroundColor3 = Color3.fromRGB(243, 255, 7)
 framesped.BorderColor3 = Color3.fromRGB(0, 0, 0)
 framesped.BorderSizePixel = 0
@@ -96,8 +329,8 @@ RunSpeed.TextScaled = true
 RunSpeed.TextSize = 14.000
 RunSpeed.TextWrapped = true
 
-UITextSizeConstraint.Parent = RunSpeed
-UITextSizeConstraint.MaxTextSize = 25
+UITextSizeConstraint_12.Parent = RunSpeed
+UITextSizeConstraint_12.MaxTextSize = 25
 
 ChangeSpeed.Name = "ChangeSpeed"
 ChangeSpeed.Parent = framesped
@@ -141,10 +374,10 @@ NormalSpeed.TextScaled = true
 NormalSpeed.TextSize = 14.000
 NormalSpeed.TextWrapped = true
 
-UITextSizeConstraint_2.Parent = NormalSpeed
-UITextSizeConstraint_2.MaxTextSize = 28
+UITextSizeConstraint_13.Parent = NormalSpeed
+UITextSizeConstraint_13.MaxTextSize = 28
 
-UICorner_2.Parent = framesped
+UICorner_11.Parent = framesped
 
 Title.Name = "Title"
 Title.Parent = framesped
@@ -159,383 +392,37 @@ Title.TextScaled = true
 Title.TextSize = 14.000
 Title.TextWrapped = true
 
-UICorner_3.Parent = Title
+UICorner_12.Parent = Title
 
-UITextSizeConstraint_3.Parent = Title
-UITextSizeConstraint_3.MaxTextSize = 36
+UITextSizeConstraint_14.Parent = Title
+UITextSizeConstraint_14.MaxTextSize = 36
 
-Frame23.Name = "Frame23"
-Frame23.Parent = game.StarterGui.Mango hub
-Frame23.BackgroundColor3 = Color3.fromRGB(242, 255, 0)
-Frame23.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame23.BorderSizePixel = 100
-Frame23.Position = UDim2.new(0.577484369, 0, 0.0745721236, 0)
-Frame23.Size = UDim2.new(0.339124382, 0, 0.566014647, 0)
+teleport6.Name = "teleport6"
+teleport6.Parent = Mangohub
+teleport6.BackgroundColor3 = Color3.fromRGB(243, 255, 7)
+teleport6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+teleport6.BorderSizePixel = 0
+teleport6.Position = UDim2.new(0, 43, 0, 691)
+teleport6.Size = UDim2.new(0.216122314, 0, 0.0721271411, 0)
 
-TextButton_2.Parent = Frame23
-TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 166, 11)
-TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.BorderSizePixel = 0
-TextButton_2.Position = UDim2.new(0.20154871, 0, 0.32818377, 0)
-TextButton_2.Size = UDim2.new(0.729508221, 0, 0.0863930956, 0)
-TextButton_2.Font = Enum.Font.Roboto
-TextButton_2.Text = "Fly"
-TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
+UICorner_13.Parent = teleport6
 
-UICorner_4.Parent = TextButton_2
-
-UITextSizeConstraint_4.Parent = TextButton_2
-UITextSizeConstraint_4.MaxTextSize = 40
-
-TextButton_3.Parent = Frame23
-TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 150, 3)
-TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_3.BorderSizePixel = 0
-TextButton_3.Position = UDim2.new(0.201548815, 0, 0.454917043, 0)
-TextButton_3.Size = UDim2.new(0.729508221, 0, 0.0863930956, 0)
-TextButton_3.Font = Enum.Font.Roboto
-TextButton_3.Text = "Noclip"
-TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_3.TextScaled = true
-TextButton_3.TextSize = 14.000
-TextButton_3.TextWrapped = true
-
-UICorner_5.Parent = TextButton_3
-
-UITextSizeConstraint_5.Parent = TextButton_3
-UITextSizeConstraint_5.MaxTextSize = 40
-
-TextButton_4.Parent = Frame23
-TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 137, 3)
-TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_4.BorderSizePixel = 0
-TextButton_4.Position = UDim2.new(0.201548815, 0, 0.591913164, 0)
-TextButton_4.Size = UDim2.new(0.729508221, 0, 0.0863930956, 0)
-TextButton_4.Font = Enum.Font.Roboto
-TextButton_4.Text = "High jump"
-TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_4.TextScaled = true
-TextButton_4.TextSize = 14.000
-TextButton_4.TextWrapped = true
-
-UICorner_6.Parent = TextButton_4
-
-UITextSizeConstraint_6.Parent = TextButton_4
-UITextSizeConstraint_6.MaxTextSize = 40
-
-TextLabel.Parent = Frame23
-TextLabel.BackgroundColor3 = Color3.fromRGB(3, 213, 255)
-TextLabel.BackgroundTransparency = 0.940
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.25967741, 0, 0, 0)
-TextLabel.Size = UDim2.new(0.368852466, 0, 0.18574515, 0)
-TextLabel.ZIndex = 2
-TextLabel.Font = Enum.Font.SciFi
-TextLabel.Text = "Mango"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-UITextSizeConstraint_7.Parent = TextLabel
-UITextSizeConstraint_7.MaxTextSize = 65
-
-UICorner_7.CornerRadius = UDim.new(0, 20)
-UICorner_7.Parent = Frame23
-
-TextLabel_2.Parent = Frame23
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(3, 213, 255)
-TextLabel_2.BackgroundTransparency = 0.940
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.53951782, 0, 0.0228811316, 0)
-TextLabel_2.Size = UDim2.new(0.389344275, 0, 0.149028093, 0)
-TextLabel_2.ZIndex = 2
-TextLabel_2.Font = Enum.Font.SciFi
-TextLabel_2.Text = "Hub"
-TextLabel_2.TextColor3 = Color3.fromRGB(158, 66, 0)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
-
-UITextSizeConstraint_8.Parent = TextLabel_2
-UITextSizeConstraint_8.MaxTextSize = 69
-
-TextLabel_3.Parent = Frame23
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(0.343548298, 0, 0.199535981, 0)
-TextLabel_3.Size = UDim2.new(0.395491809, 0, 0.0820734426, 0)
-TextLabel_3.Font = Enum.Font.SpecialElite
-TextLabel_3.Text = "V.1.0.2"
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-UITextSizeConstraint_9.Parent = TextLabel_3
-UITextSizeConstraint_9.MaxTextSize = 38
-
-TextLabel_4.Parent = Frame23
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.BorderSizePixel = 0
-TextLabel_4.Position = UDim2.new(0.0161290318, 0, 0.00928074215, 0)
-TextLabel_4.Size = UDim2.new(0.284836054, 0, 0.0561555102, 0)
-TextLabel_4.Font = Enum.Font.SpecialElite
-TextLabel_4.Text = "By timurgam7"
-TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.TextScaled = true
-TextLabel_4.TextSize = 14.000
-TextLabel_4.TextWrapped = true
-
-UITextSizeConstraint_10.Parent = TextLabel_4
-UITextSizeConstraint_10.MaxTextSize = 19
-
-GodMode.Name = "GodMode"
-GodMode.Parent = Frame23
-GodMode.BackgroundColor3 = Color3.fromRGB(255, 140, 0)
-GodMode.BorderColor3 = Color3.fromRGB(27, 42, 53)
-GodMode.Position = UDim2.new(0.199503586, 0, 0.706131458, 0)
-GodMode.Size = UDim2.new(0.728016376, 0, 0.0973242223, 0)
-GodMode.Font = Enum.Font.Roboto
-GodMode.Text = "godmode: off"
-GodMode.TextColor3 = Color3.fromRGB(0, 0, 0)
-GodMode.TextScaled = true
-GodMode.TextSize = 14.000
-GodMode.TextWrapped = true
-
-UICorner_8.Parent = GodMode
-
-UITextSizeConstraint_11.Parent = GodMode
-UITextSizeConstraint_11.MaxTextSize = 45
-
-ImageButton.Parent = Frame23
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.873210609, 0, 0.00863930862, 0)
-ImageButton.Size = UDim2.new(0.127049178, 0, 0.19654429, 0)
-ImageButton.Image = "rbxassetid://132008631609491"
-
-UIAspectRatioConstraint.Parent = ImageButton
-UIAspectRatioConstraint.AspectRatio = 0.681
-
-TextButton_5.Parent = Frame23
-TextButton_5.BackgroundColor3 = Color3.fromRGB(255, 166, 11)
-TextButton_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_5.BorderSizePixel = 0
-TextButton_5.Position = UDim2.new(0.210267484, 0, 0.844382524, 0)
-TextButton_5.Size = UDim2.new(0.715163946, 0, 0.0928725749, 0)
-TextButton_5.Font = Enum.Font.Roboto
-TextButton_5.Text = "Invisible"
-TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_5.TextScaled = true
-TextButton_5.TextSize = 14.000
-TextButton_5.TextWrapped = true
-
-UICorner_9.Parent = TextButton_5
-
-UITextSizeConstraint_12.Parent = TextButton_5
-UITextSizeConstraint_12.MaxTextSize = 43
-
-TextButton_6.Parent = Frame23
-TextButton_6.BackgroundColor3 = Color3.fromRGB(255, 166, 11)
-TextButton_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_6.BorderSizePixel = 0
-TextButton_6.Position = UDim2.new(0.461262524, 0, 0.954533696, 0)
-TextButton_6.Size = UDim2.new(0.157786891, 0, 0.0604751669, 0)
-TextButton_6.Font = Enum.Font.Roboto
-TextButton_6.Text = "visible"
-TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_6.TextScaled = true
-TextButton_6.TextSize = 14.000
-TextButton_6.TextWrapped = true
-
-UICorner_10.Parent = TextButton_6
-
-UITextSizeConstraint_13.Parent = TextButton_6
-UITextSizeConstraint_13.MaxTextSize = 28
-
-UIAspectRatioConstraint_2.Parent = Frame23
-UIAspectRatioConstraint_2.AspectRatio = 1.054
-
-TextButton_7.Parent = Frame23
-TextButton_7.BackgroundColor3 = Color3.fromRGB(255, 166, 11)
-TextButton_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_7.BorderSizePixel = 0
-TextButton_7.Position = UDim2.new(0.0155954827, 0, 0.185635239, 0)
-TextButton_7.Size = UDim2.new(0.30737704, 0, 0.0928725749, 0)
-TextButton_7.Font = Enum.Font.Roboto
-TextButton_7.Text = "Instant Steal"
-TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_7.TextScaled = true
-TextButton_7.TextSize = 14.000
-TextButton_7.TextWrapped = true
-
-UICorner_11.Parent = TextButton_7
-
-UITextSizeConstraint_14.Parent = TextButton_7
-UITextSizeConstraint_14.MaxTextSize = 43
+TextButton_8.Parent = teleport6
+TextButton_8.BackgroundColor3 = Color3.fromRGB(255, 255, 2)
+TextButton_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_8.BorderSizePixel = 0
+TextButton_8.Position = UDim2.new(0, 0, 0.203389823, 0)
+TextButton_8.Size = UDim2.new(0, 311, 0, 34)
+TextButton_8.Font = Enum.Font.Roboto
+TextButton_8.Text = "Mango steal up"
+TextButton_8.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_8.TextScaled = true
+TextButton_8.TextSize = 14.000
+TextButton_8.TextWrapped = true
 
 -- Scripts:
 
-local function GJGBR_fake_script() -- teleport6.Dragify 
-	local script = Instance.new('LocalScript', teleport6)
-
-	local UserInputService = game:GetService"UserInputService"
-	
-	function Dragify (Object)
-		local Button1Down
-	
-		Object.InputBegan:Connect(function(Input)
-			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-				Button1Down = true
-	
-				local A = UserInputService:GetMouseLocation()
-	
-				local Difference = Object.AbsolutePosition - A
-	
-				repeat task.wait()
-					local B = UserInputService:GetMouseLocation()
-					local Position = UDim2.fromOffset(
-						B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
-						B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
-					)
-	
-					Object.Position = Position
-				until not Button1Down
-			end
-		end)
-	
-		Object.InputEnded:Connect(function(Input)
-			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-				Button1Down = false
-			end
-		end)
-	end
-	
-	Dragify(script.Parent)
-end
-coroutine.wrap(GJGBR_fake_script)()
-local function DSRS_fake_script() -- TextButton.LocalScript 
-	local script = Instance.new('LocalScript', TextButton)
-
-	local button = script.Parent
-	
-	button.MouseButton1Click:Connect(function()
-		local player = game.Players.LocalPlayer
-		local character = player.Character or player.CharacterAdded:Wait()
-		local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-	
-		-- Находим что-то над головой игрока
-		local rayOrigin = humanoidRootPart.Position
-		local rayDirection = Vector3.new(0, 100, 0) -- Луч вверх на 100 studs
-		local raycastParams = RaycastParams.new()
-		raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
-		raycastParams.FilterDescendantsInstances = {character}
-	
-		local raycastResult = workspace:Raycast(rayOrigin, rayDirection, raycastParams)
-	
-		if raycastResult then
-			-- Если нашли препятствие, телепортируемся под ним
-			local newPosition = raycastResult.Position - Vector3.new(0, 8, 0)
-			humanoidRootPart.CFrame = CFrame.new(newPosition)
-		else
-			-- Если ничего нет, просто телепортируемся выше
-			humanoidRootPart.CFrame = humanoidRootPart.CFrame + Vector3.new(0, 50, 0)
-		end
-	
-		-- Уведомление
-		game:GetService("StarterGui"):SetCore("SendNotification", {
-			Title = "MangoHub",
-			Text = "Teleport up",
-			Duration = 5
-		})
-	end)
-	
-end
-coroutine.wrap(DSRS_fake_script)()
-local function WIZFL_fake_script() -- framesped.Dragify 
-	local script = Instance.new('LocalScript', framesped)
-
-	local UserInputService = game:GetService"UserInputService"
-	
-	function Dragify (Object)
-		local Button1Down
-	
-		Object.InputBegan:Connect(function(Input)
-			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-				Button1Down = true
-	
-				local A = UserInputService:GetMouseLocation()
-	
-				local Difference = Object.AbsolutePosition - A
-	
-				repeat task.wait()
-					local B = UserInputService:GetMouseLocation()
-					local Position = UDim2.fromOffset(
-						B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
-						B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
-					)
-	
-					Object.Position = Position
-				until not Button1Down
-			end
-		end)
-	
-		Object.InputEnded:Connect(function(Input)
-			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-				Button1Down = false
-			end
-		end)
-	end
-	
-	Dragify(script.Parent)
-end
-coroutine.wrap(WIZFL_fake_script)()
-local function MQUGZ_fake_script() -- ChangeSpeed.SpeedScript 
-	local script = Instance.new('LocalScript', ChangeSpeed)
-
-	local Speed = script.Parent.Parent.RunSpeed
-	
-	script.Parent.MouseButton1Down:Connect(function()
-		local player = game.Players.LocalPlayer
-		-- Changing the speed from textbox
-		player.Character.Humanoid.WalkSpeed = Speed.Text
-	end)
-	
-end
-coroutine.wrap(MQUGZ_fake_script)()
-local function CRTSSK_fake_script() -- Clear.ClearScript 
-	local script = Instance.new('LocalScript', Clear)
-
-	local text = script.Parent.Parent.RunSpeed
-	
-	script.Parent.MouseButton1Down:Connect(function()
-		text.Text = ""
-	end)
-	
-end
-coroutine.wrap(CRTSSK_fake_script)()
-local function TTJR_fake_script() -- NormalSpeed.NormalSpeed 
-	local script = Instance.new('LocalScript', NormalSpeed)
-
-	script.Parent.MouseButton1Down:Connect(function()
-		local player = game.Players.LocalPlayer
-		player.Character.Humanoid.WalkSpeed = 16
-	end)
-	
-end
-coroutine.wrap(TTJR_fake_script)()
-local function MJIRQKE_fake_script() -- Frame23.LocalScript 
+local function SPJTAD_fake_script() -- Frame23.LocalScript 
 	local script = Instance.new('LocalScript', Frame23)
 
 	local UserInputService = game:GetService"UserInputService"
@@ -573,9 +460,9 @@ local function MJIRQKE_fake_script() -- Frame23.LocalScript
 	Dragify(script.Parent)
 	
 end
-coroutine.wrap(MJIRQKE_fake_script)()
-local function KNOIK_fake_script() -- TextButton_2.Noclip 
-	local script = Instance.new('LocalScript', TextButton_2)
+coroutine.wrap(SPJTAD_fake_script)()
+local function HCAIGPT_fake_script() -- TextButton.Noclip 
+	local script = Instance.new('LocalScript', TextButton)
 
 	local c = workspace.CurrentCamera
 	local player = game.Players.LocalPlayer
@@ -650,9 +537,9 @@ local function KNOIK_fake_script() -- TextButton_2.Noclip
 		onkeypressed()
 	end)
 end
-coroutine.wrap(KNOIK_fake_script)()
-local function UUWK_fake_script() -- TextButton_3.NoclipScript 
-	local script = Instance.new('LocalScript', TextButton_3)
+coroutine.wrap(HCAIGPT_fake_script)()
+local function HMQZFMQ_fake_script() -- TextButton_2.NoclipScript 
+	local script = Instance.new('LocalScript', TextButton_2)
 
 	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- @CloneTrooper1019, 2015
@@ -723,9 +610,9 @@ local function UUWK_fake_script() -- TextButton_3.NoclipScript
 	script.Parent.Selected:connect(onSelected)
 	script.Parent.Deselected:connect(onDeselected)
 end
-coroutine.wrap(UUWK_fake_script)()
-local function EHVYRA_fake_script() -- TextButton_4.Gravity Script 
-	local script = Instance.new('Script', TextButton_4)
+coroutine.wrap(HMQZFMQ_fake_script)()
+local function OZNPRS_fake_script() -- TextButton_3.Gravity Script 
+	local script = Instance.new('Script', TextButton_3)
 
 	--Credits: SynxDev2
 	
@@ -733,8 +620,8 @@ local function EHVYRA_fake_script() -- TextButton_4.Gravity Script
 		game.Workspace.Gravity = 3 --change this numbers to change gravity
 	end)
 end
-coroutine.wrap(EHVYRA_fake_script)()
-local function CRMSD_fake_script() -- GodMode.LocalScript 
+coroutine.wrap(OZNPRS_fake_script)()
+local function FDAM_fake_script() -- GodMode.LocalScript 
 	local script = Instance.new('LocalScript', GodMode)
 
 	local godMode = "off"
@@ -855,8 +742,8 @@ local function CRMSD_fake_script() -- GodMode.LocalScript
 		
 	end)
 end
-coroutine.wrap(CRMSD_fake_script)()
-local function CMSESNC_fake_script() -- ImageButton.LocalScript 
+coroutine.wrap(FDAM_fake_script)()
+local function MHZWAAN_fake_script() -- ImageButton.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -869,8 +756,26 @@ local function CMSESNC_fake_script() -- ImageButton.LocalScript
 	
 	
 end
-coroutine.wrap(CMSESNC_fake_script)()
-local function XNGNGJ_fake_script() -- TextButton_5.script 
+coroutine.wrap(MHZWAAN_fake_script)()
+local function ZSFEHF_fake_script() -- TextButton_4.script 
+	local script = Instance.new('Script', TextButton_4)
+
+	function bla() 
+	script.Parent.Parent.Parent.Parent.Character.Head.Transparency = 1 
+	script.Parent.Parent.Parent.Parent.Character.Torso.Transparency = 1 
+	script.Parent.Parent.Parent.Parent.Character["Left Leg"].Transparency = 1 
+	script.Parent.Parent.Parent.Parent.Character["Right Leg"].Transparency = 1 
+	script.Parent.Parent.Parent.Parent.Character["Left Arm"].Transparency = 1 
+	script.Parent.Parent.Parent.Parent.Character["Right Arm"].Handle.Transparency = 1 
+	script.Parent.Parent.Parent.Parent.Character["VoidStar"].Handle.Transparency = 1 
+	script.Parent.Parent.Parent.Parent.Character["Bandana"].Handle.Transparency = 1 
+	script.Parent.Parent.Parent.Parent.Character["Future Bandit"].Handle.Transparency = 1 
+	end 
+	
+	script.Parent.MouseButton1Down:connect(bla) 
+end
+coroutine.wrap(ZSFEHF_fake_script)()
+local function UNWYT_fake_script() -- TextButton_5.script 
 	local script = Instance.new('Script', TextButton_5)
 
 	function bla() 
@@ -887,27 +792,9 @@ local function XNGNGJ_fake_script() -- TextButton_5.script
 	
 	script.Parent.MouseButton1Down:connect(bla) 
 end
-coroutine.wrap(XNGNGJ_fake_script)()
-local function TJJW_fake_script() -- TextButton_6.script 
-	local script = Instance.new('Script', TextButton_6)
-
-	function bla() 
-	script.Parent.Parent.Parent.Parent.Character.Head.Transparency = 1 
-	script.Parent.Parent.Parent.Parent.Character.Torso.Transparency = 1 
-	script.Parent.Parent.Parent.Parent.Character["Left Leg"].Transparency = 1 
-	script.Parent.Parent.Parent.Parent.Character["Right Leg"].Transparency = 1 
-	script.Parent.Parent.Parent.Parent.Character["Left Arm"].Transparency = 1 
-	script.Parent.Parent.Parent.Parent.Character["Right Arm"].Handle.Transparency = 1 
-	script.Parent.Parent.Parent.Parent.Character["VoidStar"].Handle.Transparency = 1 
-	script.Parent.Parent.Parent.Parent.Character["Bandana"].Handle.Transparency = 1 
-	script.Parent.Parent.Parent.Parent.Character["Future Bandit"].Handle.Transparency = 1 
-	end 
-	
-	script.Parent.MouseButton1Down:connect(bla) 
-end
-coroutine.wrap(TJJW_fake_script)()
-local function FCASCZX_fake_script() -- TextButton_6.script 
-	local script = Instance.new('Script', TextButton_6)
+coroutine.wrap(UNWYT_fake_script)()
+local function JEMBHJT_fake_script() -- TextButton_5.script 
+	local script = Instance.new('Script', TextButton_5)
 
 	function bla() 
 	script.Parent.Parent.Parent.Parent.Character.Head.Transparency = 0 
@@ -923,9 +810,9 @@ local function FCASCZX_fake_script() -- TextButton_6.script
 	
 	script.Parent.MouseButton1Down:connect(bla) 
 end
-coroutine.wrap(FCASCZX_fake_script)()
-local function HMPAC_fake_script() -- TextButton_7.LocalScript 
-	local script = Instance.new('LocalScript', TextButton_7)
+coroutine.wrap(JEMBHJT_fake_script)()
+local function MQEZKCX_fake_script() -- TextButton_6.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_6)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		if script.Parent.Parent.teleport6.Visible == false then
@@ -937,4 +824,166 @@ local function HMPAC_fake_script() -- TextButton_7.LocalScript
 	
 	
 end
-coroutine.wrap(HMPAC_fake_script)()
+coroutine.wrap(MQEZKCX_fake_script)()
+local function IDTJHC_fake_script() -- TextButton_7.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_7)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		if script.Parent.Parent.Frame23.Visible == false then
+			script.Parent.Parent.Frame23.Visible = true
+		else
+			script.Parent.Parent.Frame23.Visible = false
+		end
+	end)
+	
+end
+coroutine.wrap(IDTJHC_fake_script)()
+local function ZNZFRSF_fake_script() -- framesped.Dragify 
+	local script = Instance.new('LocalScript', framesped)
+
+	local UserInputService = game:GetService"UserInputService"
+	
+	function Dragify (Object)
+		local Button1Down
+	
+		Object.InputBegan:Connect(function(Input)
+			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+				Button1Down = true
+	
+				local A = UserInputService:GetMouseLocation()
+	
+				local Difference = Object.AbsolutePosition - A
+	
+				repeat task.wait()
+					local B = UserInputService:GetMouseLocation()
+					local Position = UDim2.fromOffset(
+						B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
+						B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
+					)
+	
+					Object.Position = Position
+				until not Button1Down
+			end
+		end)
+	
+		Object.InputEnded:Connect(function(Input)
+			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+				Button1Down = false
+			end
+		end)
+	end
+	
+	Dragify(script.Parent)
+end
+coroutine.wrap(ZNZFRSF_fake_script)()
+local function XEUDUL_fake_script() -- ChangeSpeed.SpeedScript 
+	local script = Instance.new('LocalScript', ChangeSpeed)
+
+	local Speed = script.Parent.Parent.RunSpeed
+	
+	script.Parent.MouseButton1Down:Connect(function()
+		local player = game.Players.LocalPlayer
+		-- Changing the speed from textbox
+		player.Character.Humanoid.WalkSpeed = Speed.Text
+	end)
+	
+end
+coroutine.wrap(XEUDUL_fake_script)()
+local function HAVQ_fake_script() -- Clear.ClearScript 
+	local script = Instance.new('LocalScript', Clear)
+
+	local text = script.Parent.Parent.RunSpeed
+	
+	script.Parent.MouseButton1Down:Connect(function()
+		text.Text = ""
+	end)
+	
+end
+coroutine.wrap(HAVQ_fake_script)()
+local function LKAD_fake_script() -- NormalSpeed.NormalSpeed 
+	local script = Instance.new('LocalScript', NormalSpeed)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		local player = game.Players.LocalPlayer
+		player.Character.Humanoid.WalkSpeed = 16
+	end)
+	
+end
+coroutine.wrap(LKAD_fake_script)()
+local function JJNJPPI_fake_script() -- teleport6.Dragify 
+	local script = Instance.new('LocalScript', teleport6)
+
+	local UserInputService = game:GetService"UserInputService"
+	
+	function Dragify (Object)
+		local Button1Down
+	
+		Object.InputBegan:Connect(function(Input)
+			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+				Button1Down = true
+	
+				local A = UserInputService:GetMouseLocation()
+	
+				local Difference = Object.AbsolutePosition - A
+	
+				repeat task.wait()
+					local B = UserInputService:GetMouseLocation()
+					local Position = UDim2.fromOffset(
+						B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
+						B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
+					)
+	
+					Object.Position = Position
+				until not Button1Down
+			end
+		end)
+	
+		Object.InputEnded:Connect(function(Input)
+			if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+				Button1Down = false
+			end
+		end)
+	end
+	
+	Dragify(script.Parent)
+end
+coroutine.wrap(JJNJPPI_fake_script)()
+local function GVLG_fake_script() -- TextButton_8.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_8)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+	
+		-- Находим что-то над головой игрока
+		local rayOrigin = humanoidRootPart.Position
+		local rayDirection = Vector3.new(0, 100, 0) -- Луч вверх на 100 studs
+		local raycastParams = RaycastParams.new()
+		raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+		raycastParams.FilterDescendantsInstances = {character}
+	
+		local raycastResult = workspace:Raycast(rayOrigin, rayDirection, raycastParams)
+	
+		if raycastResult then
+			-- Если нашли препятствие, телепортируемся под ним
+			local newPosition = raycastResult.Position - Vector3.new(0, 8, 0)
+			humanoidRootPart.CFrame = CFrame.new(newPosition)
+		else
+			-- Если ничего нет, просто телепортируемся выше
+			humanoidRootPart.CFrame = humanoidRootPart.CFrame + Vector3.new(0, 50, 0)
+		end
+	
+		-- Уведомление
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "MangoHub",
+			Text = "Teleport up",
+			Duration = 5
+		})
+	end)
+	
+end
+coroutine.wrap(GVLG_fake_script)()
+
