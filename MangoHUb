@@ -1,3 +1,4 @@
+local Mangohub = Instance.new("ScreenGui")
 local Frame23 = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
@@ -29,6 +30,10 @@ local TextButton_5 = Instance.new("TextButton")
 local UICorner_7 = Instance.new("UICorner")
 local UITextSizeConstraint_10 = Instance.new("UITextSizeConstraint")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local TextButton_6 = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
+local UICorner_8 = Instance.new("UICorner")
+local UICorner_9 = Instance.new("UICorner")
 local framesped = Instance.new("Frame")
 local RunSpeed = Instance.new("TextBox")
 local UITextSizeConstraint_11 = Instance.new("UITextSizeConstraint")
@@ -36,22 +41,22 @@ local ChangeSpeed = Instance.new("TextButton")
 local Clear = Instance.new("TextButton")
 local NormalSpeed = Instance.new("TextButton")
 local UITextSizeConstraint_12 = Instance.new("UITextSizeConstraint")
-local UICorner_8 = Instance.new("UICorner")
+local UICorner_10 = Instance.new("UICorner")
 local Title = Instance.new("TextLabel")
-local UICorner_9 = Instance.new("UICorner")
+local UICorner_11 = Instance.new("UICorner")
 local UITextSizeConstraint_13 = Instance.new("UITextSizeConstraint")
 local teleport6 = Instance.new("Frame")
-local UICorner_10 = Instance.new("UICorner")
-local TextButton_6 = Instance.new("TextButton")
-local TextButton_7 = Instance.new("TextButton")
-local ImageLabel = Instance.new("ImageLabel")
-local UICorner_11 = Instance.new("UICorner")
 local UICorner_12 = Instance.new("UICorner")
+local TextButton_7 = Instance.new("TextButton")
 
 --Properties:
 
+Mangohub.Name = "Mango hub"
+Mangohub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Mangohub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
 Frame23.Name = "Frame23"
-Frame23.Parent = game.StarterGui.Mango hub
+Frame23.Parent = Mangohub
 Frame23.BackgroundColor3 = Color3.fromRGB(242, 255, 0)
 Frame23.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame23.BorderSizePixel = 100
@@ -253,8 +258,34 @@ UITextSizeConstraint_10.MaxTextSize = 28
 UIAspectRatioConstraint_2.Parent = Frame23
 UIAspectRatioConstraint_2.AspectRatio = 1.054
 
+TextButton_6.Parent = Mangohub
+TextButton_6.BackgroundColor3 = Color3.fromRGB(255, 255, 8)
+TextButton_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.BorderSizePixel = 0
+TextButton_6.Position = UDim2.new(0.187630296, 0, 0.0831295848, 0)
+TextButton_6.Size = UDim2.new(-0.0708825588, 0, 0.0990220085, 0)
+TextButton_6.Font = Enum.Font.SourceSans
+TextButton_6.Text = "."
+TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.TextSize = 14.000
+
+ImageLabel.Parent = TextButton_6
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.903555036, 0, -0.00769721158, 0)
+ImageLabel.Size = UDim2.new(-0.823529422, 0, 0.962962985, 0)
+ImageLabel.Image = "rbxassetid://117078130894295"
+ImageLabel.ImageColor3 = Color3.fromRGB(245, 255, 64)
+
+UICorner_8.CornerRadius = UDim.new(0, 20)
+UICorner_8.Parent = ImageLabel
+
+UICorner_9.CornerRadius = UDim.new(0, 20)
+UICorner_9.Parent = TextButton_6
+
 framesped.Name = "framesped"
-framesped.Parent = game.StarterGui.Mango hub
+framesped.Parent = Mangohub
 framesped.BackgroundColor3 = Color3.fromRGB(243, 255, 7)
 framesped.BorderColor3 = Color3.fromRGB(0, 0, 0)
 framesped.BorderSizePixel = 0
@@ -325,7 +356,7 @@ NormalSpeed.TextWrapped = true
 UITextSizeConstraint_12.Parent = NormalSpeed
 UITextSizeConstraint_12.MaxTextSize = 28
 
-UICorner_8.Parent = framesped
+UICorner_10.Parent = framesped
 
 Title.Name = "Title"
 Title.Parent = framesped
@@ -340,63 +371,37 @@ Title.TextScaled = true
 Title.TextSize = 14.000
 Title.TextWrapped = true
 
-UICorner_9.Parent = Title
+UICorner_11.Parent = Title
 
 UITextSizeConstraint_13.Parent = Title
 UITextSizeConstraint_13.MaxTextSize = 36
 
 teleport6.Name = "teleport6"
-teleport6.Parent = game.StarterGui.Mango hub
+teleport6.Parent = Mangohub
 teleport6.BackgroundColor3 = Color3.fromRGB(243, 255, 7)
 teleport6.BorderColor3 = Color3.fromRGB(0, 0, 0)
 teleport6.BorderSizePixel = 0
 teleport6.Position = UDim2.new(0.170952052, 0, 0.781173587, 0)
 teleport6.Size = UDim2.new(0.216122314, 0, 0.0721271411, 0)
 
-UICorner_10.Parent = teleport6
+UICorner_12.Parent = teleport6
 
-TextButton_6.Parent = teleport6
-TextButton_6.BackgroundColor3 = Color3.fromRGB(255, 255, 2)
-TextButton_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_6.BorderSizePixel = 0
-TextButton_6.Position = UDim2.new(0.00750462571, 0, 0.179349214, 0)
-TextButton_6.Size = UDim2.new(0.984450281, 0, 0.630687416, 0)
-TextButton_6.Font = Enum.Font.Roboto
-TextButton_6.Text = "Mango steal up"
-TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_6.TextScaled = true
-TextButton_6.TextSize = 14.000
-TextButton_6.TextWrapped = true
-
-TextButton_7.Parent = game.StarterGui.Mango hub
-TextButton_7.BackgroundColor3 = Color3.fromRGB(255, 255, 8)
+TextButton_7.Parent = teleport6
+TextButton_7.BackgroundColor3 = Color3.fromRGB(255, 255, 2)
 TextButton_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_7.BorderSizePixel = 0
-TextButton_7.Position = UDim2.new(0.187630296, 0, 0.0831295848, 0)
-TextButton_7.Size = UDim2.new(-0.0708825588, 0, 0.0990220085, 0)
-TextButton_7.Font = Enum.Font.SourceSans
-TextButton_7.Text = "."
+TextButton_7.Position = UDim2.new(0.00750462571, 0, 0.179349214, 0)
+TextButton_7.Size = UDim2.new(0.984450281, 0, 0.630687416, 0)
+TextButton_7.Font = Enum.Font.Roboto
+TextButton_7.Text = "Mango steal up"
 TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_7.TextScaled = true
 TextButton_7.TextSize = 14.000
-
-ImageLabel.Parent = TextButton_7
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.903555036, 0, -0.00769721158, 0)
-ImageLabel.Size = UDim2.new(-0.823529422, 0, 0.962962985, 0)
-ImageLabel.Image = "rbxassetid://117078130894295"
-ImageLabel.ImageColor3 = Color3.fromRGB(245, 255, 64)
-
-UICorner_11.CornerRadius = UDim.new(0, 20)
-UICorner_11.Parent = ImageLabel
-
-UICorner_12.CornerRadius = UDim.new(0, 20)
-UICorner_12.Parent = TextButton_7
+TextButton_7.TextWrapped = true
 
 -- Scripts:
 
-local function YFRRZMK_fake_script() -- Frame23.LocalScript 
+local function JLMN_fake_script() -- Frame23.LocalScript 
 	local script = Instance.new('LocalScript', Frame23)
 
 	local UserInputService = game:GetService"UserInputService"
@@ -434,8 +439,8 @@ local function YFRRZMK_fake_script() -- Frame23.LocalScript
 	Dragify(script.Parent)
 	
 end
-coroutine.wrap(YFRRZMK_fake_script)()
-local function DOOI_fake_script() -- TextButton.Noclip 
+coroutine.wrap(JLMN_fake_script)()
+local function NFCA_fake_script() -- TextButton.Noclip 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local c = workspace.CurrentCamera
@@ -511,8 +516,8 @@ local function DOOI_fake_script() -- TextButton.Noclip
 		onkeypressed()
 	end)
 end
-coroutine.wrap(DOOI_fake_script)()
-local function RFWY_fake_script() -- TextButton_2.NoclipScript 
+coroutine.wrap(NFCA_fake_script)()
+local function DLAJYU_fake_script() -- TextButton_2.NoclipScript 
 	local script = Instance.new('LocalScript', TextButton_2)
 
 	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -584,8 +589,8 @@ local function RFWY_fake_script() -- TextButton_2.NoclipScript
 	script.Parent.Selected:connect(onSelected)
 	script.Parent.Deselected:connect(onDeselected)
 end
-coroutine.wrap(RFWY_fake_script)()
-local function DAYSHY_fake_script() -- TextButton_3.Gravity Script 
+coroutine.wrap(DLAJYU_fake_script)()
+local function KKKVIWM_fake_script() -- TextButton_3.Gravity Script 
 	local script = Instance.new('Script', TextButton_3)
 
 	--Credits: SynxDev2
@@ -594,8 +599,8 @@ local function DAYSHY_fake_script() -- TextButton_3.Gravity Script
 		game.Workspace.Gravity = 3 --change this numbers to change gravity
 	end)
 end
-coroutine.wrap(DAYSHY_fake_script)()
-local function XRTW_fake_script() -- GodMode.LocalScript 
+coroutine.wrap(KKKVIWM_fake_script)()
+local function PCNWUQ_fake_script() -- GodMode.LocalScript 
 	local script = Instance.new('LocalScript', GodMode)
 
 	local godMode = "off"
@@ -716,8 +721,8 @@ local function XRTW_fake_script() -- GodMode.LocalScript
 		
 	end)
 end
-coroutine.wrap(XRTW_fake_script)()
-local function WWZI_fake_script() -- ImageButton.LocalScript 
+coroutine.wrap(PCNWUQ_fake_script)()
+local function ISYHCC_fake_script() -- ImageButton.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -730,8 +735,8 @@ local function WWZI_fake_script() -- ImageButton.LocalScript
 	
 	
 end
-coroutine.wrap(WWZI_fake_script)()
-local function ARQOP_fake_script() -- TextButton_4.script 
+coroutine.wrap(ISYHCC_fake_script)()
+local function VMOQN_fake_script() -- TextButton_4.script 
 	local script = Instance.new('Script', TextButton_4)
 
 	function bla() 
@@ -748,8 +753,8 @@ local function ARQOP_fake_script() -- TextButton_4.script
 	
 	script.Parent.MouseButton1Down:connect(bla) 
 end
-coroutine.wrap(ARQOP_fake_script)()
-local function UYHFSWA_fake_script() -- TextButton_5.script 
+coroutine.wrap(VMOQN_fake_script)()
+local function TJQI_fake_script() -- TextButton_5.script 
 	local script = Instance.new('Script', TextButton_5)
 
 	function bla() 
@@ -766,8 +771,8 @@ local function UYHFSWA_fake_script() -- TextButton_5.script
 	
 	script.Parent.MouseButton1Down:connect(bla) 
 end
-coroutine.wrap(UYHFSWA_fake_script)()
-local function QQRJOS_fake_script() -- TextButton_5.script 
+coroutine.wrap(TJQI_fake_script)()
+local function KGZOS_fake_script() -- TextButton_5.script 
 	local script = Instance.new('Script', TextButton_5)
 
 	function bla() 
@@ -784,8 +789,21 @@ local function QQRJOS_fake_script() -- TextButton_5.script
 	
 	script.Parent.MouseButton1Down:connect(bla) 
 end
-coroutine.wrap(QQRJOS_fake_script)()
-local function KEHIGED_fake_script() -- framesped.Dragify 
+coroutine.wrap(KGZOS_fake_script)()
+local function HVAYO_fake_script() -- TextButton_6.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_6)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		if script.Parent.Parent.Frame23.Visible == false then
+			script.Parent.Parent.Frame23.Visible = true
+		else
+			script.Parent.Parent.Frame23.Visible = false
+		end
+	end)
+	
+end
+coroutine.wrap(HVAYO_fake_script)()
+local function MFVX_fake_script() -- framesped.Dragify 
 	local script = Instance.new('LocalScript', framesped)
 
 	local UserInputService = game:GetService"UserInputService"
@@ -822,8 +840,8 @@ local function KEHIGED_fake_script() -- framesped.Dragify
 	
 	Dragify(script.Parent)
 end
-coroutine.wrap(KEHIGED_fake_script)()
-local function FAWIORZ_fake_script() -- ChangeSpeed.SpeedScript 
+coroutine.wrap(MFVX_fake_script)()
+local function FKBWQV_fake_script() -- ChangeSpeed.SpeedScript 
 	local script = Instance.new('LocalScript', ChangeSpeed)
 
 	local Speed = script.Parent.Parent.RunSpeed
@@ -835,8 +853,8 @@ local function FAWIORZ_fake_script() -- ChangeSpeed.SpeedScript
 	end)
 	
 end
-coroutine.wrap(FAWIORZ_fake_script)()
-local function COZQTBX_fake_script() -- Clear.ClearScript 
+coroutine.wrap(FKBWQV_fake_script)()
+local function TVDSLM_fake_script() -- Clear.ClearScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	local text = script.Parent.Parent.RunSpeed
@@ -846,8 +864,8 @@ local function COZQTBX_fake_script() -- Clear.ClearScript
 	end)
 	
 end
-coroutine.wrap(COZQTBX_fake_script)()
-local function DIXI_fake_script() -- NormalSpeed.NormalSpeed 
+coroutine.wrap(TVDSLM_fake_script)()
+local function YPCKZY_fake_script() -- NormalSpeed.NormalSpeed 
 	local script = Instance.new('LocalScript', NormalSpeed)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -856,8 +874,8 @@ local function DIXI_fake_script() -- NormalSpeed.NormalSpeed
 	end)
 	
 end
-coroutine.wrap(DIXI_fake_script)()
-local function YAHK_fake_script() -- teleport6.Dragify 
+coroutine.wrap(YPCKZY_fake_script)()
+local function XUBNZPL_fake_script() -- teleport6.Dragify 
 	local script = Instance.new('LocalScript', teleport6)
 
 	local UserInputService = game:GetService"UserInputService"
@@ -894,9 +912,9 @@ local function YAHK_fake_script() -- teleport6.Dragify
 	
 	Dragify(script.Parent)
 end
-coroutine.wrap(YAHK_fake_script)()
-local function YJDRAFM_fake_script() -- TextButton_6.LocalScript 
-	local script = Instance.new('LocalScript', TextButton_6)
+coroutine.wrap(XUBNZPL_fake_script)()
+local function XPTGPKD_fake_script() -- TextButton_7.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_7)
 
 	local button = script.Parent
 	
@@ -932,17 +950,4 @@ local function YJDRAFM_fake_script() -- TextButton_6.LocalScript
 	end)
 	
 end
-coroutine.wrap(YJDRAFM_fake_script)()
-local function TPIQHMD_fake_script() -- TextButton_7.LocalScript 
-	local script = Instance.new('LocalScript', TextButton_7)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		if script.Parent.Parent.Frame23.Visible == false then
-			script.Parent.Parent.Frame23.Visible = true
-		else
-			script.Parent.Parent.Frame23.Visible = false
-		end
-	end)
-	
-end
-coroutine.wrap(TPIQHMD_fake_script)()
+coroutine.wrap(XPTGPKD_fake_script)()
