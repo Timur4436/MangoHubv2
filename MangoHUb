@@ -1,47 +1,48 @@
 local function createGui(parent)
-	--Frame1--
-	local Frame1 = Instance.new("Frame",parent)
-	Frame1["Name"] = "teleport6"
-	Frame1["Position"] = UDim2.new(0.170952052, 0, 0.781173587, 0)
-	Frame1["BorderColor3"] = Color3.new(0, 0, 0)
-	Frame1["Size"] = UDim2.new(0.216122314, 0, 0.0721271411, 0)
-	Frame1["BorderSizePixel"] = 0
-	Frame1["BackgroundColor3"] = Color3.new(0.952941, 1, 0.027451)
-	----Frame1----
-	--Script2--
-	local Script2 = Instance.new("Script",Frame1)
-	Script2["Name"] = "Dragify"
-	----Script2----
-	--UICorner3--
-	local UICorner3 = Instance.new("UICorner",Frame1)
-	----UICorner3----
-	--UIStroke4--
-	local UIStroke4 = Instance.new("UIStroke",Frame1)
-	UIStroke4["Color"] = Color3.new(1, 0.572549, 0.0470588)
-	UIStroke4["Thickness"] = 5
-	----UIStroke4----
-	--TextButton5--
-	local TextButton5 = Instance.new("TextButton",Frame1)
-	TextButton5["TextWrapped"] = true
-	TextButton5["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton5["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton5["Text"] = "Mango Steal Up"
-	TextButton5["Font"] = Enum.Font.Roboto
-	TextButton5["TextSize"] = 14
-	TextButton5["Position"] = UDim2.new(0.00750462571, 0, 0.179349214, 0)
-	TextButton5["TextScaled"] = true
-	TextButton5["Size"] = UDim2.new(0.984450281, 0, 0.630687416, 0)
-	TextButton5["BorderSizePixel"] = 0
-	TextButton5["BackgroundColor3"] = Color3.new(1, 1, 0.00784314)
-	----TextButton5----
-	--Script6--
-	local Script6 = Instance.new("Script",TextButton5)
-	----Script6----
+	--ScreenGui1--
+	local ScreenGui1 = Instance.new("ScreenGui",parent)
+	ScreenGui1["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling
+	----ScreenGui1----
+	--Frame2--
+	local Frame2 = Instance.new("Frame",ScreenGui1)
+	Frame2["Name"] = "teleport6"
+	Frame2["Position"] = UDim2.new(0.618167877, 0, 0.816625893, 0)
+	Frame2["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame2["Size"] = UDim2.new(0.216122314, 0, 0.0721271411, 0)
+	Frame2["BorderSizePixel"] = 0
+	Frame2["BackgroundColor3"] = Color3.new(0.952941, 1, 0.027451)
+	----Frame2----
+	--Script3--
+	local Script3 = Instance.new("Script",Frame2)
+	Script3["Name"] = "Dragify"
+	----Script3----
+	--UICorner4--
+	local UICorner4 = Instance.new("UICorner",Frame2)
+	----UICorner4----
+	--UIStroke5--
+	local UIStroke5 = Instance.new("UIStroke",Frame2)
+	UIStroke5["Color"] = Color3.new(1, 0.572549, 0.0470588)
+	UIStroke5["Thickness"] = 5
+	----UIStroke5----
+	--TextButton6--
+	local TextButton6 = Instance.new("TextButton",Frame2)
+	TextButton6["TextWrapped"] = true
+	TextButton6["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton6["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton6["Text"] = "Mango Fast Steal"
+	TextButton6["Font"] = Enum.Font.Roboto
+	TextButton6["TextSize"] = 14
+	TextButton6["Position"] = UDim2.new(0.00750462571, 0, 0.179349214, 0)
+	TextButton6["TextScaled"] = true
+	TextButton6["Size"] = UDim2.new(0.984450281, 0, 0.630687416, 0)
+	TextButton6["BorderSizePixel"] = 0
+	TextButton6["BackgroundColor3"] = Color3.new(1, 1, 0.00784314)
+	----TextButton6----
 	--Script7--
-	local Script7 = Instance.new("Script",TextButton5)
+	local Script7 = Instance.new("Script",TextButton6)
 	----Script7----
-	spawn(function() --Source for Script2
-		local script = Script2
+	spawn(function() --Source for Script3
+		local script = Script3
 		local UserInputService = game:GetService"UserInputService"
 		
 		function Dragify (Object)
@@ -76,75 +77,99 @@ local function createGui(parent)
 		
 		Dragify(script.Parent)
 	end)
-	spawn(function() --Source for Script6
-		local script = Script6
-		local button = script.Parent
-		
-		button.MouseButton1Click:Connect(function()
-			local player = game.Players.LocalPlayer
-			local character = player.Character or player.CharacterAdded:Wait()
-			local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-		
-			-- Находим что-то над головой игрока
-			local rayOrigin = humanoidRootPart.Position
-			local rayDirection = Vector3.new(0, 100, 0) -- Луч вверх на 100 studs
-			local raycastParams = RaycastParams.new()
-			raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
-			raycastParams.FilterDescendantsInstances = {character}
-		
-			local raycastResult = workspace:Raycast(rayOrigin, rayDirection, raycastParams)
-		
-			if raycastResult then
-				-- Если нашли препятствие, телепортируемся под ним
-				local newPosition = raycastResult.Position - Vector3.new(0, 8, 0)
-				humanoidRootPart.CFrame = CFrame.new(newPosition)
-			else
-				-- Если ничего нет, просто телепортируемся выше
-				humanoidRootPart.CFrame = humanoidRootPart.CFrame + Vector3.new(0, 50, 0)
-			end
-		
-			-- Уведомление
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "MangoHub",
-				Text = "Teleport up",
-				Duration = 5
-			})
-		end)
-		
-	end)
 	spawn(function() --Source for Script7
 		local script = Script7
 		local Player = game:GetService("Players").LocalPlayer
+		local Button = script.Parent
 		
-		function SafeTeleportUp()
+		local SpawnPosition = nil
+		local IsReturning = false
+		local RunSpeed = 120 -- Максимальная скорость
+		
+		-- Запоминаем позицию спавна при запуске
+		function RememberSpawnPosition()
 			local Character = Player.Character
 			if not Character then return end
 		
 			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 			if not HumanoidRootPart then return end
 		
-			-- Античит метод для Still Brain Road
-			local originalCF = HumanoidRootPart.CFrame
-			local newPosition = originalCF.Position + Vector3.new(0, 50, 0)
+			SpawnPosition = HumanoidRootPart.Position
+		end
 		
-			-- Плавное перемещение вместо мгновенной телепортации
-			for i = 1, 20 do
-				HumanoidRootPart.CFrame = originalCF + Vector3.new(0, i * 2.5, 0)
+		-- Функция возврата на базу
+		function ReturnToBase()
+			if not SpawnPosition then
+				RememberSpawnPosition()
+				if not SpawnPosition then return end
+			end
+		
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			IsReturning = true
+		
+			local Humanoid = Character:FindFirstChild("Humanoid")
+			local originalWalkSpeed = Humanoid and Humanoid.WalkSpeed or 16
+		
+			if Humanoid then
+				Humanoid.WalkSpeed = RunSpeed
+			end
+		
+			-- Максимально быстрый бег к базе
+			while IsReturning and Character and HumanoidRootPart do
+				local direction = (SpawnPosition - HumanoidRootPart.Position).Unit
+				local distance = (SpawnPosition - HumanoidRootPart.Position).Magnitude
+		
+				if distance < 15 then
+					break
+				end
+		
+				HumanoidRootPart.Velocity = direction * RunSpeed
 				wait(0.01)
 			end
 		
-			-- Фиксируем позицию
-			HumanoidRootPart.CFrame = CFrame.new(newPosition)
-		
-			-- Дополнительная защита от античита
-			wait(0.1)
-			if Character:FindFirstChild("Humanoid") then
-				Character.Humanoid:ChangeState(Enum.HumanoidStateType.Landed)
+			if Humanoid then
+				Humanoid.WalkSpeed = originalWalkSpeed
 			end
+		
+			if HumanoidRootPart then
+				HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+			end
+		
+			IsReturning = false
 		end
 		
-		-- Вставляй эту функцию в свою кнопку
-		SafeTeleportUp()
+		-- Нажатие на кнопку
+		Button.MouseButton1Click:Connect(function()
+			if not IsReturning then
+				ReturnToBase()
+			end
+		end)
+		
+		-- Античит защита
+		game:GetService("RunService").Heartbeat:Connect(function()
+			if IsReturning then
+				local Character = Player.Character
+				if Character then
+					local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+					if HumanoidRootPart then
+						HumanoidRootPart.Velocity = Vector3.new(
+							HumanoidRootPart.Velocity.X,
+							0,
+							HumanoidRootPart.Velocity.Z
+						)
+					end
+				end
+			end
+		end)
+		
+		-- Автоматически запоминаем позицию при запуске
+		wait(3)
+		RememberSpawnPosition()
 		
 	end)
 end
