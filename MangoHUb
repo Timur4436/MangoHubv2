@@ -29,7 +29,7 @@ local function createGui(parent)
 	TextButton6["TextWrapped"] = true
 	TextButton6["TextColor3"] = Color3.new(0, 0, 0)
 	TextButton6["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton6["Text"] = "Mango steal up"
+	TextButton6["Text"] = "Mango Steal Up"
 	TextButton6["Font"] = Enum.Font.Roboto
 	TextButton6["TextSize"] = 14
 	TextButton6["Position"] = UDim2.new(0.00750462571, 0, 0.179349214, 0)
@@ -44,10 +44,82 @@ local function createGui(parent)
 	--Script8--
 	local Script8 = Instance.new("Script",TextButton6)
 	----Script8----
-	--Script9--
-	local Script9 = Instance.new("Script",ScreenGui1)
-	Script9["Name"] = "Gui2Lua-teleport6"
-	----Script9----
+	--Frame9--
+	local Frame9 = Instance.new("Frame",ScreenGui1)
+	Frame9["Name"] = "teleport6"
+	Frame9["Position"] = UDim2.new(0.73591733, 0, 0.721271396, 0)
+	Frame9["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame9["Size"] = UDim2.new(0.216122314, 0, 0.0721271411, 0)
+	Frame9["BorderSizePixel"] = 0
+	Frame9["BackgroundColor3"] = Color3.new(0.952941, 1, 0.027451)
+	----Frame9----
+	--Script10--
+	local Script10 = Instance.new("Script",Frame9)
+	Script10["Name"] = "Dragify"
+	----Script10----
+	--UICorner11--
+	local UICorner11 = Instance.new("UICorner",Frame9)
+	----UICorner11----
+	--UIStroke12--
+	local UIStroke12 = Instance.new("UIStroke",Frame9)
+	UIStroke12["Color"] = Color3.new(1, 0.572549, 0.0470588)
+	UIStroke12["Thickness"] = 5
+	----UIStroke12----
+	--TextButton13--
+	local TextButton13 = Instance.new("TextButton",Frame9)
+	TextButton13["TextWrapped"] = true
+	TextButton13["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton13["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton13["Text"] = "Mango Invisible Steal"
+	TextButton13["Font"] = Enum.Font.Roboto
+	TextButton13["TextSize"] = 14
+	TextButton13["Position"] = UDim2.new(0.00750462571, 0, 0.179349214, 0)
+	TextButton13["TextScaled"] = true
+	TextButton13["Size"] = UDim2.new(0.984450281, 0, 0.630687416, 0)
+	TextButton13["BorderSizePixel"] = 0
+	TextButton13["BackgroundColor3"] = Color3.new(1, 1, 0.00784314)
+	----TextButton13----
+	--Script14--
+	local Script14 = Instance.new("Script",TextButton13)
+	----Script14----
+	--Frame15--
+	local Frame15 = Instance.new("Frame",ScreenGui1)
+	Frame15["Name"] = "teleport6"
+	Frame15["Position"] = UDim2.new(0.704014778, 0, 0.28484109, 0)
+	Frame15["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame15["Size"] = UDim2.new(0.216122314, 0, 0.0721271411, 0)
+	Frame15["BorderSizePixel"] = 0
+	Frame15["BackgroundColor3"] = Color3.new(0.952941, 1, 0.027451)
+	----Frame15----
+	--Script16--
+	local Script16 = Instance.new("Script",Frame15)
+	Script16["Name"] = "Dragify"
+	----Script16----
+	--UICorner17--
+	local UICorner17 = Instance.new("UICorner",Frame15)
+	----UICorner17----
+	--UIStroke18--
+	local UIStroke18 = Instance.new("UIStroke",Frame15)
+	UIStroke18["Color"] = Color3.new(1, 0.572549, 0.0470588)
+	UIStroke18["Thickness"] = 5
+	----UIStroke18----
+	--TextButton19--
+	local TextButton19 = Instance.new("TextButton",Frame15)
+	TextButton19["TextWrapped"] = true
+	TextButton19["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton19["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton19["Text"] = "Mango Fast Steal"
+	TextButton19["Font"] = Enum.Font.Roboto
+	TextButton19["TextSize"] = 14
+	TextButton19["Position"] = UDim2.new(0.00750462571, 0, 0.179349214, 0)
+	TextButton19["TextScaled"] = true
+	TextButton19["Size"] = UDim2.new(0.984450281, 0, 0.630687416, 0)
+	TextButton19["BorderSizePixel"] = 0
+	TextButton19["BackgroundColor3"] = Color3.new(1, 1, 0.00784314)
+	----TextButton19----
+	--Script20--
+	local Script20 = Instance.new("Script",TextButton19)
+	----Script20----
 	spawn(function() --Source for Script3
 		local script = Script3
 		local UserInputService = game:GetService"UserInputService"
@@ -155,159 +227,290 @@ local function createGui(parent)
 		SafeTeleportUp()
 		
 	end)
-	spawn(function() --Source for Script9
-		local script = Script9
-		local function createGui(parent)
-			--Frame1--
-			local Frame1 = Instance.new("Frame",parent)
-			Frame1["Name"] = "teleport6"
-			Frame1["Position"] = UDim2.new(0.170952052, 0, 0.781173587, 0)
-			Frame1["BorderColor3"] = Color3.new(0, 0, 0)
-			Frame1["Size"] = UDim2.new(0.216122314, 0, 0.0721271411, 0)
-			Frame1["BorderSizePixel"] = 0
-			Frame1["BackgroundColor3"] = Color3.new(0.952941, 1, 0.027451)
-			----Frame1----
-			--Script2--
-			local Script2 = Instance.new("Script",Frame1)
-			Script2["Name"] = "Dragify"
-			----Script2----
-			--UICorner3--
-			local UICorner3 = Instance.new("UICorner",Frame1)
-			----UICorner3----
-			--UIStroke4--
-			local UIStroke4 = Instance.new("UIStroke",Frame1)
-			UIStroke4["Color"] = Color3.new(1, 0.572549, 0.0470588)
-			UIStroke4["Thickness"] = 5
-			----UIStroke4----
-			--TextButton5--
-			local TextButton5 = Instance.new("TextButton",Frame1)
-			TextButton5["TextWrapped"] = true
-			TextButton5["TextColor3"] = Color3.new(0, 0, 0)
-			TextButton5["BorderColor3"] = Color3.new(0, 0, 0)
-			TextButton5["Text"] = "Mango steal up"
-			TextButton5["Font"] = Enum.Font.Roboto
-			TextButton5["TextSize"] = 14
-			TextButton5["Position"] = UDim2.new(0.00750462571, 0, 0.179349214, 0)
-			TextButton5["TextScaled"] = true
-			TextButton5["Size"] = UDim2.new(0.984450281, 0, 0.630687416, 0)
-			TextButton5["BorderSizePixel"] = 0
-			TextButton5["BackgroundColor3"] = Color3.new(1, 1, 0.00784314)
-			----TextButton5----
-			--Script6--
-			local Script6 = Instance.new("Script",TextButton5)
-			----Script6----
-			--Script7--
-			local Script7 = Instance.new("Script",TextButton5)
-			----Script7----
-			spawn(function() --Source for Script2
-				local script = Script2
-				local UserInputService = game:GetService"UserInputService"
-				
-				function Dragify (Object)
-					local Button1Down
-				
-					Object.InputBegan:Connect(function(Input)
-						if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-							Button1Down = true
-				
-							local A = UserInputService:GetMouseLocation()
-				
-							local Difference = Object.AbsolutePosition - A
-				
-							repeat task.wait()
-								local B = UserInputService:GetMouseLocation()
-								local Position = UDim2.fromOffset(
-									B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
-									B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
-								)
-				
-								Object.Position = Position
-							until not Button1Down
-						end
-					end)
-				
-					Object.InputEnded:Connect(function(Input)
-						if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-							Button1Down = false
-						end
-					end)
+	spawn(function() --Source for Script10
+		local script = Script10
+		local UserInputService = game:GetService"UserInputService"
+		
+		function Dragify (Object)
+			local Button1Down
+		
+			Object.InputBegan:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = true
+		
+					local A = UserInputService:GetMouseLocation()
+		
+					local Difference = Object.AbsolutePosition - A
+		
+					repeat task.wait()
+						local B = UserInputService:GetMouseLocation()
+						local Position = UDim2.fromOffset(
+							B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
+							B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
+						)
+		
+						Object.Position = Position
+					until not Button1Down
 				end
-				
-				Dragify(script.Parent)
 			end)
-			spawn(function() --Source for Script6
-				local script = Script6
-				local button = script.Parent
-				
-				button.MouseButton1Click:Connect(function()
-					local player = game.Players.LocalPlayer
-					local character = player.Character or player.CharacterAdded:Wait()
-					local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-				
-					-- Находим что-то над головой игрока
-					local rayOrigin = humanoidRootPart.Position
-					local rayDirection = Vector3.new(0, 100, 0) -- Луч вверх на 100 studs
-					local raycastParams = RaycastParams.new()
-					raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
-					raycastParams.FilterDescendantsInstances = {character}
-				
-					local raycastResult = workspace:Raycast(rayOrigin, rayDirection, raycastParams)
-				
-					if raycastResult then
-						-- Если нашли препятствие, телепортируемся под ним
-						local newPosition = raycastResult.Position - Vector3.new(0, 8, 0)
-						humanoidRootPart.CFrame = CFrame.new(newPosition)
-					else
-						-- Если ничего нет, просто телепортируемся выше
-						humanoidRootPart.CFrame = humanoidRootPart.CFrame + Vector3.new(0, 50, 0)
-					end
-				
-					-- Уведомление
-					game:GetService("StarterGui"):SetCore("SendNotification", {
-						Title = "MangoHub",
-						Text = "Teleport up",
-						Duration = 5
-					})
-				end)
-				
-			end)
-			spawn(function() --Source for Script7
-				local script = Script7
-				local Player = game:GetService("Players").LocalPlayer
-				
-				function SafeTeleportUp()
-					local Character = Player.Character
-					if not Character then return end
-				
-					local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-					if not HumanoidRootPart then return end
-				
-					-- Античит метод для Still Brain Road
-					local originalCF = HumanoidRootPart.CFrame
-					local newPosition = originalCF.Position + Vector3.new(0, 50, 0)
-				
-					-- Плавное перемещение вместо мгновенной телепортации
-					for i = 1, 20 do
-						HumanoidRootPart.CFrame = originalCF + Vector3.new(0, i * 2.5, 0)
-						wait(0.01)
-					end
-				
-					-- Фиксируем позицию
-					HumanoidRootPart.CFrame = CFrame.new(newPosition)
-				
-					-- Дополнительная защита от античита
-					wait(0.1)
-					if Character:FindFirstChild("Humanoid") then
-						Character.Humanoid:ChangeState(Enum.HumanoidStateType.Landed)
-					end
+		
+			Object.InputEnded:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = false
 				end
-				
-				-- Вставляй эту функцию в свою кнопку
-				SafeTeleportUp()
-				
 			end)
 		end
-		createGui(game.CoreGui) --coregui by default you should but change it
+		
+		Dragify(script.Parent)
+	end)
+	spawn(function() --Source for Script14
+		local script = Script14
+		local Player = game:GetService("Players").LocalPlayer
+		local Button = script.Parent
+		
+		local IsInvisible = false
+		local OriginalPosition = nil
+		local CameraOffset = Vector3.new(0, 10, 0)
+		local MoveSpeed = 0.5
+		
+		-- Античит функция
+		function SafeTeleport(position)
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			-- Плавное перемещение для античита
+			local startPos = HumanoidRootPart.Position
+			local steps = 20
+		
+			for i = 1, steps do
+				HumanoidRootPart.CFrame = CFrame.new(startPos:Lerp(position, i/steps))
+				wait(0.01)
+			end
+		
+			HumanoidRootPart.CFrame = CFrame.new(position)
+		end
+		
+		Button.MouseButton1Click:Connect(function()
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			if not IsInvisible then
+				-- Сохраняем позицию
+				OriginalPosition = HumanoidRootPart.Position
+		
+				-- Античит телепорт под карту
+				SafeTeleport(Vector3.new(OriginalPosition.X, -500, OriginalPosition.Z))
+		
+				-- Делаем игрока невидимым
+				for _, part in pairs(Character:GetChildren()) do
+					if part:IsA("BasePart") then
+						part.Transparency = 1
+						part.CanCollide = false
+					end
+				end
+		
+				-- Включаем свободную камеру
+				workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+				workspace.CurrentCamera.CFrame = CFrame.new(OriginalPosition + CameraOffset)
+		
+				-- Подключаем управление камерой
+				local CameraControl = game:GetService("RunService").RenderStepped:Connect(function()
+					if IsInvisible then
+						-- Управление камерой WASD
+						local moveVector = Vector3.new(0, 0, 0)
+		
+						if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.W) then
+							moveVector = moveVector + Vector3.new(0, 0, -MoveSpeed)
+						end
+						if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.S) then
+							moveVector = moveVector + Vector3.new(0, 0, MoveSpeed)
+						end
+						if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.A) then
+							moveVector = moveVector + Vector3.new(-MoveSpeed, 0, 0)
+						end
+						if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.D) then
+							moveVector = moveVector + Vector3.new(MoveSpeed, 0, 0)
+						end
+		
+						-- Двигаем камеру
+						local currentCamPos = workspace.CurrentCamera.CFrame.Position
+						workspace.CurrentCamera.CFrame = CFrame.new(currentCamPos + moveVector)
+					end
+				end)
+		
+				IsInvisible = true
+		
+			else
+				-- Возвращаем игрока с античитом
+				SafeTeleport(OriginalPosition)
+		
+				-- Делаем игрока видимым
+				for _, part in pairs(Character:GetChildren()) do
+					if part:IsA("BasePart") then
+						part.Transparency = 0
+						part.CanCollide = true
+					end
+				end
+		
+				-- Возвращаем обычную камеру
+				workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+		
+				IsInvisible = false
+			end
+		end)
+		
+		-- Дополнительный античит от падения
+		game:GetService("RunService").Heartbeat:Connect(function()
+			if IsInvisible then
+				local Character = Player.Character
+				if Character then
+					local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+					if HumanoidRootPart then
+						-- Фиксируем позицию под картой
+						HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+						HumanoidRootPart.RotVelocity = Vector3.new(0, 0, 0)
+					end
+				end
+			end
+		end)
+		
+	end)
+	spawn(function() --Source for Script16
+		local script = Script16
+		local UserInputService = game:GetService"UserInputService"
+		
+		function Dragify (Object)
+			local Button1Down
+		
+			Object.InputBegan:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = true
+		
+					local A = UserInputService:GetMouseLocation()
+		
+					local Difference = Object.AbsolutePosition - A
+		
+					repeat task.wait()
+						local B = UserInputService:GetMouseLocation()
+						local Position = UDim2.fromOffset(
+							B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
+							B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
+						)
+		
+						Object.Position = Position
+					until not Button1Down
+				end
+			end)
+		
+			Object.InputEnded:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = false
+				end
+			end)
+		end
+		
+		Dragify(script.Parent)
+	end)
+	spawn(function() --Source for Script20
+		local script = Script20
+		local Player = game:GetService("Players").LocalPlayer
+		local Button = script.Parent
+		
+		local SpawnPosition = nil
+		local IsReturning = false
+		local RunSpeed = 120 -- Максимальная скорость
+		
+		-- Запоминаем позицию спавна при запуске
+		function RememberSpawnPosition()
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			SpawnPosition = HumanoidRootPart.Position
+		end
+		
+		-- Функция возврата на базу
+		function ReturnToBase()
+			if not SpawnPosition then
+				RememberSpawnPosition()
+				if not SpawnPosition then return end
+			end
+		
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			IsReturning = true
+		
+			local Humanoid = Character:FindFirstChild("Humanoid")
+			local originalWalkSpeed = Humanoid and Humanoid.WalkSpeed or 16
+		
+			if Humanoid then
+				Humanoid.WalkSpeed = RunSpeed
+			end
+		
+			-- Максимально быстрый бег к базе
+			while IsReturning and Character and HumanoidRootPart do
+				local direction = (SpawnPosition - HumanoidRootPart.Position).Unit
+				local distance = (SpawnPosition - HumanoidRootPart.Position).Magnitude
+		
+				if distance < 15 then
+					break
+				end
+		
+				HumanoidRootPart.Velocity = direction * RunSpeed
+				wait(0.01)
+			end
+		
+			if Humanoid then
+				Humanoid.WalkSpeed = originalWalkSpeed
+			end
+		
+			if HumanoidRootPart then
+				HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+			end
+		
+			IsReturning = false
+		end
+		
+		-- Нажатие на кнопку
+		Button.MouseButton1Click:Connect(function()
+			if not IsReturning then
+				ReturnToBase()
+			end
+		end)
+		
+		-- Античит защита
+		game:GetService("RunService").Heartbeat:Connect(function()
+			if IsReturning then
+				local Character = Player.Character
+				if Character then
+					local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+					if HumanoidRootPart then
+						HumanoidRootPart.Velocity = Vector3.new(
+							HumanoidRootPart.Velocity.X,
+							0,
+							HumanoidRootPart.Velocity.Z
+						)
+					end
+				end
+			end
+		end)
+		
+		-- Автоматически запоминаем позицию при запуске
+		wait(3)
+		RememberSpawnPosition()
+		
 	end)
 end
 createGui(game.CoreGui) --coregui by default you should but change it
