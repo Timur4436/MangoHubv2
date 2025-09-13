@@ -85,7 +85,7 @@ local function createGui(parent)
 		local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
 		
 		local savedPosition = nil
-		local isTeleported = false
+		local isTeleporting = false
 		
 		-- Запоминаем позицию при спавне
 		local function saveSpawnPosition()
@@ -93,25 +93,41 @@ local function createGui(parent)
 			print("📍 Базовая позиция сохранена: " .. tostring(savedPosition))
 		end
 		
-		-- Мгновенная телепортация навсегда
-		local function permanentTeleport()
-			if isTeleported then return end
+		-- Телепортация на 5 секунд
+		local function temporaryTeleport()
+			if isTeleporting then return end
 			if not savedPosition then return end
 		
-			isTeleported = true
+			isTeleporting = true
 		
-			-- МГНОВЕННАЯ телепортация
+			-- Сохраняем текущую позицию чтобы вернуться
+			local originalPosition = HumanoidRootPart.Position
+		
+			-- МГНОВЕННАЯ телепортация на базу
 			HumanoidRootPart.CFrame = CFrame.new(savedPosition)
-			print("✅ Телепортирован на базу навсегда!")
+			print("✅ Телепортирован на базу на 5 секунд!")
 		
-			-- Постоянная защита от возвращения
-			while isTeleported do
-				wait(0.1)
-				-- Если игрок почему-то отошел от базы - возвращаем обратно
-				if (HumanoidRootPart.Position - savedPosition).Magnitude > 10 then
-					HumanoidRootPart.CFrame = CFrame.new(savedPosition)
-				end
-			end
+			-- Визуальное уведомление
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Телепортация",
+				Text = "На базе 5 секунд!",
+				Duration = 3
+			})
+		
+			-- Ждем 5 секунд
+			wait(5)
+		
+			-- Возвращаем обратно
+			HumanoidRootPart.CFrame = CFrame.new(originalPosition)
+			print("↩️ Возврат на исходную позицию")
+		
+			isTeleporting = false
+		
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Телепортация",
+				Text = "Возврат обратно!",
+				Duration = 3
+			})
 		end
 		
 		-- Обработчик смерти персонажа
@@ -120,9 +136,6 @@ local function createGui(parent)
 			HumanoidRootPart = character:WaitForChild("HumanoidRootPart")
 			wait(1)
 			saveSpawnPosition()
-			if isTeleported then
-				permanentTeleport() -- Автоматически телепортируем после смерти
-			end
 		end)
 		
 		-- Сохраняем позицию при первом запуске
@@ -132,17 +145,10 @@ local function createGui(parent)
 		
 		-- Обработчик кнопки
 		button.MouseButton1Click:Connect(function()
-			if savedPosition then
-				permanentTeleport()
-		
-				-- Визуальное уведомление
-				game:GetService("StarterGui"):SetCore("SendNotification", {
-					Title = "Телепортация",
-					Text = "Вы телепортированы на базу!",
-					Duration = 5
-				})
+			if savedPosition and not isTeleporting then
+				temporaryTeleport()
 			else
-				warn("Позиция не сохранена!")
+				warn("Позиция не сохранена или телепортация уже идет!")
 			end
 		end)
 		
