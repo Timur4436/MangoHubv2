@@ -1,3 +1,4 @@
+
 local function createGui(parent)
 	--ScreenGui1--
 	local ScreenGui1 = Instance.new("ScreenGui",parent)
@@ -29,7 +30,7 @@ local function createGui(parent)
 	TextButton6["TextWrapped"] = true
 	TextButton6["TextColor3"] = Color3.new(0, 0, 0)
 	TextButton6["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton6["Text"] = "Mango Instant Steal"
+	TextButton6["Text"] = "Mango Fast Steal"
 	TextButton6["Font"] = Enum.Font.Roboto
 	TextButton6["TextSize"] = 14
 	TextButton6["Position"] = UDim2.new(0.00750462571, 0, 0.179349214, 0)
@@ -41,20 +42,6 @@ local function createGui(parent)
 	--Script7--
 	local Script7 = Instance.new("Script",TextButton6)
 	----Script7----
-	--TextLabel8--
-	local TextLabel8 = Instance.new("TextLabel",Frame2)
-	TextLabel8["TextWrapped"] = true
-	TextLabel8["TextColor3"] = Color3.new(0, 0, 0)
-	TextLabel8["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel8["Text"] = "MangoHub - By timurgam2 - Steal a brainrot"
-	TextLabel8["Font"] = Enum.Font.SourceSans
-	TextLabel8["BackgroundTransparency"] = 1
-	TextLabel8["TextSize"] = 14
-	TextLabel8["TextScaled"] = true
-	TextLabel8["Size"] = UDim2.new(0, 369, 0, 10)
-	TextLabel8["BorderSizePixel"] = 0
-	TextLabel8["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel8----
 	spawn(function() --Source for Script3
 		local script = Script3
 		local UserInputService = game:GetService"UserInputService"
@@ -93,52 +80,97 @@ local function createGui(parent)
 	end)
 	spawn(function() --Source for Script7
 		local script = Script7
-		local button = script.Parent
 		local Player = game:GetService("Players").LocalPlayer
+		local Button = script.Parent
 		
-		local savedPosition = nil
+		local SpawnPosition = nil
+		local IsReturning = false
+		local RunSpeed = 120 -- Максимальная скорость
 		
-		-- Функция для мгновенного телепорта
-		local function teleportToPosition(position)
-			pcall(function()
-				local character = Player.Character
-				if character and character:FindFirstChild("HumanoidRootPart") then
-					character.HumanoidRootPart.CFrame = CFrame.new(position)
+		-- Запоминаем позицию спавна при запуске
+		function RememberSpawnPosition()
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			SpawnPosition = HumanoidRootPart.Position
+		end
+		
+		-- Функция возврата на базу
+		function ReturnToBase()
+			if not SpawnPosition then
+				RememberSpawnPosition()
+				if not SpawnPosition then return end
+			end
+		
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			IsReturning = true
+		
+			local Humanoid = Character:FindFirstChild("Humanoid")
+			local originalWalkSpeed = Humanoid and Humanoid.WalkSpeed or 16
+		
+			if Humanoid then
+				Humanoid.WalkSpeed = RunSpeed
+			end
+		
+			-- Максимально быстрый бег к базе
+			while IsReturning and Character and HumanoidRootPart do
+				local direction = (SpawnPosition - HumanoidRootPart.Position).Unit
+				local distance = (SpawnPosition - HumanoidRootPart.Position).Magnitude
+		
+				if distance < 15 then
+					break
 				end
-			end)
-		end
 		
-		-- Запоминаем позицию при запуске
-		local function savePosition()
-			local character = Player.Character
-			if character and character:FindFirstChild("HumanoidRootPart") then
-				savedPosition = character.HumanoidRootPart.Position
-				print("Позиция сохранена: " .. tostring(savedPosition))
+				HumanoidRootPart.Velocity = direction * RunSpeed
+				wait(0.01)
 			end
+		
+			if Humanoid then
+				Humanoid.WalkSpeed = originalWalkSpeed
+			end
+		
+			if HumanoidRootPart then
+				HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+			end
+		
+			IsReturning = false
 		end
 		
-		-- Обработчик нажатия кнопки
-		button.MouseButton1Click:Connect(function()
-			if savedPosition then
-				teleportToPosition(savedPosition)
-				print("Телепортирован на базу!")
-			else
-				warn("Позиция не сохранена!")
+		-- Нажатие на кнопку
+		Button.MouseButton1Click:Connect(function()
+			if not IsReturning then
+				ReturnToBase()
 			end
 		end)
 		
-		-- Автоматически сохраняем позицию при появлении
-		Player.CharacterAdded:Connect(function(character)
-			character:WaitForChild("HumanoidRootPart")
-			wait(1)
-			savePosition()
+		-- Античит защита
+		game:GetService("RunService").Heartbeat:Connect(function()
+			if IsReturning then
+				local Character = Player.Character
+				if Character then
+					local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+					if HumanoidRootPart then
+						HumanoidRootPart.Velocity = Vector3.new(
+							HumanoidRootPart.Velocity.X,
+							0,
+							HumanoidRootPart.Velocity.Z
+						)
+					end
+				end
+			end
 		end)
 		
-		-- Сохраняем при старте если персонаж уже есть
-		if Player.Character then
-			wait(1)
-			savePosition()
-		end
+		-- Автоматически запоминаем позицию при запуске
+		wait(3)
+		RememberSpawnPosition()
 		
 	end)
 end
