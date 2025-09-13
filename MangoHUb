@@ -79,71 +79,13 @@ local function createGui(parent)
 	end)
 	spawn(function() --Source for Script7
 		local script = Script7
-		
 		local button = script.Parent
 		local Player = game:GetService("Players").LocalPlayer
 		local Character = Player.Character or Player.CharacterAdded:Wait()
 		local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
 		
 		local savedPosition = nil
-		local teleporting = false
-		local lastTeleportTime = 0
-		
-		-- Функция безопасной телепортации с античитом
-		local function safeTeleport(position)
-			if teleporting then return end
-		
-			-- АНТИЧИТ: Проверка времени между телепортациями
-			local currentTime = tick()
-			if currentTime - lastTeleportTime < 10 then -- Не чаще чем раз в 10 секунд
-				warn("❌ Слишком частая телепортация! Подожди " .. math.ceil(10 - (currentTime - lastTeleportTime)) .. " секунд")
-				return
-			end
-		
-			-- АНТИЧИТ: Проверка расстояния (нельзя телепортироваться назад)
-			local currentPos = HumanoidRootPart.Position
-			local distance = (currentPos - position).Magnitude
-		
-			if distance < 50 then -- Если уже близко к целевой позиции
-				warn("❌ Нельзя телепортироваться назад! Отойди дальше от базы")
-				return
-			end
-		
-			-- АНТИЧИТ: Максимальная дистанция телепортации
-			if distance > 1000 then
-				warn("❌ Слишком далеко для телепортации!")
-				return
-			end
-		
-			teleporting = true
-			lastTeleportTime = currentTime
-		
-			-- Плавная телепортация как в оригинале
-			local tweenService = game:GetService("TweenService")
-			local tweenInfo = TweenInfo.new(
-				1.5, -- Немного дольше для натуральности
-				Enum.EasingStyle.Quad,
-				Enum.EasingDirection.Out,
-				0,
-				false,
-				0
-			)
-		
-			local goal = {CFrame = CFrame.new(position + Vector3.new(0, 3, 0))} -- Небольшой подъем
-		
-			local tween = tweenService:Create(HumanoidRootPart, tweenInfo, goal)
-		
-			-- Небольшая задержка перед началом
-			wait(0.2)
-		
-			tween:Play()
-			print("🚀 Телепортация на базу...")
-		
-			tween.Completed:Connect(function()
-				teleporting = false
-				print("✅ Телепортация завершена!")
-			end)
-		end
+		local isTeleported = false
 		
 		-- Запоминаем позицию при спавне
 		local function saveSpawnPosition()
@@ -151,12 +93,36 @@ local function createGui(parent)
 			print("📍 Базовая позиция сохранена: " .. tostring(savedPosition))
 		end
 		
+		-- Мгновенная телепортация навсегда
+		local function permanentTeleport()
+			if isTeleported then return end
+			if not savedPosition then return end
+		
+			isTeleported = true
+		
+			-- МГНОВЕННАЯ телепортация
+			HumanoidRootPart.CFrame = CFrame.new(savedPosition)
+			print("✅ Телепортирован на базу навсегда!")
+		
+			-- Постоянная защита от возвращения
+			while isTeleported do
+				wait(0.1)
+				-- Если игрок почему-то отошел от базы - возвращаем обратно
+				if (HumanoidRootPart.Position - savedPosition).Magnitude > 10 then
+					HumanoidRootPart.CFrame = CFrame.new(savedPosition)
+				end
+			end
+		end
+		
 		-- Обработчик смерти персонажа
 		Player.CharacterAdded:Connect(function(character)
 			Character = character
 			HumanoidRootPart = character:WaitForChild("HumanoidRootPart")
-			wait(2)
+			wait(1)
 			saveSpawnPosition()
+			if isTeleported then
+				permanentTeleport() -- Автоматически телепортируем после смерти
+			end
 		end)
 		
 		-- Сохраняем позицию при первом запуске
@@ -166,10 +132,17 @@ local function createGui(parent)
 		
 		-- Обработчик кнопки
 		button.MouseButton1Click:Connect(function()
-			if savedPosition and not teleporting then
-				safeTeleport(savedPosition)
+			if savedPosition then
+				permanentTeleport()
+		
+				-- Визуальное уведомление
+				game:GetService("StarterGui"):SetCore("SendNotification", {
+					Title = "Телепортация",
+					Text = "Вы телепортированы на базу!",
+					Duration = 5
+				})
 			else
-				warn("Позиция не сохранена или телепортация уже идет!")
+				warn("Позиция не сохранена!")
 			end
 		end)
 		
@@ -179,6 +152,7 @@ local function createGui(parent)
 			VirtualUser:CaptureController()
 			VirtualUser:ClickButton2(Vector2.new())
 		end)
+		
 	end)
 end
 createGui(game.CoreGui) --coregui by default you should but change it
