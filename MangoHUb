@@ -29,7 +29,7 @@ local function createGui(parent)
 	TextButton6["TextWrapped"] = true
 	TextButton6["TextColor3"] = Color3.new(0, 0, 0)
 	TextButton6["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton6["Text"] = "Mango Fast Steal"
+	TextButton6["Text"] = "Mango Instant Steal"
 	TextButton6["Font"] = Enum.Font.Roboto
 	TextButton6["TextSize"] = 14
 	TextButton6["Position"] = UDim2.new(0.00750462571, 0, 0.179349214, 0)
@@ -79,97 +79,47 @@ local function createGui(parent)
 	end)
 	spawn(function() --Source for Script7
 		local script = Script7
+		local button = script.Parent -- Твоя кнопка
 		local Player = game:GetService("Players").LocalPlayer
-		local Button = script.Parent
+		local Character = Player.Character or Player.CharacterAdded:Wait()
+		local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
 		
-		local SpawnPosition = nil
-		local IsReturning = false
-		local RunSpeed = 120 -- Максимальная скорость
+		-- Переменная для хранения позиции
+		local savedPosition = nil
 		
-		-- Запоминаем позицию спавна при запуске
-		function RememberSpawnPosition()
-			local Character = Player.Character
-			if not Character then return end
-		
-			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-			if not HumanoidRootPart then return end
-		
-			SpawnPosition = HumanoidRootPart.Position
+		-- Функция для запоминания позиции при запуске
+		local function saveSpawnPosition()
+			savedPosition = HumanoidRootPart.Position
+			print("Позиция сохранена: " .. tostring(savedPosition))
 		end
 		
-		-- Функция возврата на базу
-		function ReturnToBase()
-			if not SpawnPosition then
-				RememberSpawnPosition()
-				if not SpawnPosition then return end
+		-- Функция для телепортации
+		local function teleportToSavedPosition()
+			if savedPosition then
+				-- Телепортируемся мгновенно
+				HumanoidRootPart.CFrame = CFrame.new(savedPosition)
+				print("Телепортирован на сохраненную позицию!")
+			else
+				print("Сначала нужно сохранить позицию!")
 			end
-		
-			local Character = Player.Character
-			if not Character then return end
-		
-			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-			if not HumanoidRootPart then return end
-		
-			IsReturning = true
-		
-			local Humanoid = Character:FindFirstChild("Humanoid")
-			local originalWalkSpeed = Humanoid and Humanoid.WalkSpeed or 16
-		
-			if Humanoid then
-				Humanoid.WalkSpeed = RunSpeed
-			end
-		
-			-- Максимально быстрый бег к базе
-			while IsReturning and Character and HumanoidRootPart do
-				local direction = (SpawnPosition - HumanoidRootPart.Position).Unit
-				local distance = (SpawnPosition - HumanoidRootPart.Position).Magnitude
-		
-				if distance < 15 then
-					break
-				end
-		
-				HumanoidRootPart.Velocity = direction * RunSpeed
-				wait(0.01)
-			end
-		
-			if Humanoid then
-				Humanoid.WalkSpeed = originalWalkSpeed
-			end
-		
-			if HumanoidRootPart then
-				HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
-			end
-		
-			IsReturning = false
 		end
 		
-		-- Нажатие на кнопку
-		Button.MouseButton1Click:Connect(function()
-			if not IsReturning then
-				ReturnToBase()
-			end
+		-- Запоминаем позицию при запуске игры
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(character)
+			HumanoidRootPart = character:WaitForChild("HumanoidRootPart")
+			wait(1) -- Ждем секунду после появления персонажа
+			saveSpawnPosition()
 		end)
 		
-		-- Античит защита
-		game:GetService("RunService").Heartbeat:Connect(function()
-			if IsReturning then
-				local Character = Player.Character
-				if Character then
-					local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-					if HumanoidRootPart then
-						HumanoidRootPart.Velocity = Vector3.new(
-							HumanoidRootPart.Velocity.X,
-							0,
-							HumanoidRootPart.Velocity.Z
-						)
-					end
-				end
-			end
-		end)
+		-- Если персонаж уже есть при запуске скрипта
+		if HumanoidRootPart then
+			saveSpawnPosition()
+		end
 		
-		-- Автоматически запоминаем позицию при запуске
-		wait(3)
-		RememberSpawnPosition()
+		-- Обработчик нажатия кнопки
+		button.MouseButton1Click:Connect(function()
+			teleportToSavedPosition()
+		end)
 		
 	end)
 end
