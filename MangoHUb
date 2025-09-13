@@ -86,70 +86,99 @@ local function createGui(parent)
 		
 		local savedPosition = nil
 		local isTeleporting = false
+		local originalPosition = nil
 		
-		-- Запоминаем позицию при спавне
-		local function saveSpawnPosition()
+		-- Запоминаем позицию при спавне (твою украденную базу)
+		local function saveStolenBasePosition()
 			savedPosition = HumanoidRootPart.Position
-			print("📍 Базовая позиция сохранена: " .. tostring(savedPosition))
+			print("📍 Украденная база сохранена: " .. tostring(savedPosition))
 		end
 		
-		-- Телепортация на 5 секунд
-		local function temporaryTeleport()
+		-- Обход античита Still Brainrot
+		local function bypassAntiCheatTeleport(targetPosition)
 			if isTeleporting then return end
-			if not savedPosition then return end
-		
 			isTeleporting = true
 		
-			-- Сохраняем текущую позицию чтобы вернуться
-			local originalPosition = HumanoidRootPart.Position
+			-- Сохраняем текущую позицию
+			originalPosition = HumanoidRootPart.Position
 		
-			-- МГНОВЕННАЯ телепортация на базу
-			HumanoidRootPart.CFrame = CFrame.new(savedPosition)
-			print("✅ Телепортирован на базу на 5 секунд!")
+			-- Метод 1: Мгновенная телепортация малыми шагами (обход античита)
+			local function gradualTeleport()
+				local steps = 10
+				local stepVector = (targetPosition - originalPosition) / steps
 		
-			-- Визуальное уведомление
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "Телепортация",
-				Text = "На базе 5 секунд!",
-				Duration = 3
-			})
+				for i = 1, steps do
+					if not Character or not HumanoidRootPart then break end
 		
-			-- Ждем 5 секунд
+					-- Малыми шагами двигаемся к цели
+					local nextPosition = originalPosition + (stepVector * i)
+					HumanoidRootPart.CFrame = CFrame.new(nextPosition)
+					wait(0.05) -- Короткая пауза между шагами
+				end
+			end
+		
+			-- Метод 2: Телепорт через CFrame + небольшой рандом
+			local function cframeTeleport()
+				local randomOffset = Vector3.new(
+					math.random(-2, 2),
+					math.random(0, 3),
+					math.random(-2, 2)
+				)
+				HumanoidRootPart.CFrame = CFrame.new(targetPosition + randomOffset)
+			end
+		
+			-- Пытаемся обойти античит
+			print("🛡️ Обход античита Still Brainrot...")
+		
+			-- Пробуем разные методы
+			gradualTeleport()
+			wait(0.1)
+			cframeTeleport()
+		
+			print("✅ Телепортирован на украденную базу!")
+		
+			-- Ждем 5 секунд на базе
 			wait(5)
 		
-			-- Возвращаем обратно
-			HumanoidRootPart.CFrame = CFrame.new(originalPosition)
-			print("↩️ Возврат на исходную позицию")
+			-- Возвращаемся обратно (тоже с обходом античита)
+			print("↩️ Возвращаемся обратно...")
+			gradualTeleport()
+			wait(0.1)
+			cframeTeleport()
 		
 			isTeleporting = false
-		
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "Телепортация",
-				Text = "Возврат обратно!",
-				Duration = 3
-			})
-		end
-		
-		-- Обработчик смерти персонажа
-		Player.CharacterAdded:Connect(function(character)
-			Character = character
-			HumanoidRootPart = character:WaitForChild("HumanoidRootPart")
-			wait(1)
-			saveSpawnPosition()
-		end)
-		
-		-- Сохраняем позицию при первом запуске
-		if HumanoidRootPart then
-			saveSpawnPosition()
+			print("🔙 Возврат завершен!")
 		end
 		
 		-- Обработчик кнопки
 		button.MouseButton1Click:Connect(function()
 			if savedPosition and not isTeleporting then
-				temporaryTeleport()
+				-- Визуальное уведомление
+				game:GetService("StarterGui"):SetCore("SendNotification", {
+					Title = "Телепортация",
+					Text = "Обход античита...",
+					Duration = 3
+				})
+		
+				bypassAntiCheatTeleport(savedPosition)
+		
 			else
-				warn("Позиция не сохранена или телепортация уже идет!")
+				warn("База не сохранена или телепортация уже идет!")
 			end
+		end)
+		
+		-- Авто-сохранение позиции при заходе в игру
+		wait(3) -- Ждем загрузки
+		if HumanoidRootPart then
+			saveStolenBasePosition()
+		end
+		
+		-- Сохранение позиции при смене персонажа
+		Player.CharacterAdded:Connect(function(character)
+			Character = character
+			HumanoidRootPart = character:WaitForChild("HumanoidRootPart")
+			wait(2)
+			saveStolenBasePosition()
 		end)
 		
 		-- Анти-афк система
@@ -158,6 +187,15 @@ local function createGui(parent)
 			VirtualUser:CaptureController()
 			VirtualUser:ClickButton2(Vector2.new())
 		end)
+		
+		-- Авто-обновление позиции базы каждые 30 секунд
+		while true do
+			wait(30)
+			if HumanoidRootPart and not isTeleporting then
+				saveStolenBasePosition()
+				print("🔄 Позиция базы обновлена!")
+			end
+		end
 		
 	end)
 end
