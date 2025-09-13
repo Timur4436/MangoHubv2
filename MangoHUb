@@ -41,6 +41,20 @@ local function createGui(parent)
 	--Script7--
 	local Script7 = Instance.new("Script",TextButton6)
 	----Script7----
+	--TextLabel8--
+	local TextLabel8 = Instance.new("TextLabel",Frame2)
+	TextLabel8["TextWrapped"] = true
+	TextLabel8["TextColor3"] = Color3.new(0, 0, 0)
+	TextLabel8["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel8["Text"] = "MangoHub - By timurgam2 - Steal a brainrot"
+	TextLabel8["Font"] = Enum.Font.SourceSans
+	TextLabel8["BackgroundTransparency"] = 1
+	TextLabel8["TextSize"] = 14
+	TextLabel8["TextScaled"] = true
+	TextLabel8["Size"] = UDim2.new(0, 369, 0, 10)
+	TextLabel8["BorderSizePixel"] = 0
+	TextLabel8["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel8----
 	spawn(function() --Source for Script3
 		local script = Script3
 		local UserInputService = game:GetService"UserInputService"
@@ -81,74 +95,50 @@ local function createGui(parent)
 		local script = Script7
 		local button = script.Parent
 		local Player = game:GetService("Players").LocalPlayer
-		local Character = Player.Character or Player.CharacterAdded:Wait()
-		local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
 		
 		local savedPosition = nil
 		
-		-- Запоминаем позицию базы
-		local function saveBasePosition()
-			savedPosition = HumanoidRootPart.Position
-			print("📍 База сохранена: " .. tostring(savedPosition))
+		-- Функция для мгновенного телепорта
+		local function teleportToPosition(position)
+			pcall(function()
+				local character = Player.Character
+				if character and character:FindFirstChild("HumanoidRootPart") then
+					character.HumanoidRootPart.CFrame = CFrame.new(position)
+				end
+			end)
 		end
 		
-		-- Мгновенный телепорт на базу навсегда с античитом
-		local function instantPermanentTeleport()
-			if not savedPosition then return end
-		
-			-- АНТИЧИТ: Включаем невидимость на момент телепорта
-			local oldTransparency = HumanoidRootPart.Transparency
-			HumanoidRootPart.Transparency = 1
-		
-			-- МГНОВЕННАЯ телепортация на базу
-			HumanoidRootPart.CFrame = CFrame.new(savedPosition)
-			print("⚡ Телепортирован на базу навсегда!")
-		
-			-- АНТИЧИТ: Плавно возвращаем видимость
-			wait(0.2)
-			for i = 1, 0, -0.1 do
-				HumanoidRootPart.Transparency = i
-				wait(0.05)
+		-- Запоминаем позицию при запуске
+		local function savePosition()
+			local character = Player.Character
+			if character and character:FindFirstChild("HumanoidRootPart") then
+				savedPosition = character.HumanoidRootPart.Position
+				print("Позиция сохранена: " .. tostring(savedPosition))
 			end
-			HumanoidRootPart.Transparency = oldTransparency
-		
-			-- Визуальное уведомление
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "Телепортация",
-				Text = "Вы на базе!",
-				Duration = 5
-			})
 		end
 		
-		-- Обработчик кнопки
+		-- Обработчик нажатия кнопки
 		button.MouseButton1Click:Connect(function()
 			if savedPosition then
-				instantPermanentTeleport()
+				teleportToPosition(savedPosition)
+				print("Телепортирован на базу!")
 			else
-				warn("База не сохранена!")
+				warn("Позиция не сохранена!")
 			end
 		end)
 		
-		-- Авто-сохранение позиции при заходе в игру
-		wait(3)
-		if HumanoidRootPart then
-			saveBasePosition()
-		end
-		
-		-- Сохранение позиции при смене персонажа
+		-- Автоматически сохраняем позицию при появлении
 		Player.CharacterAdded:Connect(function(character)
-			Character = character
-			HumanoidRootPart = character:WaitForChild("HumanoidRootPart")
-			wait(2)
-			saveBasePosition()
+			character:WaitForChild("HumanoidRootPart")
+			wait(1)
+			savePosition()
 		end)
 		
-		-- Анти-афк система
-		local VirtualUser = game:GetService('VirtualUser')
-		game:GetService('Players').LocalPlayer.Idled:connect(function()
-			VirtualUser:CaptureController()
-			VirtualUser:ClickButton2(Vector2.new())
-		end)
+		-- Сохраняем при старте если персонаж уже есть
+		if Player.Character then
+			wait(1)
+			savePosition()
+		end
 		
 	end)
 end
