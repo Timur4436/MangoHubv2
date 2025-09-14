@@ -159,24 +159,25 @@ local function createGui(parent)
 		
 		local isHidden = false
 		local savedTransparency = {}
+		local currentBrainrot = nil
 		
 		button.MouseButton1Click:Connect(function()
 			isHidden = not isHidden
 		
 			if isHidden then
-				-- Прячем себя и Brainrot в руках
-				hidePlayerAndBrainrot()
+				-- Прячем себя
+				hidePlayer()
 				button.Text = "Show"
 				button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			else
-				-- Показываем себя и Brainrot
-				showPlayerAndBrainrot()
+				-- Показываем себя
+				showPlayer()
 				button.Text = "Hide"
 				button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 			end
 		end)
 		
-		function hidePlayerAndBrainrot()
+		function hidePlayer()
 			local character = player.Character
 			if not character then return end
 		
@@ -185,33 +186,23 @@ local function createGui(parent)
 			for _, part in ipairs(character:GetDescendants()) do
 				if part:IsA("BasePart") then
 					savedTransparency[part] = part.Transparency
-					part.Transparency = 1 -- Полная невидимость
-					part.LocalTransparencyModifier = 1 -- Только для себя
+					part.Transparency = 1
+					part.LocalTransparencyModifier = 1
 				end
 			end
 		
-			-- Ищем Brainrot в руках (предмет с определённым именем)
-			local brainrotTool = findBrainrotInHands(character)
-			if brainrotTool then
-				-- Скрываем все части Brainrot
-				for _, part in ipairs(brainrotTool:GetDescendants()) do
-					if part:IsA("BasePart") then
-						savedTransparency[part] = part.Transparency
-						part.Transparency = 1
-						part.LocalTransparencyModifier = 1
-					end
-				end
-			end
+			-- Ищем и скрываем Brainrot в руках
+			findAndHideBrainrot(character)
 		
-			-- Отключаем тень и имя над головой
+			-- Отключаем тень и имя
 			disablePlayerEffects(character)
 		end
 		
-		function showPlayerAndBrainrot()
+		function showPlayer()
 			local character = player.Character
 			if not character then return end
 		
-			-- Восстанавливаем прозрачность всех частей
+			-- Восстанавливаем прозрачность
 			for part, transparency in pairs(savedTransparency) do
 				if part and part.Parent then
 					part.Transparency = transparency
@@ -219,18 +210,36 @@ local function createGui(parent)
 				end
 			end
 		
+			-- Показываем Brainrot если он есть
+			if currentBrainrot then
+				for _, part in ipairs(currentBrainrot:GetDescendants()) do
+					if part:IsA("BasePart") then
+						part.Transparency = 0
+						part.LocalTransparencyModifier = 0
+					end
+				end
+			end
+		
 			-- Включаем тень и имя
 			enablePlayerEffects(character)
 		end
 		
-		function findBrainrotInHands(character)
-			-- Ищем предмет с названием "Brainrot" или подобным
-			for _, tool in ipairs(character:GetChildren()) do
-				if tool:IsA("Tool") and (tool.Name:lower():find("brain") or tool.Name:lower():find("rot")) then
-					return tool
+		function findAndHideBrainrot(character)
+			-- Ищем Brainrot в руках (проверяем все возможные названия)
+			local tool = character:FindFirstChildWhichIsA("Tool")
+			if tool and (tool.Name:lower():find("brain") or tool.Name:lower():find("rot") or tool.Name:lower():find("брейн") or tool.Name:lower():find("мозг")) then
+				currentBrainrot = tool
+				-- Скрываем Brainrot
+				for _, part in ipairs(tool:GetDescendants()) do
+					if part:IsA("BasePart") then
+						savedTransparency[part] = part.Transparency
+						part.Transparency = 1
+						part.LocalTransparencyModifier = 1
+					end
 				end
+			else
+				currentBrainrot = nil
 			end
-			return nil
 		end
 		
 		function disablePlayerEffects(character)
@@ -265,20 +274,12 @@ local function createGui(parent)
 			end
 		end
 		
-		-- Автоматически применяем при перерождении
-		player.CharacterAdded:Connect(function(character)
-			task.wait(1)
-			if isHidden then
-				hidePlayerAndBrainrot()
-			end
-		end)
-		
-		-- Постоянная проверка
+		-- Постоянная проверка наличия Brainrot в руках
 		runService.Heartbeat:Connect(function()
 			if isHidden then
 				local character = player.Character
 				if character then
-					-- Постоянно скрываем все части персонажа
+					-- Постоянно скрываем персонажа
 					for _, part in ipairs(character:GetDescendants()) do
 						if part:IsA("BasePart") then
 							part.Transparency = 1
@@ -286,18 +287,28 @@ local function createGui(parent)
 						end
 					end
 		
-					-- Постоянно скрываем Brainrot в руках
-					local brainrotTool = findBrainrotInHands(character)
-					if brainrotTool then
-						for _, part in ipairs(brainrotTool:GetDescendants()) do
-							if part:IsA("BasePart") then
-								part.Transparency = 1
-								part.LocalTransparencyModifier = 1
-							end
-						end
-					end
+					-- Постоянно ищем и скрываем Brainrot
+					findAndHideBrainrot(character)
 				end
 			end
+		end)
+		
+		-- Автоматически применяем при перерождении
+		player.CharacterAdded:Connect(function(character)
+			task.wait(1)
+			if isHidden then
+				hidePlayer()
+			end
+		end)
+		
+		-- Следим за появлением новых инструментов в руках
+		player.CharacterAdded:Connect(function(character)
+			character.ChildAdded:Connect(function(child)
+				if isHidden and child:IsA("Tool") then
+					task.wait(0.1)
+					findAndHideBrainrot(character)
+				end
+			end)
 		end)
 		
 	end)
