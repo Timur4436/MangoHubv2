@@ -91,42 +91,6 @@ local function createGui(parent)
 	local Script14 = Instance.new("Script",Frame2)
 	Script14["Name"] = "Dragify"
 	----Script14----
-	--TextButton15--
-	local TextButton15 = Instance.new("TextButton",ScreenGui1)
-	TextButton15["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton15["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton15["Text"] = "."
-	TextButton15["Font"] = Enum.Font.SourceSans
-	TextButton15["Position"] = UDim2.new(0.187630296, 0, 0.0831295848, 0)
-	TextButton15["TextSize"] = 14
-	TextButton15["Size"] = UDim2.new(-0.0708825588, 0, 0.0990220085, 0)
-	TextButton15["BorderSizePixel"] = 0
-	TextButton15["BackgroundColor3"] = Color3.new(1, 1, 0.0313726)
-	----TextButton15----
-	--Script16--
-	local Script16 = Instance.new("Script",TextButton15)
-	----Script16----
-	--ImageLabel17--
-	local ImageLabel17 = Instance.new("ImageLabel",TextButton15)
-	ImageLabel17["ImageColor3"] = Color3.new(0.960784, 1, 0.25098)
-	ImageLabel17["Image"] = "rbxassetid://117078130894295"
-	ImageLabel17["Position"] = UDim2.new(0.903555036, 0, -0.00769721158, 0)
-	ImageLabel17["BorderColor3"] = Color3.new(0, 0, 0)
-	ImageLabel17["Size"] = UDim2.new(-0.823529422, 0, 0.962962985, 0)
-	ImageLabel17["BorderSizePixel"] = 0
-	ImageLabel17["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----ImageLabel17----
-	--UICorner18--
-	local UICorner18 = Instance.new("UICorner",ImageLabel17)
-	UICorner18["CornerRadius"] = UDim.new(0, 40)
-	----UICorner18----
-	--ClickDetector19--
-	local ClickDetector19 = Instance.new("ClickDetector",ImageLabel17)
-	----ClickDetector19----
-	--UICorner20--
-	local UICorner20 = Instance.new("UICorner",TextButton15)
-	UICorner20["CornerRadius"] = UDim.new(1, 0)
-	----UICorner20----
 	spawn(function() --Source for Script6
 		local script = Script6
 		local button = script.Parent
@@ -195,25 +159,24 @@ local function createGui(parent)
 		
 		local isHidden = false
 		local savedTransparency = {}
-		local hiddenTools = {}
 		
 		button.MouseButton1Click:Connect(function()
 			isHidden = not isHidden
 		
 			if isHidden then
-				-- Прячем себя и инструменты в руках
-				hideMyselfAndTools()
-				button.Text = "Show Myself"
+				-- Прячем себя и Brainrot в руках
+				hidePlayerAndBrainrot()
+				button.Text = "Show"
 				button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			else
-				-- Показываем себя и инструменты
-				showMyselfAndTools()
-				button.Text = "Hide Myself"
+				-- Показываем себя и Brainrot
+				showPlayerAndBrainrot()
+				button.Text = "Hide"
 				button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 			end
 		end)
 		
-		function hideMyselfAndTools()
+		function hidePlayerAndBrainrot()
 			local character = player.Character
 			if not character then return end
 		
@@ -222,32 +185,55 @@ local function createGui(parent)
 			for _, part in ipairs(character:GetDescendants()) do
 				if part:IsA("BasePart") then
 					savedTransparency[part] = part.Transparency
-					part.Transparency = 1
-					part.LocalTransparencyModifier = 1
+					part.Transparency = 1 -- Полная невидимость
+					part.LocalTransparencyModifier = 1 -- Только для себя
 				end
 			end
 		
-			-- Скрываем все инструменты в инвентаре и руках
-			hiddenTools = {}
-			local backpack = player:FindFirstChild("Backpack")
-			if backpack then
-				for _, tool in ipairs(backpack:GetChildren()) do
-					if tool:IsA("Tool") then
-						hiddenTools[tool] = tool.Parent
-						tool.Parent = nil -- Полностью убираем инструмент
+			-- Ищем Brainrot в руках (предмет с определённым именем)
+			local brainrotTool = findBrainrotInHands(character)
+			if brainrotTool then
+				-- Скрываем все части Brainrot
+				for _, part in ipairs(brainrotTool:GetDescendants()) do
+					if part:IsA("BasePart") then
+						savedTransparency[part] = part.Transparency
+						part.Transparency = 1
+						part.LocalTransparencyModifier = 1
 					end
 				end
 			end
 		
-			-- Скрываем инструмент в руках персонажа
-			for _, tool in ipairs(character:GetChildren()) do
-				if tool:IsA("Tool") then
-					hiddenTools[tool] = tool.Parent
-					tool.Parent = nil
+			-- Отключаем тень и имя над головой
+			disablePlayerEffects(character)
+		end
+		
+		function showPlayerAndBrainrot()
+			local character = player.Character
+			if not character then return end
+		
+			-- Восстанавливаем прозрачность всех частей
+			for part, transparency in pairs(savedTransparency) do
+				if part and part.Parent then
+					part.Transparency = transparency
+					part.LocalTransparencyModifier = 0
 				end
 			end
 		
-			-- Отключаем тень и имя над головой
+			-- Включаем тень и имя
+			enablePlayerEffects(character)
+		end
+		
+		function findBrainrotInHands(character)
+			-- Ищем предмет с названием "Brainrot" или подобным
+			for _, tool in ipairs(character:GetChildren()) do
+				if tool:IsA("Tool") and (tool.Name:lower():find("brain") or tool.Name:lower():find("rot")) then
+					return tool
+				end
+			end
+			return nil
+		end
+		
+		function disablePlayerEffects(character)
 			local humanoid = character:FindFirstChild("Humanoid")
 			if humanoid then
 				humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
@@ -263,26 +249,7 @@ local function createGui(parent)
 			end
 		end
 		
-		function showMyselfAndTools()
-			local character = player.Character
-			if not character then return end
-		
-			-- Восстанавливаем прозрачность персонажа
-			for part, transparency in pairs(savedTransparency) do
-				if part and part.Parent then
-					part.Transparency = transparency
-					part.LocalTransparencyModifier = 0
-				end
-			end
-		
-			-- Возвращаем все инструменты
-			for tool, originalParent in pairs(hiddenTools) do
-				if tool and originalParent then
-					tool.Parent = originalParent
-				end
-			end
-		
-			-- Включаем тень и имя
+		function enablePlayerEffects(character)
 			local humanoid = character:FindFirstChild("Humanoid")
 			if humanoid then
 				humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Viewer
@@ -300,18 +267,18 @@ local function createGui(parent)
 		
 		-- Автоматически применяем при перерождении
 		player.CharacterAdded:Connect(function(character)
-			task.wait(1) -- Ждём полной загрузки
+			task.wait(1)
 			if isHidden then
-				hideMyselfAndTools()
+				hidePlayerAndBrainrot()
 			end
 		end)
 		
-		-- Постоянная проверка и скрытие
+		-- Постоянная проверка
 		runService.Heartbeat:Connect(function()
 			if isHidden then
 				local character = player.Character
 				if character then
-					-- Постоянно скрываем все части
+					-- Постоянно скрываем все части персонажа
 					for _, part in ipairs(character:GetDescendants()) do
 						if part:IsA("BasePart") then
 							part.Transparency = 1
@@ -319,11 +286,14 @@ local function createGui(parent)
 						end
 					end
 		
-					-- Постоянно скрываем новые инструменты в руках
-					for _, tool in ipairs(character:GetChildren()) do
-						if tool:IsA("Tool") and not hiddenTools[tool] then
-							hiddenTools[tool] = tool.Parent
-							tool.Parent = nil
+					-- Постоянно скрываем Brainrot в руках
+					local brainrotTool = findBrainrotInHands(character)
+					if brainrotTool then
+						for _, part in ipairs(brainrotTool:GetDescendants()) do
+							if part:IsA("BasePart") then
+								part.Transparency = 1
+								part.LocalTransparencyModifier = 1
+							end
 						end
 					end
 				end
@@ -366,17 +336,6 @@ local function createGui(parent)
 		end
 		
 		Dragify(script.Parent)
-	end)
-	spawn(function() --Source for Script16
-		local script = Script16
-		script.Parent.MouseButton1Click:Connect(function()
-			if script.Parent.Parent.Frame23.Visible == false then
-				script.Parent.Parent.Frame23.Visible = true
-			else
-				script.Parent.Parent.Frame23.Visible = false
-			end
-		end)
-		
 	end)
 end
 createGui(game.CoreGui) --coregui by default you should but change it
