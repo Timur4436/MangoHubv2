@@ -6,7 +6,6 @@ local function createGui(parent)
 	----ScreenGui1----
 	--Frame2--
 	local Frame2 = Instance.new("Frame",ScreenGui1)
-	Frame2["Visible"] = false
 	Frame2["Name"] = "Frame23"
 	Frame2["Position"] = UDim2.new(0.691237807, 0, 0.306845963, 0)
 	Frame2["BorderColor3"] = Color3.new(0, 0, 0)
@@ -48,7 +47,6 @@ local function createGui(parent)
 	----UITextSizeConstraint8----
 	--Script9--
 	local Script9 = Instance.new("Script",TextButton4)
-	Script9["Name"] = "Gui2Lua-ScreenGui"
 	----Script9----
 	--TextLabel10--
 	local TextLabel10 = Instance.new("TextLabel",Frame2)
@@ -197,44 +195,64 @@ local function createGui(parent)
 		
 		local isHidden = false
 		local savedTransparency = {}
+		local hiddenTools = {}
 		
 		button.MouseButton1Click:Connect(function()
 			isHidden = not isHidden
 		
 			if isHidden then
-				-- Прячем себя полностью
-				hideMyselfCompletely()
+				-- Прячем себя и инструменты в руках
+				hideMyselfAndTools()
 				button.Text = "Show Myself"
 				button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			else
-				-- Показываем себя
-				showMyself()
+				-- Показываем себя и инструменты
+				showMyselfAndTools()
 				button.Text = "Hide Myself"
 				button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 			end
 		end)
 		
-		function hideMyselfCompletely()
+		function hideMyselfAndTools()
 			local character = player.Character
 			if not character then return end
 		
-			-- Сохраняем все прозрачности
+			-- Сохраняем и скрываем все части персонажа
 			savedTransparency = {}
 			for _, part in ipairs(character:GetDescendants()) do
 				if part:IsA("BasePart") then
 					savedTransparency[part] = part.Transparency
-					part.Transparency = 1 -- Полная невидимость
-					part.LocalTransparencyModifier = 1 -- Для себя
+					part.Transparency = 1
+					part.LocalTransparencyModifier = 1
 				end
 			end
 		
-			-- Отключаем тень и эффекты
+			-- Скрываем все инструменты в инвентаре и руках
+			hiddenTools = {}
+			local backpack = player:FindFirstChild("Backpack")
+			if backpack then
+				for _, tool in ipairs(backpack:GetChildren()) do
+					if tool:IsA("Tool") then
+						hiddenTools[tool] = tool.Parent
+						tool.Parent = nil -- Полностью убираем инструмент
+					end
+				end
+			end
+		
+			-- Скрываем инструмент в руках персонажа
+			for _, tool in ipairs(character:GetChildren()) do
+				if tool:IsA("Tool") then
+					hiddenTools[tool] = tool.Parent
+					tool.Parent = nil
+				end
+			end
+		
+			-- Отключаем тень и имя над головой
 			local humanoid = character:FindFirstChild("Humanoid")
 			if humanoid then
 				humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
 			end
 		
-			-- Убираем имя над головой
 			local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
 			if humanoidRootPart then
 				for _, child in ipairs(humanoidRootPart:GetChildren()) do
@@ -245,11 +263,11 @@ local function createGui(parent)
 			end
 		end
 		
-		function showMyself()
+		function showMyselfAndTools()
 			local character = player.Character
 			if not character then return end
 		
-			-- Восстанавливаем прозрачности
+			-- Восстанавливаем прозрачность персонажа
 			for part, transparency in pairs(savedTransparency) do
 				if part and part.Parent then
 					part.Transparency = transparency
@@ -257,13 +275,19 @@ local function createGui(parent)
 				end
 			end
 		
-			-- Включаем тень обратно
+			-- Возвращаем все инструменты
+			for tool, originalParent in pairs(hiddenTools) do
+				if tool and originalParent then
+					tool.Parent = originalParent
+				end
+			end
+		
+			-- Включаем тень и имя
 			local humanoid = character:FindFirstChild("Humanoid")
 			if humanoid then
 				humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Viewer
 			end
 		
-			-- Включаем имя над головой
 			local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
 			if humanoidRootPart then
 				for _, child in ipairs(humanoidRootPart:GetChildren()) do
@@ -278,7 +302,7 @@ local function createGui(parent)
 		player.CharacterAdded:Connect(function(character)
 			task.wait(1) -- Ждём полной загрузки
 			if isHidden then
-				hideMyselfCompletely()
+				hideMyselfAndTools()
 			end
 		end)
 		
@@ -287,11 +311,19 @@ local function createGui(parent)
 			if isHidden then
 				local character = player.Character
 				if character then
-					-- Постоянно делаем все части невидимыми
+					-- Постоянно скрываем все части
 					for _, part in ipairs(character:GetDescendants()) do
 						if part:IsA("BasePart") then
 							part.Transparency = 1
 							part.LocalTransparencyModifier = 1
+						end
+					end
+		
+					-- Постоянно скрываем новые инструменты в руках
+					for _, tool in ipairs(character:GetChildren()) do
+						if tool:IsA("Tool") and not hiddenTools[tool] then
+							hiddenTools[tool] = tool.Parent
+							tool.Parent = nil
 						end
 					end
 				end
