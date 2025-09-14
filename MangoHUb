@@ -6,6 +6,7 @@ local function createGui(parent)
 	----ScreenGui1----
 	--Frame2--
 	local Frame2 = Instance.new("Frame",ScreenGui1)
+	Frame2["Visible"] = false
 	Frame2["Name"] = "Frame23"
 	Frame2["Position"] = UDim2.new(0.691237807, 0, 0.306845963, 0)
 	Frame2["BorderColor3"] = Color3.new(0, 0, 0)
@@ -47,89 +48,87 @@ local function createGui(parent)
 	----UITextSizeConstraint8----
 	--Script9--
 	local Script9 = Instance.new("Script",TextButton4)
+	Script9["Name"] = "Gui2Lua-ScreenGui"
 	----Script9----
-	--Script10--
-	local Script10 = Instance.new("Script",TextButton4)
-	----Script10----
-	--TextLabel11--
-	local TextLabel11 = Instance.new("TextLabel",Frame2)
-	TextLabel11["TextWrapped"] = true
-	TextLabel11["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
-	TextLabel11["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel11["Text"] = "Ready."
-	TextLabel11["TextSize"] = 19
-	TextLabel11["TextScaled"] = true
-	TextLabel11["Font"] = Enum.Font.SourceSans
-	TextLabel11["BackgroundTransparency"] = 1
-	TextLabel11["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
-	TextLabel11["Name"] = "Label"
-	TextLabel11["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
-	TextLabel11["BorderSizePixel"] = 0
-	TextLabel11["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel11----
-	--UITextSizeConstraint12--
-	local UITextSizeConstraint12 = Instance.new("UITextSizeConstraint",TextLabel11)
-	UITextSizeConstraint12["MaxTextSize"] = 19
-	----UITextSizeConstraint12----
-	--TextLabel13--
-	local TextLabel13 = Instance.new("TextLabel",Frame2)
-	TextLabel13["TextWrapped"] = true
-	TextLabel13["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
-	TextLabel13["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel13["Text"] = "Mango Invisible Steal"
-	TextLabel13["TextSize"] = 29
-	TextLabel13["Font"] = Enum.Font.SourceSans
-	TextLabel13["BackgroundTransparency"] = 1
-	TextLabel13["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
-	TextLabel13["TextScaled"] = true
-	TextLabel13["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
-	TextLabel13["BorderSizePixel"] = 0
-	TextLabel13["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel13----
-	--UITextSizeConstraint14--
-	local UITextSizeConstraint14 = Instance.new("UITextSizeConstraint",TextLabel13)
-	UITextSizeConstraint14["MaxTextSize"] = 29
-	----UITextSizeConstraint14----
-	--Script15--
-	local Script15 = Instance.new("Script",Frame2)
-	Script15["Name"] = "Dragify"
-	----Script15----
-	--TextButton16--
-	local TextButton16 = Instance.new("TextButton",ScreenGui1)
-	TextButton16["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton16["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton16["Text"] = "."
-	TextButton16["Font"] = Enum.Font.SourceSans
-	TextButton16["Position"] = UDim2.new(0.187630296, 0, 0.0831295848, 0)
-	TextButton16["TextSize"] = 14
-	TextButton16["Size"] = UDim2.new(-0.0708825588, 0, 0.0990220085, 0)
-	TextButton16["BorderSizePixel"] = 0
-	TextButton16["BackgroundColor3"] = Color3.new(1, 1, 0.0313726)
-	----TextButton16----
-	--Script17--
-	local Script17 = Instance.new("Script",TextButton16)
-	----Script17----
-	--ImageLabel18--
-	local ImageLabel18 = Instance.new("ImageLabel",TextButton16)
-	ImageLabel18["ImageColor3"] = Color3.new(0.960784, 1, 0.25098)
-	ImageLabel18["Image"] = "rbxassetid://117078130894295"
-	ImageLabel18["Position"] = UDim2.new(0.903555036, 0, -0.00769721158, 0)
-	ImageLabel18["BorderColor3"] = Color3.new(0, 0, 0)
-	ImageLabel18["Size"] = UDim2.new(-0.823529422, 0, 0.962962985, 0)
-	ImageLabel18["BorderSizePixel"] = 0
-	ImageLabel18["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----ImageLabel18----
-	--UICorner19--
-	local UICorner19 = Instance.new("UICorner",ImageLabel18)
-	UICorner19["CornerRadius"] = UDim.new(0, 40)
-	----UICorner19----
-	--ClickDetector20--
-	local ClickDetector20 = Instance.new("ClickDetector",ImageLabel18)
-	----ClickDetector20----
-	--UICorner21--
-	local UICorner21 = Instance.new("UICorner",TextButton16)
-	UICorner21["CornerRadius"] = UDim.new(1, 0)
-	----UICorner21----
+	--TextLabel10--
+	local TextLabel10 = Instance.new("TextLabel",Frame2)
+	TextLabel10["TextWrapped"] = true
+	TextLabel10["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel10["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel10["Text"] = "Ready."
+	TextLabel10["TextSize"] = 19
+	TextLabel10["TextScaled"] = true
+	TextLabel10["Font"] = Enum.Font.SourceSans
+	TextLabel10["BackgroundTransparency"] = 1
+	TextLabel10["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
+	TextLabel10["Name"] = "Label"
+	TextLabel10["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel10["BorderSizePixel"] = 0
+	TextLabel10["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel10----
+	--UITextSizeConstraint11--
+	local UITextSizeConstraint11 = Instance.new("UITextSizeConstraint",TextLabel10)
+	UITextSizeConstraint11["MaxTextSize"] = 19
+	----UITextSizeConstraint11----
+	--TextLabel12--
+	local TextLabel12 = Instance.new("TextLabel",Frame2)
+	TextLabel12["TextWrapped"] = true
+	TextLabel12["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
+	TextLabel12["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel12["Text"] = "Mango Invisible Steal"
+	TextLabel12["TextSize"] = 29
+	TextLabel12["Font"] = Enum.Font.SourceSans
+	TextLabel12["BackgroundTransparency"] = 1
+	TextLabel12["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
+	TextLabel12["TextScaled"] = true
+	TextLabel12["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
+	TextLabel12["BorderSizePixel"] = 0
+	TextLabel12["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel12----
+	--UITextSizeConstraint13--
+	local UITextSizeConstraint13 = Instance.new("UITextSizeConstraint",TextLabel12)
+	UITextSizeConstraint13["MaxTextSize"] = 29
+	----UITextSizeConstraint13----
+	--Script14--
+	local Script14 = Instance.new("Script",Frame2)
+	Script14["Name"] = "Dragify"
+	----Script14----
+	--TextButton15--
+	local TextButton15 = Instance.new("TextButton",ScreenGui1)
+	TextButton15["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton15["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton15["Text"] = "."
+	TextButton15["Font"] = Enum.Font.SourceSans
+	TextButton15["Position"] = UDim2.new(0.187630296, 0, 0.0831295848, 0)
+	TextButton15["TextSize"] = 14
+	TextButton15["Size"] = UDim2.new(-0.0708825588, 0, 0.0990220085, 0)
+	TextButton15["BorderSizePixel"] = 0
+	TextButton15["BackgroundColor3"] = Color3.new(1, 1, 0.0313726)
+	----TextButton15----
+	--Script16--
+	local Script16 = Instance.new("Script",TextButton15)
+	----Script16----
+	--ImageLabel17--
+	local ImageLabel17 = Instance.new("ImageLabel",TextButton15)
+	ImageLabel17["ImageColor3"] = Color3.new(0.960784, 1, 0.25098)
+	ImageLabel17["Image"] = "rbxassetid://117078130894295"
+	ImageLabel17["Position"] = UDim2.new(0.903555036, 0, -0.00769721158, 0)
+	ImageLabel17["BorderColor3"] = Color3.new(0, 0, 0)
+	ImageLabel17["Size"] = UDim2.new(-0.823529422, 0, 0.962962985, 0)
+	ImageLabel17["BorderSizePixel"] = 0
+	ImageLabel17["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----ImageLabel17----
+	--UICorner18--
+	local UICorner18 = Instance.new("UICorner",ImageLabel17)
+	UICorner18["CornerRadius"] = UDim.new(0, 40)
+	----UICorner18----
+	--ClickDetector19--
+	local ClickDetector19 = Instance.new("ClickDetector",ImageLabel17)
+	----ClickDetector19----
+	--UICorner20--
+	local UICorner20 = Instance.new("UICorner",TextButton15)
+	UICorner20["CornerRadius"] = UDim.new(1, 0)
+	----UICorner20----
 	spawn(function() --Source for Script6
 		local script = Script6
 		local button = script.Parent
@@ -194,59 +193,67 @@ local function createGui(parent)
 		local script = Script9
 		local button = script.Parent
 		local player = game.Players.LocalPlayer
+		local runService = game:GetService("RunService")
 		
-		-- Переменная для отслеживания состояния
-		local isInvisible = false
+		local isHidden = false
+		local savedTransparency = {}
 		
 		button.MouseButton1Click:Connect(function()
-			-- Меняем состояние на противоположное
-			isInvisible = not isInvisible
+			isHidden = not isHidden
 		
-			if isInvisible then
-				-- Делаем игрока невидимым
-				makePlayerInvisible(player)
-				button.Text = "Visible" -- Меняем текст кнопки
-				button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Красный
+			if isHidden then
+				-- Прячем себя полностью
+				hideMyselfCompletely()
+				button.Text = "Show Myself"
+				button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 			else
-				-- Делаем игрока видимым
-				makePlayerVisible(player)
-				button.Text = "Invisible" -- Возвращаем текст
-				button.BackgroundColor3 = Color3.fromRGB(0, 255, 0) -- Зелёный
+				-- Показываем себя
+				showMyself()
+				button.Text = "Hide Myself"
+				button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 			end
 		end)
 		
-		-- Функция для невидимости
-		local function makePlayerInvisible(plr)
-			local character = plr.Character
+		function hideMyselfCompletely()
+			local character = player.Character
 			if not character then return end
 		
-			-- Делаем все части прозрачными
+			-- Сохраняем все прозрачности
+			savedTransparency = {}
 			for _, part in ipairs(character:GetDescendants()) do
 				if part:IsA("BasePart") then
-					part.Transparency = 1
-				elseif part:IsA("Decal") or part:IsA("Texture") then
-					part.Transparency = 1
+					savedTransparency[part] = part.Transparency
+					part.Transparency = 1 -- Полная невидимость
+					part.LocalTransparencyModifier = 1 -- Для себя
 				end
 			end
 		
-			-- Отключаем тень
+			-- Отключаем тень и эффекты
 			local humanoid = character:FindFirstChild("Humanoid")
 			if humanoid then
 				humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
 			end
+		
+			-- Убираем имя над головой
+			local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+			if humanoidRootPart then
+				for _, child in ipairs(humanoidRootPart:GetChildren()) do
+					if child:IsA("BillboardGui") then
+						child.Enabled = false
+					end
+				end
+			end
 		end
 		
-		-- Функция для видимости
-		local function makePlayerVisible(plr)
-			local character = plr.Character
+		function showMyself()
+			local character = player.Character
 			if not character then return end
 		
-			-- Возвращаем нормальную прозрачность
-			for _, part in ipairs(character:GetDescendants()) do
-				if part:IsA("BasePart") then
-					part.Transparency = 0
-				elseif part:IsA("Decal") or part:IsA("Texture") then
-					part.Transparency = 0
+			-- Восстанавливаем прозрачности
+			for part, transparency in pairs(savedTransparency) do
+				if part and part.Parent then
+					part.Transparency = transparency
+					part.LocalTransparencyModifier = 0
 				end
 			end
 		
@@ -255,91 +262,45 @@ local function createGui(parent)
 			if humanoid then
 				humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Viewer
 			end
+		
+			-- Включаем имя над головой
+			local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+			if humanoidRootPart then
+				for _, child in ipairs(humanoidRootPart:GetChildren()) do
+					if child:IsA("BillboardGui") then
+						child.Enabled = true
+					end
+				end
+			end
 		end
 		
-		-- Обработка перерождения персонажа
+		-- Автоматически применяем при перерождении
 		player.CharacterAdded:Connect(function(character)
-			if isInvisible then
-				-- Если был невидимым, применяем невидимость к новому персонажу
-				task.wait(0.5) -- Ждём полсекунды пока персонаж полностью загрузится
-				makePlayerInvisible(player)
+			task.wait(1) -- Ждём полной загрузки
+			if isHidden then
+				hideMyselfCompletely()
+			end
+		end)
+		
+		-- Постоянная проверка и скрытие
+		runService.Heartbeat:Connect(function()
+			if isHidden then
+				local character = player.Character
+				if character then
+					-- Постоянно делаем все части невидимыми
+					for _, part in ipairs(character:GetDescendants()) do
+						if part:IsA("BasePart") then
+							part.Transparency = 1
+							part.LocalTransparencyModifier = 1
+						end
+					end
+				end
 			end
 		end)
 		
 	end)
-	spawn(function() --Source for Script10
-		local script = Script10
-		local button = script.Parent
-		local player = game.Players.LocalPlayer
-		local runService = game:GetService("RunService")
-		
-		local isHidden = false
-		local originalCFrame = nil
-		
-		button.MouseButton1Click:Connect(function()
-			isHidden = not isHidden
-		
-			if isHidden then
-				-- Прячем персонажа
-				hideMyself()
-				button.Text = "Show Myself"
-				button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-			else
-				-- Показываем персонажа
-				showMyself()
-				button.Text = "Hide Myself"
-				button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-			end
-		end)
-		
-		function hideMyself()
-			local character = player.Character
-			if not character then return end
-		
-			-- Сохраняем исходное положение
-			local root = character:FindFirstChild("HumanoidRootPart")
-			if root then
-				originalCFrame = root.CFrame
-			end
-		
-			-- Телепортируем персонажа далеко под карту (только для себя)
-			if root then
-				root.CFrame = CFrame.new(0, -1000, 0) -- Далеко под карту
-			end
-		
-			-- Отключаем обновление положения (чтобы не телепортировало обратно)
-			if character:FindFirstChild("Humanoid") then
-				character.Humanoid.AutoRotate = false
-			end
-		end
-		
-		function showMyself()
-			local character = player.Character
-			if not character then return end
-		
-			-- Возвращаем персонажа на исходное положение
-			local root = character:FindFirstChild("HumanoidRootPart")
-			if root and originalCFrame then
-				root.CFrame = originalCFrame
-			end
-		
-			-- Включаем обратно авто-поворот
-			if character:FindFirstChild("Humanoid") then
-				character.Humanoid.AutoRotate = true
-			end
-		end
-		
-		-- Обработка перерождения
-		player.CharacterAdded:Connect(function(character)
-			task.wait(0.5)
-			if isHidden then
-				hideMyself()
-			end
-		end)
-		
-	end)
-	spawn(function() --Source for Script15
-		local script = Script15
+	spawn(function() --Source for Script14
+		local script = Script14
 		local UserInputService = game:GetService"UserInputService"
 		
 		function Dragify (Object)
@@ -374,8 +335,8 @@ local function createGui(parent)
 		
 		Dragify(script.Parent)
 	end)
-	spawn(function() --Source for Script17
-		local script = Script17
+	spawn(function() --Source for Script16
+		local script = Script16
 		script.Parent.MouseButton1Click:Connect(function()
 			if script.Parent.Parent.Frame23.Visible == false then
 				script.Parent.Parent.Frame23.Visible = true
