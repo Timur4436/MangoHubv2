@@ -164,7 +164,7 @@ local function createGui(parent)
 	TextLabel26["TextWrapped"] = true
 	TextLabel26["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
 	TextLabel26["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel26["Text"] = "Mango Fast Steal"
+	TextLabel26["Text"] = "Mango Instant Steal"
 	TextLabel26["TextSize"] = 29
 	TextLabel26["Font"] = Enum.Font.SourceSans
 	TextLabel26["BackgroundTransparency"] = 1
@@ -709,97 +709,52 @@ local function createGui(parent)
 	end)
 	spawn(function() --Source for Script23
 		local script = Script23
+		local button = script.Parent
 		local Player = game:GetService("Players").LocalPlayer
-		local Button = script.Parent
 		
-		local SpawnPosition = nil
-		local IsReturning = false
-		local RunSpeed = 120-- Максимальная скорость
+		local savedPosition = nil
 		
-		-- Запоминаем позицию спавна при запуске
-		function RememberSpawnPosition()
-			local Character = Player.Character
-			if not Character then return end
-		
-			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-			if not HumanoidRootPart then return end
-		
-			SpawnPosition = HumanoidRootPart.Position
-		end
-		
-		-- Функция возврата на базу
-		function ReturnToBase()
-			if not SpawnPosition then
-				RememberSpawnPosition()
-				if not SpawnPosition then return end
-			end
-		
-			local Character = Player.Character
-			if not Character then return end
-		
-			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-			if not HumanoidRootPart then return end
-		
-			IsReturning = true
-		
-			local Humanoid = Character:FindFirstChild("Humanoid")
-			local originalWalkSpeed = Humanoid and Humanoid.WalkSpeed or 16
-		
-			if Humanoid then
-				Humanoid.WalkSpeed = RunSpeed
-			end
-		
-			-- Максимально быстрый бег к базе
-			while IsReturning and Character and HumanoidRootPart do
-				local direction = (SpawnPosition - HumanoidRootPart.Position).Unit
-				local distance = (SpawnPosition - HumanoidRootPart.Position).Magnitude
-		
-				if distance < 15 then
-					break
+		-- Функция для мгновенного телепорта
+		local function teleportToPosition(position)
+			pcall(function()
+				local character = Player.Character
+				if character and character:FindFirstChild("HumanoidRootPart") then
+					character.HumanoidRootPart.CFrame = CFrame.new(position)
 				end
-		
-				HumanoidRootPart.Velocity = direction * RunSpeed
-				wait(0.01)
-			end
-		
-			if Humanoid then
-				Humanoid.WalkSpeed = originalWalkSpeed
-			end
-		
-			if HumanoidRootPart then
-				HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
-			end
-		
-			IsReturning = false
+			end)
 		end
 		
-		-- Нажатие на кнопку
-		Button.MouseButton1Click:Connect(function()
-			if not IsReturning then
-				ReturnToBase()
+		-- Запоминаем позицию при запуске
+		local function savePosition()
+			local character = Player.Character
+			if character and character:FindFirstChild("HumanoidRootPart") then
+				savedPosition = character.HumanoidRootPart.Position
+				print("Позиция сохранена: " .. tostring(savedPosition))
+			end
+		end
+		
+		-- Обработчик нажатия кнопки
+		button.MouseButton1Click:Connect(function()
+			if savedPosition then
+				teleportToPosition(savedPosition)
+				print("Телепортирован на базу!")
+			else
+				warn("Позиция не сохранена!")
 			end
 		end)
 		
-		-- Античит защита
-		game:GetService("RunService").Heartbeat:Connect(function()
-			if IsReturning then
-				local Character = Player.Character
-				if Character then
-					local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-					if HumanoidRootPart then
-						HumanoidRootPart.Velocity = Vector3.new(
-							HumanoidRootPart.Velocity.X,
-							0,
-							HumanoidRootPart.Velocity.Z
-						)
-					end
-				end
-			end
+		-- Автоматически сохраняем позицию при появлении
+		Player.CharacterAdded:Connect(function(character)
+			character:WaitForChild("HumanoidRootPart")
+			wait(1)
+			savePosition()
 		end)
 		
-		-- Автоматически запоминаем позицию при запуске
-		wait(3)
-		RememberSpawnPosition()
+		-- Сохраняем при старте если персонаж уже есть
+		if Player.Character then
+			wait(1)
+			savePosition()
+		end
 		
 	end)
 	spawn(function() --Source for Script29
@@ -900,26 +855,27 @@ local function createGui(parent)
 	end)
 	spawn(function() --Source for Script36
 		local script = Script36
+		local button = script.Parent -- Ваша существующая кнопка
 		local Players = game:GetService("Players")
-		local UserInputService = game:GetService("UserInputService")
 		local RunService = game:GetService("RunService")
 		
 		local player = Players.LocalPlayer
-		local character = player.Character or player.CharacterAdded:Wait()
-		local humanoid = character:WaitForChild("Humanoid")
-		
 		local noclipEnabled = false
 		local noclipConnection = nil
 		
-		-- Функция для включения/выключения NoClip
-		local function toggleNoClip()
+		button.MouseButton1Click:Connect(function()
+			local character = player.Character
+			if not character then return end
+		
+			local humanoid = character:FindFirstChild("Humanoid")
+			if not humanoid then return end
+		
 			noclipEnabled = not noclipEnabled
 		
 			if noclipEnabled then
 				-- Включаем NoClip
 				humanoid:ChangeState(Enum.HumanoidStateType.Physics)
 		
-				-- Создаем соединение для обновления положения
 				if noclipConnection then
 					noclipConnection:Disconnect()
 				end
@@ -935,6 +891,7 @@ local function createGui(parent)
 				end)
 		
 				print("NoClip включен")
+		
 			else
 				-- Выключаем NoClip
 				if noclipConnection then
@@ -942,6 +899,7 @@ local function createGui(parent)
 					noclipConnection = nil
 				end
 		
+				-- Восстанавливаем коллизии
 				for _, part in pairs(character:GetDescendants()) do
 					if part:IsA("BasePart") then
 						part.CanCollide = true
@@ -951,30 +909,10 @@ local function createGui(parent)
 				humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
 				print("NoClip выключен")
 			end
-		end
-		
-		-- Обработка нажатия кнопки (замените на вашу кнопку)
-		local button = script.Parent -- Предполагается, что скрипт находится в кнопке
-		
-		button.MouseButton1Click:Connect(function()
-			toggleNoClip()
 		end)
 		
-		-- Альтернативно: активация по клавише (например, клавиша N)
-		UserInputService.InputBegan:Connect(function(input, gameProcessed)
-			if gameProcessed then return end
-		
-			if input.KeyCode == Enum.KeyCode.N then
-				toggleNoClip()
-			end
-		end)
-		
-		-- Обработка смерти/смены персонажа
-		player.CharacterAdded:Connect(function(newCharacter)
-			character = newCharacter
-			humanoid = character:WaitForChild("Humanoid")
-		
-			-- Автоматически выключаем NoClip при смене персонажа
+		-- Автоматически выключаем NoClip при смерти
+		player.CharacterAdded:Connect(function(character)
 			if noclipEnabled then
 				noclipEnabled = false
 				if noclipConnection then
