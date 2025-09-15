@@ -113,7 +113,7 @@ local function createGui(parent)
 	TextButton18["TextWrapped"] = true
 	TextButton18["TextColor3"] = Color3.new(0, 0, 0)
 	TextButton18["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton18["Text"] = "Instant Steal  (Off)"
+	TextButton18["Text"] = "Mango Steal (Off)"
 	TextButton18["Font"] = Enum.Font.SourceSans
 	TextButton18["TextSize"] = 25
 	TextButton18["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
@@ -164,7 +164,7 @@ local function createGui(parent)
 	TextLabel26["TextWrapped"] = true
 	TextLabel26["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
 	TextLabel26["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel26["Text"] = "Mango Instant Steal"
+	TextLabel26["Text"] = "Mango Fast Steal"
 	TextLabel26["TextSize"] = 29
 	TextLabel26["Font"] = Enum.Font.SourceSans
 	TextLabel26["BackgroundTransparency"] = 1
@@ -178,6 +178,182 @@ local function createGui(parent)
 	local UITextSizeConstraint27 = Instance.new("UITextSizeConstraint",TextLabel26)
 	UITextSizeConstraint27["MaxTextSize"] = 29
 	----UITextSizeConstraint27----
+	--Frame28--
+	local Frame28 = Instance.new("Frame",ScreenGui1)
+	Frame28["Name"] = "Frame23"
+	Frame28["Position"] = UDim2.new(0.6905424, 0, 0.735941291, 0)
+	Frame28["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame28["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
+	Frame28["BorderSizePixel"] = 0
+	Frame28["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
+	----Frame28----
+	--Script29--
+	local Script29 = Instance.new("Script",Frame28)
+	Script29["Name"] = "Dragify"
+	----Script29----
+	--UICorner30--
+	local UICorner30 = Instance.new("UICorner",Frame28)
+	UICorner30["CornerRadius"] = UDim.new(0, 18)
+	----UICorner30----
+	--TextButton31--
+	local TextButton31 = Instance.new("TextButton",Frame28)
+	TextButton31["TextWrapped"] = true
+	TextButton31["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton31["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton31["Text"] = "Mango Noclip Steal (Off)"
+	TextButton31["Font"] = Enum.Font.SourceSans
+	TextButton31["TextSize"] = 25
+	TextButton31["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
+	TextButton31["TextScaled"] = true
+	TextButton31["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
+	TextButton31["BorderSizePixel"] = 0
+	TextButton31["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
+	----TextButton31----
+	--Script32--
+	local Script32 = Instance.new("Script",TextButton31)
+	----Script32----
+	--Script33--
+	local Script33 = Instance.new("Script",TextButton31)
+	----Script33----
+	--UICorner34--
+	local UICorner34 = Instance.new("UICorner",TextButton31)
+	UICorner34["CornerRadius"] = UDim.new(0, 10)
+	----UICorner34----
+	--UITextSizeConstraint35--
+	local UITextSizeConstraint35 = Instance.new("UITextSizeConstraint",TextButton31)
+	UITextSizeConstraint35["MaxTextSize"] = 25
+	----UITextSizeConstraint35----
+	--Script36--
+	local Script36 = Instance.new("Script",TextButton31)
+	----Script36----
+	--TextLabel37--
+	local TextLabel37 = Instance.new("TextLabel",Frame28)
+	TextLabel37["TextWrapped"] = true
+	TextLabel37["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel37["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel37["Text"] = "Ready."
+	TextLabel37["TextSize"] = 19
+	TextLabel37["TextScaled"] = true
+	TextLabel37["Font"] = Enum.Font.SourceSans
+	TextLabel37["BackgroundTransparency"] = 1
+	TextLabel37["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
+	TextLabel37["Name"] = "Label"
+	TextLabel37["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel37["BorderSizePixel"] = 0
+	TextLabel37["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel37----
+	--UITextSizeConstraint38--
+	local UITextSizeConstraint38 = Instance.new("UITextSizeConstraint",TextLabel37)
+	UITextSizeConstraint38["MaxTextSize"] = 19
+	----UITextSizeConstraint38----
+	--TextLabel39--
+	local TextLabel39 = Instance.new("TextLabel",Frame28)
+	TextLabel39["TextWrapped"] = true
+	TextLabel39["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
+	TextLabel39["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel39["Text"] = "Mango Noclip Steal"
+	TextLabel39["TextSize"] = 29
+	TextLabel39["Rotation"] = -0.07000000029802322
+	TextLabel39["Font"] = Enum.Font.SourceSans
+	TextLabel39["BackgroundTransparency"] = 1
+	TextLabel39["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
+	TextLabel39["TextScaled"] = true
+	TextLabel39["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
+	TextLabel39["BorderSizePixel"] = 0
+	TextLabel39["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel39----
+	--UITextSizeConstraint40--
+	local UITextSizeConstraint40 = Instance.new("UITextSizeConstraint",TextLabel39)
+	UITextSizeConstraint40["MaxTextSize"] = 29
+	----UITextSizeConstraint40----
+	--Frame41--
+	local Frame41 = Instance.new("Frame",ScreenGui1)
+	Frame41["Name"] = "Frame23"
+	Frame41["Position"] = UDim2.new(0.0424200296, 0, 0.7652812, 0)
+	Frame41["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame41["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
+	Frame41["BorderSizePixel"] = 0
+	Frame41["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
+	----Frame41----
+	--Script42--
+	local Script42 = Instance.new("Script",Frame41)
+	Script42["Name"] = "Dragify"
+	----Script42----
+	--UICorner43--
+	local UICorner43 = Instance.new("UICorner",Frame41)
+	UICorner43["CornerRadius"] = UDim.new(0, 18)
+	----UICorner43----
+	--TextButton44--
+	local TextButton44 = Instance.new("TextButton",Frame41)
+	TextButton44["TextWrapped"] = true
+	TextButton44["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton44["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton44["Text"] = "Mango Steal (Off)"
+	TextButton44["Font"] = Enum.Font.SourceSans
+	TextButton44["TextSize"] = 25
+	TextButton44["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
+	TextButton44["TextScaled"] = true
+	TextButton44["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
+	TextButton44["BorderSizePixel"] = 0
+	TextButton44["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
+	----TextButton44----
+	--Script45--
+	local Script45 = Instance.new("Script",TextButton44)
+	----Script45----
+	--Script46--
+	local Script46 = Instance.new("Script",TextButton44)
+	----Script46----
+	--UICorner47--
+	local UICorner47 = Instance.new("UICorner",TextButton44)
+	UICorner47["CornerRadius"] = UDim.new(0, 10)
+	----UICorner47----
+	--UITextSizeConstraint48--
+	local UITextSizeConstraint48 = Instance.new("UITextSizeConstraint",TextButton44)
+	UITextSizeConstraint48["MaxTextSize"] = 25
+	----UITextSizeConstraint48----
+	--Script49--
+	local Script49 = Instance.new("Script",TextButton44)
+	----Script49----
+	--TextLabel50--
+	local TextLabel50 = Instance.new("TextLabel",Frame41)
+	TextLabel50["TextWrapped"] = true
+	TextLabel50["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel50["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel50["Text"] = "Ready."
+	TextLabel50["TextSize"] = 19
+	TextLabel50["TextScaled"] = true
+	TextLabel50["Font"] = Enum.Font.SourceSans
+	TextLabel50["BackgroundTransparency"] = 1
+	TextLabel50["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
+	TextLabel50["Name"] = "Label"
+	TextLabel50["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel50["BorderSizePixel"] = 0
+	TextLabel50["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel50----
+	--UITextSizeConstraint51--
+	local UITextSizeConstraint51 = Instance.new("UITextSizeConstraint",TextLabel50)
+	UITextSizeConstraint51["MaxTextSize"] = 19
+	----UITextSizeConstraint51----
+	--TextLabel52--
+	local TextLabel52 = Instance.new("TextLabel",Frame41)
+	TextLabel52["TextWrapped"] = true
+	TextLabel52["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
+	TextLabel52["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel52["Text"] = "Mango steal up"
+	TextLabel52["TextSize"] = 29
+	TextLabel52["Rotation"] = -0.07000000029802322
+	TextLabel52["Font"] = Enum.Font.SourceSans
+	TextLabel52["BackgroundTransparency"] = 1
+	TextLabel52["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
+	TextLabel52["TextScaled"] = true
+	TextLabel52["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
+	TextLabel52["BorderSizePixel"] = 0
+	TextLabel52["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel52----
+	--UITextSizeConstraint53--
+	local UITextSizeConstraint53 = Instance.new("UITextSizeConstraint",TextLabel52)
+	UITextSizeConstraint53["MaxTextSize"] = 29
+	----UITextSizeConstraint53----
 	spawn(function() --Source for Script3
 		local script = Script3
 		local UserInputService = game:GetService"UserInputService"
@@ -533,15 +709,394 @@ local function createGui(parent)
 	end)
 	spawn(function() --Source for Script23
 		local script = Script23
-		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local Player = game:GetService("Players").LocalPlayer
+		local Button = script.Parent
+		
+		local SpawnPosition = nil
+		local IsReturning = false
+		local RunSpeed = 120-- Максимальная скорость
+		
+		-- Запоминаем позицию спавна при запуске
+		function RememberSpawnPosition()
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			SpawnPosition = HumanoidRootPart.Position
+		end
+		
+		-- Функция возврата на базу
+		function ReturnToBase()
+			if not SpawnPosition then
+				RememberSpawnPosition()
+				if not SpawnPosition then return end
+			end
+		
+			local Character = Player.Character
+			if not Character then return end
+		
+			local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+			if not HumanoidRootPart then return end
+		
+			IsReturning = true
+		
+			local Humanoid = Character:FindFirstChild("Humanoid")
+			local originalWalkSpeed = Humanoid and Humanoid.WalkSpeed or 16
+		
+			if Humanoid then
+				Humanoid.WalkSpeed = RunSpeed
+			end
+		
+			-- Максимально быстрый бег к базе
+			while IsReturning and Character and HumanoidRootPart do
+				local direction = (SpawnPosition - HumanoidRootPart.Position).Unit
+				local distance = (SpawnPosition - HumanoidRootPart.Position).Magnitude
+		
+				if distance < 15 then
+					break
+				end
+		
+				HumanoidRootPart.Velocity = direction * RunSpeed
+				wait(0.01)
+			end
+		
+			if Humanoid then
+				Humanoid.WalkSpeed = originalWalkSpeed
+			end
+		
+			if HumanoidRootPart then
+				HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+			end
+		
+			IsReturning = false
+		end
+		
+		-- Нажатие на кнопку
+		Button.MouseButton1Click:Connect(function()
+			if not IsReturning then
+				ReturnToBase()
+			end
+		end)
+		
+		-- Античит защита
+		game:GetService("RunService").Heartbeat:Connect(function()
+			if IsReturning then
+				local Character = Player.Character
+				if Character then
+					local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+					if HumanoidRootPart then
+						HumanoidRootPart.Velocity = Vector3.new(
+							HumanoidRootPart.Velocity.X,
+							0,
+							HumanoidRootPart.Velocity.Z
+						)
+					end
+				end
+			end
+		end)
+		
+		-- Автоматически запоминаем позицию при запуске
+		wait(3)
+		RememberSpawnPosition()
+		
+	end)
+	spawn(function() --Source for Script29
+		local script = Script29
+		local UserInputService = game:GetService"UserInputService"
+		
+		function Dragify (Object)
+			local Button1Down
+		
+			Object.InputBegan:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = true
+		
+					local A = UserInputService:GetMouseLocation()
+		
+					local Difference = Object.AbsolutePosition - A
+		
+					repeat task.wait()
+						local B = UserInputService:GetMouseLocation()
+						local Position = UDim2.fromOffset(
+							B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
+							B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
+						)
+		
+						Object.Position = Position
+					until not Button1Down
+				end
+			end)
+		
+			Object.InputEnded:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = false
+				end
+			end)
+		end
+		
+		Dragify(script.Parent)
+	end)
+	spawn(function() --Source for Script32
+		local script = Script32
+		local button = script.Parent
+		
+		-- Запоминаем исходные значения
+		local originalColor = button.BackgroundColor3
+		local originalText = button.Text
+		
+		-- Значения при активации
+		local activeColor = Color3.fromRGB(0, 255, 0) -- Зелёный
+		local activeText = "Instant Steal (On)"
+		
+		-- Переменная-флаг
+		local isActive = false
+		
+		button.MouseButton1Click:Connect(function()
+			-- Меняем состояние
+			isActive = not isActive
+		
+			if isActive then
+				-- Активируем: зелёный цвет и новый текст
+				button.BackgroundColor3 = activeColor
+				button.Text = activeText
+			else
+				-- Деактивируем: исходный цвет и исходный текст
+				button.BackgroundColor3 = originalColor
+				button.Text = originalText
+			end
+		end)
+		
+	end)
+	spawn(function() --Source for Script33
+		local script = Script33
+		local button = script.Parent
+		local label = script.Parent.Parent:FindFirstChild("Label")
+		
+		if not label then
+			warn("Label не найден!")
+			return
+		end
+		
+		-- Запоминаем исходный текст
+		local originalText = label.Text
+		-- Состояние: false = исходный текст, true = изменённый текст
+		local isChanged = false
+		
+		button.MouseButton1Click:Connect(function()
+			-- Меняем состояние на противоположное
+			isChanged = not isChanged
+		
+			if isChanged then
+				-- Меняем текст на новый
+				label.Text = "Stealing..."
+			else
+				-- Возвращаем исходный текст
+				label.Text = originalText
+			end
+		end)
+		
+	end)
+	spawn(function() --Source for Script36
+		local script = Script36
+		local Players = game:GetService("Players")
+		local UserInputService = game:GetService("UserInputService")
+		local RunService = game:GetService("RunService")
+		
+		local player = Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoid = character:WaitForChild("Humanoid")
+		
+		local noclipEnabled = false
+		local noclipConnection = nil
+		
+		-- Функция для включения/выключения NoClip
+		local function toggleNoClip()
+			noclipEnabled = not noclipEnabled
+		
+			if noclipEnabled then
+				-- Включаем NoClip
+				humanoid:ChangeState(Enum.HumanoidStateType.Physics)
+		
+				-- Создаем соединение для обновления положения
+				if noclipConnection then
+					noclipConnection:Disconnect()
+				end
+		
+				noclipConnection = RunService.Stepped:Connect(function()
+					if noclipEnabled and character then
+						for _, part in pairs(character:GetDescendants()) do
+							if part:IsA("BasePart") then
+								part.CanCollide = false
+							end
+						end
+					end
+				end)
+		
+				print("NoClip включен")
+			else
+				-- Выключаем NoClip
+				if noclipConnection then
+					noclipConnection:Disconnect()
+					noclipConnection = nil
+				end
+		
+				for _, part in pairs(character:GetDescendants()) do
+					if part:IsA("BasePart") then
+						part.CanCollide = true
+					end
+				end
+		
+				humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+				print("NoClip выключен")
+			end
+		end
+		
+		-- Обработка нажатия кнопки (замените на вашу кнопку)
+		local button = script.Parent -- Предполагается, что скрипт находится в кнопке
+		
+		button.MouseButton1Click:Connect(function()
+			toggleNoClip()
+		end)
+		
+		-- Альтернативно: активация по клавише (например, клавиша N)
+		UserInputService.InputBegan:Connect(function(input, gameProcessed)
+			if gameProcessed then return end
+		
+			if input.KeyCode == Enum.KeyCode.N then
+				toggleNoClip()
+			end
+		end)
+		
+		-- Обработка смерти/смены персонажа
+		player.CharacterAdded:Connect(function(newCharacter)
+			character = newCharacter
+			humanoid = character:WaitForChild("Humanoid")
+		
+			-- Автоматически выключаем NoClip при смене персонажа
+			if noclipEnabled then
+				noclipEnabled = false
+				if noclipConnection then
+					noclipConnection:Disconnect()
+					noclipConnection = nil
+				end
+			end
+		end)
+		
+	end)
+	spawn(function() --Source for Script42
+		local script = Script42
+		local UserInputService = game:GetService"UserInputService"
+		
+		function Dragify (Object)
+			local Button1Down
+		
+			Object.InputBegan:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = true
+		
+					local A = UserInputService:GetMouseLocation()
+		
+					local Difference = Object.AbsolutePosition - A
+		
+					repeat task.wait()
+						local B = UserInputService:GetMouseLocation()
+						local Position = UDim2.fromOffset(
+							B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
+							B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
+						)
+		
+						Object.Position = Position
+					until not Button1Down
+				end
+			end)
+		
+			Object.InputEnded:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = false
+				end
+			end)
+		end
+		
+		Dragify(script.Parent)
+	end)
+	spawn(function() --Source for Script45
+		local script = Script45
+		local button = script.Parent
+		
+		-- Запоминаем исходные значения
+		local originalColor = button.BackgroundColor3
+		local originalText = button.Text
+		
+		-- Значения при активации
+		local activeColor = Color3.fromRGB(0, 255, 0) -- Зелёный
+		local activeText = "Instant Steal (On)"
+		
+		-- Переменная-флаг
+		local isActive = false
+		
+		button.MouseButton1Click:Connect(function()
+			-- Меняем состояние
+			isActive = not isActive
+		
+			if isActive then
+				-- Активируем: зелёный цвет и новый текст
+				button.BackgroundColor3 = activeColor
+				button.Text = activeText
+			else
+				-- Деактивируем: исходный цвет и исходный текст
+				button.BackgroundColor3 = originalColor
+				button.Text = originalText
+			end
+		end)
+		
+	end)
+	spawn(function() --Source for Script46
+		local script = Script46
+		local button = script.Parent
+		local label = script.Parent.Parent:FindFirstChild("Label")
+		
+		if not label then
+			warn("Label не найден!")
+			return
+		end
+		
+		-- Запоминаем исходный текст
+		local originalText = label.Text
+		-- Состояние: false = исходный текст, true = изменённый текст
+		local isChanged = false
+		
+		button.MouseButton1Click:Connect(function()
+			-- Меняем состояние на противоположное
+			isChanged = not isChanged
+		
+			if isChanged then
+				-- Меняем текст на новый
+				label.Text = "Stealing..."
+			else
+				-- Возвращаем исходный текст
+				label.Text = originalText
+			end
+		end)
+		
+	end)
+	spawn(function() --Source for Script49
+		local script = Script49
+		local button = script.Parent -- Кнопка, к которой прикреплен скрипт
 		local Players = game:GetService("Players")
 		
 		local player = Players.LocalPlayer
-		local TeleportEvent = ReplicatedStorage:WaitForChild("SafeTeleportEvent")
 		
-		-- Обработчик нажатия кнопки [citation:5]
-		script.Parent.MouseButton1Click:Connect(function()
-			TeleportEvent:FireServer()
+		button.MouseButton1Click:Connect(function()
+			local character = player.Character
+			if character then
+				local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+				if humanoidRootPart then
+					-- Телепортируем на 50 studs вверх
+					humanoidRootPart.CFrame = humanoidRootPart.CFrame + Vector3.new(0, 50, 0)
+				end
+			end
 		end)
 		
 	end)
