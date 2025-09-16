@@ -52,279 +52,289 @@ local function createGui(parent)
 	local UITextSizeConstraint10 = Instance.new("UITextSizeConstraint",TextButton5)
 	UITextSizeConstraint10["MaxTextSize"] = 25
 	----UITextSizeConstraint10----
-	--Script11--
-	local Script11 = Instance.new("Script",TextButton5)
-	----Script11----
-	--TextLabel12--
-	local TextLabel12 = Instance.new("TextLabel",Frame2)
-	TextLabel12["TextWrapped"] = true
-	TextLabel12["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
-	TextLabel12["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel12["Text"] = "Ready."
-	TextLabel12["TextSize"] = 19
-	TextLabel12["TextScaled"] = true
-	TextLabel12["Font"] = Enum.Font.SourceSans
-	TextLabel12["BackgroundTransparency"] = 1
-	TextLabel12["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
-	TextLabel12["Name"] = "Label"
-	TextLabel12["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
-	TextLabel12["BorderSizePixel"] = 0
-	TextLabel12["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel12----
-	--UITextSizeConstraint13--
-	local UITextSizeConstraint13 = Instance.new("UITextSizeConstraint",TextLabel12)
-	UITextSizeConstraint13["MaxTextSize"] = 19
-	----UITextSizeConstraint13----
-	--TextLabel14--
-	local TextLabel14 = Instance.new("TextLabel",Frame2)
-	TextLabel14["TextWrapped"] = true
-	TextLabel14["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
-	TextLabel14["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel14["Text"] = "Mango Instant Steal"
-	TextLabel14["TextSize"] = 29
-	TextLabel14["Font"] = Enum.Font.SourceSans
-	TextLabel14["BackgroundTransparency"] = 1
-	TextLabel14["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
-	TextLabel14["TextScaled"] = true
-	TextLabel14["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
-	TextLabel14["BorderSizePixel"] = 0
-	TextLabel14["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel14----
-	--UITextSizeConstraint15--
-	local UITextSizeConstraint15 = Instance.new("UITextSizeConstraint",TextLabel14)
-	UITextSizeConstraint15["MaxTextSize"] = 29
-	----UITextSizeConstraint15----
-	--Frame16--
-	local Frame16 = Instance.new("Frame",ScreenGui1)
-	Frame16["Name"] = "Frame23"
-	Frame16["Position"] = UDim2.new(0.6905424, 0, 0.735941291, 0)
-	Frame16["BorderColor3"] = Color3.new(0, 0, 0)
-	Frame16["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
-	Frame16["BorderSizePixel"] = 0
-	Frame16["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
-	----Frame16----
-	--Script17--
-	local Script17 = Instance.new("Script",Frame16)
-	Script17["Name"] = "Dragify"
-	----Script17----
-	--UICorner18--
-	local UICorner18 = Instance.new("UICorner",Frame16)
-	UICorner18["CornerRadius"] = UDim.new(0, 18)
-	----UICorner18----
-	--TextButton19--
-	local TextButton19 = Instance.new("TextButton",Frame16)
-	TextButton19["TextWrapped"] = true
-	TextButton19["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton19["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton19["Text"] = "Float V2 (Off)"
-	TextButton19["Font"] = Enum.Font.SourceSans
-	TextButton19["TextSize"] = 25
-	TextButton19["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
-	TextButton19["TextScaled"] = true
-	TextButton19["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
-	TextButton19["BorderSizePixel"] = 0
-	TextButton19["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
-	----TextButton19----
+	--TextLabel11--
+	local TextLabel11 = Instance.new("TextLabel",Frame2)
+	TextLabel11["TextWrapped"] = true
+	TextLabel11["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel11["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel11["Text"] = "Ready."
+	TextLabel11["TextSize"] = 19
+	TextLabel11["TextScaled"] = true
+	TextLabel11["Font"] = Enum.Font.SourceSans
+	TextLabel11["BackgroundTransparency"] = 1
+	TextLabel11["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
+	TextLabel11["Name"] = "Label"
+	TextLabel11["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel11["BorderSizePixel"] = 0
+	TextLabel11["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel11----
+	--UITextSizeConstraint12--
+	local UITextSizeConstraint12 = Instance.new("UITextSizeConstraint",TextLabel11)
+	UITextSizeConstraint12["MaxTextSize"] = 19
+	----UITextSizeConstraint12----
+	--TextLabel13--
+	local TextLabel13 = Instance.new("TextLabel",Frame2)
+	TextLabel13["TextWrapped"] = true
+	TextLabel13["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
+	TextLabel13["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel13["Text"] = "Mango Instant Steal"
+	TextLabel13["TextSize"] = 29
+	TextLabel13["Font"] = Enum.Font.SourceSans
+	TextLabel13["BackgroundTransparency"] = 1
+	TextLabel13["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
+	TextLabel13["TextScaled"] = true
+	TextLabel13["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
+	TextLabel13["BorderSizePixel"] = 0
+	TextLabel13["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel13----
+	--UITextSizeConstraint14--
+	local UITextSizeConstraint14 = Instance.new("UITextSizeConstraint",TextLabel13)
+	UITextSizeConstraint14["MaxTextSize"] = 29
+	----UITextSizeConstraint14----
+	--Frame15--
+	local Frame15 = Instance.new("Frame",ScreenGui1)
+	Frame15["Name"] = "Frame23"
+	Frame15["Position"] = UDim2.new(0.6905424, 0, 0.735941291, 0)
+	Frame15["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame15["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
+	Frame15["BorderSizePixel"] = 0
+	Frame15["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
+	----Frame15----
+	--Script16--
+	local Script16 = Instance.new("Script",Frame15)
+	Script16["Name"] = "Dragify"
+	----Script16----
+	--UICorner17--
+	local UICorner17 = Instance.new("UICorner",Frame15)
+	UICorner17["CornerRadius"] = UDim.new(0, 18)
+	----UICorner17----
+	--TextButton18--
+	local TextButton18 = Instance.new("TextButton",Frame15)
+	TextButton18["TextWrapped"] = true
+	TextButton18["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton18["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton18["Text"] = "Float V2 (Off)"
+	TextButton18["Font"] = Enum.Font.SourceSans
+	TextButton18["TextSize"] = 25
+	TextButton18["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
+	TextButton18["TextScaled"] = true
+	TextButton18["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
+	TextButton18["BorderSizePixel"] = 0
+	TextButton18["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
+	----TextButton18----
+	--Script19--
+	local Script19 = Instance.new("Script",TextButton18)
+	----Script19----
 	--Script20--
-	local Script20 = Instance.new("Script",TextButton19)
+	local Script20 = Instance.new("Script",TextButton18)
 	----Script20----
-	--Script21--
-	local Script21 = Instance.new("Script",TextButton19)
-	----Script21----
-	--UICorner22--
-	local UICorner22 = Instance.new("UICorner",TextButton19)
-	UICorner22["CornerRadius"] = UDim.new(0, 10)
-	----UICorner22----
-	--UITextSizeConstraint23--
-	local UITextSizeConstraint23 = Instance.new("UITextSizeConstraint",TextButton19)
-	UITextSizeConstraint23["MaxTextSize"] = 25
-	----UITextSizeConstraint23----
-	--TextLabel24--
-	local TextLabel24 = Instance.new("TextLabel",Frame16)
-	TextLabel24["TextWrapped"] = true
-	TextLabel24["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
-	TextLabel24["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel24["Text"] = "Ready."
-	TextLabel24["TextSize"] = 19
-	TextLabel24["TextScaled"] = true
-	TextLabel24["Font"] = Enum.Font.SourceSans
-	TextLabel24["BackgroundTransparency"] = 1
-	TextLabel24["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
-	TextLabel24["Name"] = "Label"
-	TextLabel24["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
-	TextLabel24["BorderSizePixel"] = 0
-	TextLabel24["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel24----
-	--UITextSizeConstraint25--
-	local UITextSizeConstraint25 = Instance.new("UITextSizeConstraint",TextLabel24)
-	UITextSizeConstraint25["MaxTextSize"] = 19
-	----UITextSizeConstraint25----
-	--TextLabel26--
-	local TextLabel26 = Instance.new("TextLabel",Frame16)
-	TextLabel26["TextWrapped"] = true
-	TextLabel26["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
-	TextLabel26["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel26["Text"] = "Mango Float"
-	TextLabel26["TextSize"] = 29
-	TextLabel26["Rotation"] = -0.07000000029802322
-	TextLabel26["Font"] = Enum.Font.SourceSans
-	TextLabel26["BackgroundTransparency"] = 1
-	TextLabel26["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
-	TextLabel26["TextScaled"] = true
-	TextLabel26["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
-	TextLabel26["BorderSizePixel"] = 0
-	TextLabel26["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel26----
-	--UITextSizeConstraint27--
-	local UITextSizeConstraint27 = Instance.new("UITextSizeConstraint",TextLabel26)
-	UITextSizeConstraint27["MaxTextSize"] = 29
-	----UITextSizeConstraint27----
-	--Frame28--
-	local Frame28 = Instance.new("Frame",ScreenGui1)
-	Frame28["Name"] = "Frame23"
-	Frame28["Position"] = UDim2.new(0.0424200296, 0, 0.7652812, 0)
-	Frame28["BorderColor3"] = Color3.new(0, 0, 0)
-	Frame28["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
-	Frame28["BorderSizePixel"] = 0
-	Frame28["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
-	----Frame28----
-	--Script29--
-	local Script29 = Instance.new("Script",Frame28)
-	Script29["Name"] = "Dragify"
-	----Script29----
-	--UICorner30--
-	local UICorner30 = Instance.new("UICorner",Frame28)
-	UICorner30["CornerRadius"] = UDim.new(0, 18)
-	----UICorner30----
-	--TextButton31--
-	local TextButton31 = Instance.new("TextButton",Frame28)
-	TextButton31["TextWrapped"] = true
-	TextButton31["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton31["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton31["Text"] = " Steal up (Off)"
-	TextButton31["Font"] = Enum.Font.SourceSans
-	TextButton31["TextSize"] = 25
-	TextButton31["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
-	TextButton31["TextScaled"] = true
-	TextButton31["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
-	TextButton31["BorderSizePixel"] = 0
-	TextButton31["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
-	----TextButton31----
+	--UICorner21--
+	local UICorner21 = Instance.new("UICorner",TextButton18)
+	UICorner21["CornerRadius"] = UDim.new(0, 10)
+	----UICorner21----
+	--UITextSizeConstraint22--
+	local UITextSizeConstraint22 = Instance.new("UITextSizeConstraint",TextButton18)
+	UITextSizeConstraint22["MaxTextSize"] = 25
+	----UITextSizeConstraint22----
+	--TextLabel23--
+	local TextLabel23 = Instance.new("TextLabel",Frame15)
+	TextLabel23["TextWrapped"] = true
+	TextLabel23["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel23["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel23["Text"] = "Ready."
+	TextLabel23["TextSize"] = 19
+	TextLabel23["TextScaled"] = true
+	TextLabel23["Font"] = Enum.Font.SourceSans
+	TextLabel23["BackgroundTransparency"] = 1
+	TextLabel23["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
+	TextLabel23["Name"] = "Label"
+	TextLabel23["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel23["BorderSizePixel"] = 0
+	TextLabel23["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel23----
+	--UITextSizeConstraint24--
+	local UITextSizeConstraint24 = Instance.new("UITextSizeConstraint",TextLabel23)
+	UITextSizeConstraint24["MaxTextSize"] = 19
+	----UITextSizeConstraint24----
+	--TextLabel25--
+	local TextLabel25 = Instance.new("TextLabel",Frame15)
+	TextLabel25["TextWrapped"] = true
+	TextLabel25["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
+	TextLabel25["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel25["Text"] = "Mango Float"
+	TextLabel25["TextSize"] = 29
+	TextLabel25["Rotation"] = -0.07000000029802322
+	TextLabel25["Font"] = Enum.Font.SourceSans
+	TextLabel25["BackgroundTransparency"] = 1
+	TextLabel25["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
+	TextLabel25["TextScaled"] = true
+	TextLabel25["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
+	TextLabel25["BorderSizePixel"] = 0
+	TextLabel25["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel25----
+	--UITextSizeConstraint26--
+	local UITextSizeConstraint26 = Instance.new("UITextSizeConstraint",TextLabel25)
+	UITextSizeConstraint26["MaxTextSize"] = 29
+	----UITextSizeConstraint26----
+	--Frame27--
+	local Frame27 = Instance.new("Frame",ScreenGui1)
+	Frame27["Name"] = "Frame23"
+	Frame27["Position"] = UDim2.new(0.0424200296, 0, 0.7652812, 0)
+	Frame27["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame27["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
+	Frame27["BorderSizePixel"] = 0
+	Frame27["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
+	----Frame27----
+	--Script28--
+	local Script28 = Instance.new("Script",Frame27)
+	Script28["Name"] = "Dragify"
+	----Script28----
+	--UICorner29--
+	local UICorner29 = Instance.new("UICorner",Frame27)
+	UICorner29["CornerRadius"] = UDim.new(0, 18)
+	----UICorner29----
+	--TextButton30--
+	local TextButton30 = Instance.new("TextButton",Frame27)
+	TextButton30["TextWrapped"] = true
+	TextButton30["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton30["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton30["Text"] = " Steal up (Off)"
+	TextButton30["Font"] = Enum.Font.SourceSans
+	TextButton30["TextSize"] = 25
+	TextButton30["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
+	TextButton30["TextScaled"] = true
+	TextButton30["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
+	TextButton30["BorderSizePixel"] = 0
+	TextButton30["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
+	----TextButton30----
+	--Script31--
+	local Script31 = Instance.new("Script",TextButton30)
+	----Script31----
 	--Script32--
-	local Script32 = Instance.new("Script",TextButton31)
+	local Script32 = Instance.new("Script",TextButton30)
 	----Script32----
 	--Script33--
-	local Script33 = Instance.new("Script",TextButton31)
+	local Script33 = Instance.new("Script",TextButton30)
 	----Script33----
-	--Script34--
-	local Script34 = Instance.new("Script",TextButton31)
-	----Script34----
-	--UICorner35--
-	local UICorner35 = Instance.new("UICorner",TextButton31)
-	UICorner35["CornerRadius"] = UDim.new(0, 10)
-	----UICorner35----
-	--UITextSizeConstraint36--
-	local UITextSizeConstraint36 = Instance.new("UITextSizeConstraint",TextButton31)
-	UITextSizeConstraint36["MaxTextSize"] = 25
-	----UITextSizeConstraint36----
-	--Script37--
-	local Script37 = Instance.new("Script",TextButton31)
-	----Script37----
+	--UICorner34--
+	local UICorner34 = Instance.new("UICorner",TextButton30)
+	UICorner34["CornerRadius"] = UDim.new(0, 10)
+	----UICorner34----
+	--UITextSizeConstraint35--
+	local UITextSizeConstraint35 = Instance.new("UITextSizeConstraint",TextButton30)
+	UITextSizeConstraint35["MaxTextSize"] = 25
+	----UITextSizeConstraint35----
+	--TextLabel36--
+	local TextLabel36 = Instance.new("TextLabel",Frame27)
+	TextLabel36["TextWrapped"] = true
+	TextLabel36["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel36["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel36["Text"] = "Ready."
+	TextLabel36["TextSize"] = 19
+	TextLabel36["TextScaled"] = true
+	TextLabel36["Font"] = Enum.Font.SourceSans
+	TextLabel36["BackgroundTransparency"] = 1
+	TextLabel36["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
+	TextLabel36["Name"] = "Label"
+	TextLabel36["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel36["BorderSizePixel"] = 0
+	TextLabel36["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel36----
+	--UITextSizeConstraint37--
+	local UITextSizeConstraint37 = Instance.new("UITextSizeConstraint",TextLabel36)
+	UITextSizeConstraint37["MaxTextSize"] = 19
+	----UITextSizeConstraint37----
 	--TextLabel38--
-	local TextLabel38 = Instance.new("TextLabel",Frame28)
+	local TextLabel38 = Instance.new("TextLabel",Frame27)
 	TextLabel38["TextWrapped"] = true
-	TextLabel38["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel38["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
 	TextLabel38["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel38["Text"] = "Ready."
-	TextLabel38["TextSize"] = 19
-	TextLabel38["TextScaled"] = true
+	TextLabel38["Text"] = "Mango Steal up"
+	TextLabel38["TextSize"] = 29
+	TextLabel38["Rotation"] = -0.07000000029802322
 	TextLabel38["Font"] = Enum.Font.SourceSans
 	TextLabel38["BackgroundTransparency"] = 1
-	TextLabel38["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
-	TextLabel38["Name"] = "Label"
-	TextLabel38["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel38["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
+	TextLabel38["TextScaled"] = true
+	TextLabel38["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
 	TextLabel38["BorderSizePixel"] = 0
 	TextLabel38["BackgroundColor3"] = Color3.new(1, 1, 1)
 	----TextLabel38----
 	--UITextSizeConstraint39--
 	local UITextSizeConstraint39 = Instance.new("UITextSizeConstraint",TextLabel38)
-	UITextSizeConstraint39["MaxTextSize"] = 19
+	UITextSizeConstraint39["MaxTextSize"] = 29
 	----UITextSizeConstraint39----
-	--TextLabel40--
-	local TextLabel40 = Instance.new("TextLabel",Frame28)
-	TextLabel40["TextWrapped"] = true
-	TextLabel40["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
-	TextLabel40["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel40["Text"] = "Mango Steal up"
-	TextLabel40["TextSize"] = 29
-	TextLabel40["Rotation"] = -0.07000000029802322
-	TextLabel40["Font"] = Enum.Font.SourceSans
-	TextLabel40["BackgroundTransparency"] = 1
-	TextLabel40["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
-	TextLabel40["TextScaled"] = true
-	TextLabel40["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
-	TextLabel40["BorderSizePixel"] = 0
-	TextLabel40["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel40----
-	--UITextSizeConstraint41--
-	local UITextSizeConstraint41 = Instance.new("UITextSizeConstraint",TextLabel40)
-	UITextSizeConstraint41["MaxTextSize"] = 29
-	----UITextSizeConstraint41----
+	--Frame40--
+	local Frame40 = Instance.new("Frame",ScreenGui1)
+	Frame40["Visible"] = false
+	Frame40["Position"] = UDim2.new(0.316411674, 0, 0.31418094, 0)
+	Frame40["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame40["Size"] = UDim2.new(0, 386, 0, 339)
+	Frame40["BorderSizePixel"] = 0
+	Frame40["BackgroundColor3"] = Color3.new(0.117647, 0.117647, 0.137255)
+	----Frame40----
+	--Script41--
+	local Script41 = Instance.new("Script",Frame40)
+	Script41["Name"] = "Dragify"
+	----Script41----
 	--Frame42--
-	local Frame42 = Instance.new("Frame",ScreenGui1)
-	Frame42["Visible"] = false
-	Frame42["Position"] = UDim2.new(0.316411674, 0, 0.31418094, 0)
+	local Frame42 = Instance.new("Frame",Frame40)
 	Frame42["BorderColor3"] = Color3.new(0, 0, 0)
-	Frame42["Size"] = UDim2.new(0, 386, 0, 339)
+	Frame42["Size"] = UDim2.new(1, 0, 0.0265486725, 30)
 	Frame42["BorderSizePixel"] = 0
-	Frame42["BackgroundColor3"] = Color3.new(0.117647, 0.117647, 0.137255)
+	Frame42["BackgroundColor3"] = Color3.new(0.0784314, 0.0784314, 0.0980392)
 	----Frame42----
-	--Script43--
-	local Script43 = Instance.new("Script",Frame42)
-	Script43["Name"] = "Dragify"
-	----Script43----
-	--Frame44--
-	local Frame44 = Instance.new("Frame",Frame42)
-	Frame44["BorderColor3"] = Color3.new(0, 0, 0)
-	Frame44["Size"] = UDim2.new(1, 0, 0.0265486725, 30)
-	Frame44["BorderSizePixel"] = 0
-	Frame44["BackgroundColor3"] = Color3.new(0.0784314, 0.0784314, 0.0980392)
-	----Frame44----
-	--UICorner45--
-	local UICorner45 = Instance.new("UICorner",Frame44)
-	UICorner45["CornerRadius"] = UDim.new(0, 15)
-	----UICorner45----
-	--UICorner46--
-	local UICorner46 = Instance.new("UICorner",Frame42)
-	UICorner46["CornerRadius"] = UDim.new(0, 15)
-	----UICorner46----
-	--TextButton47--
-	local TextButton47 = Instance.new("TextButton",Frame42)
-	TextButton47["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton47["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton47["Text"] = "Invisible Steal"
-	TextButton47["Font"] = Enum.Font.SourceSansBold
-	TextButton47["TextXAlignment"] = Enum.TextXAlignment.Left
-	TextButton47["Position"] = UDim2.new(0.0440414511, 0, 0.227138638, 0)
-	TextButton47["TextSize"] = 25
-	TextButton47["Size"] = UDim2.new(0, 262, 0, 39)
-	TextButton47["BorderSizePixel"] = 0
-	TextButton47["BackgroundColor3"] = Color3.new(0.290196, 0.290196, 0.290196)
-	----TextButton47----
-	--Script48--
-	local Script48 = Instance.new("Script",TextButton47)
-	----Script48----
+	--UICorner43--
+	local UICorner43 = Instance.new("UICorner",Frame42)
+	UICorner43["CornerRadius"] = UDim.new(0, 15)
+	----UICorner43----
+	--UICorner44--
+	local UICorner44 = Instance.new("UICorner",Frame40)
+	UICorner44["CornerRadius"] = UDim.new(0, 15)
+	----UICorner44----
+	--TextButton45--
+	local TextButton45 = Instance.new("TextButton",Frame40)
+	TextButton45["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton45["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton45["Text"] = "Invisible Steal"
+	TextButton45["Font"] = Enum.Font.SourceSansBold
+	TextButton45["TextXAlignment"] = Enum.TextXAlignment.Left
+	TextButton45["Position"] = UDim2.new(0.0440414511, 0, 0.227138638, 0)
+	TextButton45["TextSize"] = 25
+	TextButton45["Size"] = UDim2.new(0, 262, 0, 39)
+	TextButton45["BorderSizePixel"] = 0
+	TextButton45["BackgroundColor3"] = Color3.new(0.290196, 0.290196, 0.290196)
+	----TextButton45----
+	--Script46--
+	local Script46 = Instance.new("Script",TextButton45)
+	----Script46----
+	--UICorner47--
+	local UICorner47 = Instance.new("UICorner",TextButton45)
+	----UICorner47----
+	--TextButton48--
+	local TextButton48 = Instance.new("TextButton",Frame40)
+	TextButton48["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton48["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton48["Text"] = "Instant steal (for modification)"
+	TextButton48["Font"] = Enum.Font.SourceSansBold
+	TextButton48["TextXAlignment"] = Enum.TextXAlignment.Left
+	TextButton48["Position"] = UDim2.new(0.0440414511, 0, 0.407079637, 0)
+	TextButton48["TextSize"] = 25
+	TextButton48["Size"] = UDim2.new(0, 262, 0, 39)
+	TextButton48["BorderSizePixel"] = 0
+	TextButton48["BackgroundColor3"] = Color3.new(0.290196, 0.290196, 0.290196)
+	----TextButton48----
 	--UICorner49--
-	local UICorner49 = Instance.new("UICorner",TextButton47)
+	local UICorner49 = Instance.new("UICorner",TextButton48)
 	----UICorner49----
 	--TextButton50--
-	local TextButton50 = Instance.new("TextButton",Frame42)
+	local TextButton50 = Instance.new("TextButton",Frame40)
 	TextButton50["TextColor3"] = Color3.new(0, 0, 0)
 	TextButton50["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton50["Text"] = "Instant steal (for modification)"
+	TextButton50["Text"] = "Steal up (we'll fix it soon )"
 	TextButton50["Font"] = Enum.Font.SourceSansBold
 	TextButton50["TextXAlignment"] = Enum.TextXAlignment.Left
-	TextButton50["Position"] = UDim2.new(0.0440414511, 0, 0.407079637, 0)
+	TextButton50["Position"] = UDim2.new(0.0440414511, 0, 0.589970529, 0)
 	TextButton50["TextSize"] = 25
 	TextButton50["Size"] = UDim2.new(0, 262, 0, 39)
 	TextButton50["BorderSizePixel"] = 0
@@ -334,13 +344,13 @@ local function createGui(parent)
 	local UICorner51 = Instance.new("UICorner",TextButton50)
 	----UICorner51----
 	--TextButton52--
-	local TextButton52 = Instance.new("TextButton",Frame42)
+	local TextButton52 = Instance.new("TextButton",Frame40)
 	TextButton52["TextColor3"] = Color3.new(0, 0, 0)
 	TextButton52["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton52["Text"] = "Steal up (we'll fix it soon )"
+	TextButton52["Text"] = "Noclip Steal (fixed )"
 	TextButton52["Font"] = Enum.Font.SourceSansBold
 	TextButton52["TextXAlignment"] = Enum.TextXAlignment.Left
-	TextButton52["Position"] = UDim2.new(0.0440414511, 0, 0.589970529, 0)
+	TextButton52["Position"] = UDim2.new(0.0440414511, 0, 0.755162239, 0)
 	TextButton52["TextSize"] = 25
 	TextButton52["Size"] = UDim2.new(0, 262, 0, 39)
 	TextButton52["BorderSizePixel"] = 0
@@ -349,150 +359,134 @@ local function createGui(parent)
 	--UICorner53--
 	local UICorner53 = Instance.new("UICorner",TextButton52)
 	----UICorner53----
-	--TextButton54--
-	local TextButton54 = Instance.new("TextButton",Frame42)
-	TextButton54["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton54["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton54["Text"] = "Noclip Steal (fixed )"
-	TextButton54["Font"] = Enum.Font.SourceSansBold
-	TextButton54["TextXAlignment"] = Enum.TextXAlignment.Left
-	TextButton54["Position"] = UDim2.new(0.0440414511, 0, 0.755162239, 0)
-	TextButton54["TextSize"] = 25
-	TextButton54["Size"] = UDim2.new(0, 262, 0, 39)
-	TextButton54["BorderSizePixel"] = 0
-	TextButton54["BackgroundColor3"] = Color3.new(0.290196, 0.290196, 0.290196)
-	----TextButton54----
-	--UICorner55--
-	local UICorner55 = Instance.new("UICorner",TextButton54)
-	----UICorner55----
+	--TextLabel54--
+	local TextLabel54 = Instance.new("TextLabel",Frame40)
+	TextLabel54["TextColor3"] = Color3.new(1, 1, 1)
+	TextLabel54["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel54["Text"] = "Stealer"
+	TextLabel54["Font"] = Enum.Font.SourceSans
+	TextLabel54["BackgroundTransparency"] = 1
+	TextLabel54["Position"] = UDim2.new(-0.134257421, 0, 0.0964508504, 0)
+	TextLabel54["TextSize"] = 20
+	TextLabel54["Size"] = UDim2.new(0, 200, 0, 50)
+	TextLabel54["BorderSizePixel"] = 0
+	TextLabel54["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel54----
+	--TextLabel55--
+	local TextLabel55 = Instance.new("TextLabel",Frame40)
+	TextLabel55["TextWrapped"] = true
+	TextLabel55["TextColor3"] = Color3.new(1, 1, 1)
+	TextLabel55["BorderColor3"] = Color3.new(1, 1, 1)
+	TextLabel55["Text"] = "Steal a Brainrot - Mango Hub"
+	TextLabel55["TextSize"] = 1
+	TextLabel55["Font"] = Enum.Font.SourceSansBold
+	TextLabel55["BackgroundTransparency"] = 1
+	TextLabel55["Position"] = UDim2.new(0.0546995178, 0, -0.0122429505, 0)
+	TextLabel55["TextScaled"] = true
+	TextLabel55["Size"] = UDim2.new(0, 253, 0, 46)
+	TextLabel55["BorderSizePixel"] = 0
+	TextLabel55["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel55----
 	--TextLabel56--
-	local TextLabel56 = Instance.new("TextLabel",Frame42)
+	local TextLabel56 = Instance.new("TextLabel",Frame40)
 	TextLabel56["TextColor3"] = Color3.new(1, 1, 1)
 	TextLabel56["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel56["Text"] = "Stealer"
-	TextLabel56["Font"] = Enum.Font.SourceSans
+	TextLabel56["Text"] = "tiktok @timur55ghe"
+	TextLabel56["Font"] = Enum.Font.Sarpanch
 	TextLabel56["BackgroundTransparency"] = 1
-	TextLabel56["Position"] = UDim2.new(-0.134257421, 0, 0.0964508504, 0)
+	TextLabel56["Position"] = UDim2.new(0.189576775, 0, 0.0669523254, 0)
 	TextLabel56["TextSize"] = 20
 	TextLabel56["Size"] = UDim2.new(0, 200, 0, 50)
 	TextLabel56["BorderSizePixel"] = 0
 	TextLabel56["BackgroundColor3"] = Color3.new(1, 1, 1)
 	----TextLabel56----
-	--TextLabel57--
-	local TextLabel57 = Instance.new("TextLabel",Frame42)
-	TextLabel57["TextWrapped"] = true
-	TextLabel57["TextColor3"] = Color3.new(1, 1, 1)
-	TextLabel57["BorderColor3"] = Color3.new(1, 1, 1)
-	TextLabel57["Text"] = "Steal a Brainrot - Mango Hub"
-	TextLabel57["TextSize"] = 1
-	TextLabel57["Font"] = Enum.Font.SourceSansBold
-	TextLabel57["BackgroundTransparency"] = 1
-	TextLabel57["Position"] = UDim2.new(0.0546995178, 0, -0.0122429505, 0)
-	TextLabel57["TextScaled"] = true
-	TextLabel57["Size"] = UDim2.new(0, 253, 0, 46)
-	TextLabel57["BorderSizePixel"] = 0
-	TextLabel57["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel57----
-	--TextLabel58--
-	local TextLabel58 = Instance.new("TextLabel",Frame42)
-	TextLabel58["TextColor3"] = Color3.new(1, 1, 1)
-	TextLabel58["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel58["Text"] = "tiktok @timur55ghe"
-	TextLabel58["Font"] = Enum.Font.Sarpanch
-	TextLabel58["BackgroundTransparency"] = 1
-	TextLabel58["Position"] = UDim2.new(0.189576775, 0, 0.0669523254, 0)
-	TextLabel58["TextSize"] = 20
-	TextLabel58["Size"] = UDim2.new(0, 200, 0, 50)
-	TextLabel58["BorderSizePixel"] = 0
-	TextLabel58["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel58----
-	--Frame59--
-	local Frame59 = Instance.new("Frame",ScreenGui1)
-	Frame59["Name"] = "Frame24"
-	Frame59["Position"] = UDim2.new(0.691237807, 0, 0.306845963, 0)
-	Frame59["BorderColor3"] = Color3.new(0, 0, 0)
-	Frame59["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
-	Frame59["BorderSizePixel"] = 0
-	Frame59["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
-	----Frame59----
-	--Script60--
-	local Script60 = Instance.new("Script",Frame59)
-	Script60["Name"] = "Dragify"
-	----Script60----
-	--UICorner61--
-	local UICorner61 = Instance.new("UICorner",Frame59)
-	UICorner61["CornerRadius"] = UDim.new(0, 18)
-	----UICorner61----
-	--TextButton62--
-	local TextButton62 = Instance.new("TextButton",Frame59)
-	TextButton62["TextWrapped"] = true
-	TextButton62["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton62["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton62["Text"] = "Invisible Steal (Off )"
-	TextButton62["Font"] = Enum.Font.SourceSans
-	TextButton62["TextSize"] = 25
-	TextButton62["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
-	TextButton62["TextScaled"] = true
-	TextButton62["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
-	TextButton62["BorderSizePixel"] = 0
-	TextButton62["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
-	----TextButton62----
+	--Frame57--
+	local Frame57 = Instance.new("Frame",ScreenGui1)
+	Frame57["Name"] = "Frame24"
+	Frame57["Position"] = UDim2.new(0.691237807, 0, 0.306845963, 0)
+	Frame57["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame57["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
+	Frame57["BorderSizePixel"] = 0
+	Frame57["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
+	----Frame57----
+	--Script58--
+	local Script58 = Instance.new("Script",Frame57)
+	Script58["Name"] = "Dragify"
+	----Script58----
+	--UICorner59--
+	local UICorner59 = Instance.new("UICorner",Frame57)
+	UICorner59["CornerRadius"] = UDim.new(0, 18)
+	----UICorner59----
+	--TextButton60--
+	local TextButton60 = Instance.new("TextButton",Frame57)
+	TextButton60["TextWrapped"] = true
+	TextButton60["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton60["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton60["Text"] = "Invisible Steal (Off )"
+	TextButton60["Font"] = Enum.Font.SourceSans
+	TextButton60["TextSize"] = 25
+	TextButton60["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
+	TextButton60["TextScaled"] = true
+	TextButton60["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
+	TextButton60["BorderSizePixel"] = 0
+	TextButton60["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
+	----TextButton60----
+	--Script61--
+	local Script61 = Instance.new("Script",TextButton60)
+	----Script61----
+	--Script62--
+	local Script62 = Instance.new("Script",TextButton60)
+	----Script62----
 	--Script63--
-	local Script63 = Instance.new("Script",TextButton62)
+	local Script63 = Instance.new("Script",TextButton60)
 	----Script63----
-	--Script64--
-	local Script64 = Instance.new("Script",TextButton62)
-	----Script64----
-	--Script65--
-	local Script65 = Instance.new("Script",TextButton62)
-	----Script65----
-	--UICorner66--
-	local UICorner66 = Instance.new("UICorner",TextButton62)
-	UICorner66["CornerRadius"] = UDim.new(0, 10)
-	----UICorner66----
+	--UICorner64--
+	local UICorner64 = Instance.new("UICorner",TextButton60)
+	UICorner64["CornerRadius"] = UDim.new(0, 10)
+	----UICorner64----
+	--UITextSizeConstraint65--
+	local UITextSizeConstraint65 = Instance.new("UITextSizeConstraint",TextButton60)
+	UITextSizeConstraint65["MaxTextSize"] = 25
+	----UITextSizeConstraint65----
+	--TextLabel66--
+	local TextLabel66 = Instance.new("TextLabel",Frame57)
+	TextLabel66["TextWrapped"] = true
+	TextLabel66["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel66["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel66["Text"] = "Ready."
+	TextLabel66["TextSize"] = 19
+	TextLabel66["TextScaled"] = true
+	TextLabel66["Font"] = Enum.Font.SourceSans
+	TextLabel66["BackgroundTransparency"] = 1
+	TextLabel66["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
+	TextLabel66["Name"] = "Label"
+	TextLabel66["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel66["BorderSizePixel"] = 0
+	TextLabel66["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel66----
 	--UITextSizeConstraint67--
-	local UITextSizeConstraint67 = Instance.new("UITextSizeConstraint",TextButton62)
-	UITextSizeConstraint67["MaxTextSize"] = 25
+	local UITextSizeConstraint67 = Instance.new("UITextSizeConstraint",TextLabel66)
+	UITextSizeConstraint67["MaxTextSize"] = 19
 	----UITextSizeConstraint67----
 	--TextLabel68--
-	local TextLabel68 = Instance.new("TextLabel",Frame59)
+	local TextLabel68 = Instance.new("TextLabel",Frame57)
 	TextLabel68["TextWrapped"] = true
-	TextLabel68["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel68["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
 	TextLabel68["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel68["Text"] = "Ready."
-	TextLabel68["TextSize"] = 19
-	TextLabel68["TextScaled"] = true
+	TextLabel68["Text"] = "Mango Invisible Steal"
+	TextLabel68["TextSize"] = 29
 	TextLabel68["Font"] = Enum.Font.SourceSans
 	TextLabel68["BackgroundTransparency"] = 1
-	TextLabel68["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
-	TextLabel68["Name"] = "Label"
-	TextLabel68["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel68["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
+	TextLabel68["TextScaled"] = true
+	TextLabel68["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
 	TextLabel68["BorderSizePixel"] = 0
 	TextLabel68["BackgroundColor3"] = Color3.new(1, 1, 1)
 	----TextLabel68----
 	--UITextSizeConstraint69--
 	local UITextSizeConstraint69 = Instance.new("UITextSizeConstraint",TextLabel68)
-	UITextSizeConstraint69["MaxTextSize"] = 19
+	UITextSizeConstraint69["MaxTextSize"] = 29
 	----UITextSizeConstraint69----
-	--TextLabel70--
-	local TextLabel70 = Instance.new("TextLabel",Frame59)
-	TextLabel70["TextWrapped"] = true
-	TextLabel70["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
-	TextLabel70["BorderColor3"] = Color3.new(0, 0, 0)
-	TextLabel70["Text"] = "Mango Invisible Steal"
-	TextLabel70["TextSize"] = 29
-	TextLabel70["Font"] = Enum.Font.SourceSans
-	TextLabel70["BackgroundTransparency"] = 1
-	TextLabel70["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
-	TextLabel70["TextScaled"] = true
-	TextLabel70["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
-	TextLabel70["BorderSizePixel"] = 0
-	TextLabel70["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel70----
-	--UITextSizeConstraint71--
-	local UITextSizeConstraint71 = Instance.new("UITextSizeConstraint",TextLabel70)
-	UITextSizeConstraint71["MaxTextSize"] = 29
-	----UITextSizeConstraint71----
 	spawn(function() --Source for Script3
 		local script = Script3
 		local UserInputService = game:GetService"UserInputService"
@@ -639,89 +633,8 @@ local function createGui(parent)
 		end
 		
 	end)
-	spawn(function() --Source for Script11
-		local script = Script11
-		local Players = game:GetService("Players")
-		local player = Players.LocalPlayer
-		
-		local button = script.Parent -- Это ваша TextButton
-		
-		-- Ждем когда загрузится PlayerGui
-		player:WaitForChild("PlayerGui")
-		
-		-- Функция создания черного экрана
-		local function createBlackScreen()
-			-- Создаем ScreenGui если его нет
-			local screenGui = player.PlayerGui:FindFirstChild("BlackScreenGui")
-			if not screenGui then
-				screenGui = Instance.new("ScreenGui")
-				screenGui.Name = "BlackScreenGui"
-				screenGui.Parent = player.PlayerGui
-			end
-		
-			-- Очищаем предыдущий экран
-			screenGui:ClearAllChildren()
-		
-			-- Создаем черный экран
-			local blackScreen = Instance.new("Frame")
-			blackScreen.Name = "BlackScreen"
-			blackScreen.Size = UDim2.new(1, 0, 1, 0)
-			blackScreen.Position = UDim2.new(0, 0, 0, 0)
-			blackScreen.BackgroundColor3 = Color3.new(0, 0, 0)
-			blackScreen.BackgroundTransparency = 0
-			blackScreen.BorderSizePixel = 0
-			blackScreen.ZIndex = 100
-			blackScreen.Parent = screenGui
-		
-			-- Текст посередине
-			local textLabel = Instance.new("TextLabel")
-			textLabel.Name = "TeleportText"
-			textLabel.Size = UDim2.new(0, 300, 0, 50)
-			textLabel.Position = UDim2.new(0.5, -150, 0.5, -25)
-			textLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-			textLabel.BackgroundTransparency = 1
-			textLabel.Text = "Mango hub is teleporting you..."
-			textLabel.TextColor3 = Color3.new(1, 1, 1)
-			textLabel.TextSize = 20
-			textLabel.Font = Enum.Font.GothamBold
-			textLabel.ZIndex = 101
-			textLabel.Parent = blackScreen
-		
-			-- Анимация многоточия
-			local dots = ""
-			local dotCount = 0
-		
-			local function updateDots()
-				dotCount = (dotCount % 3) + 1
-				dots = string.rep(".", dotCount)
-				textLabel.Text = "Mango hub is teleporting you" .. dots
-			end
-		
-			-- Запускаем анимацию
-			local heartbeatConnection
-			heartbeatConnection = game:GetService("RunService").Heartbeat:Connect(updateDots)
-		
-			-- Удаляем через 3 секунды
-			task.delay(3, function()
-				if heartbeatConnection then
-					heartbeatConnection:Disconnect()
-				end
-				if screenGui and screenGui.Parent then
-					screenGui:Destroy()
-				end
-			end)
-		end
-		
-		-- Подключаем нажатие кнопки
-		button.MouseButton1Click:Connect(function()
-			createBlackScreen()
-		end)
-		
-		print("Скрипт активирован! Нажмите на кнопку для черного экрана")
-		
-	end)
-	spawn(function() --Source for Script17
-		local script = Script17
+	spawn(function() --Source for Script16
+		local script = Script16
 		local UserInputService = game:GetService"UserInputService"
 		
 		function Dragify (Object)
@@ -756,8 +669,8 @@ local function createGui(parent)
 		
 		Dragify(script.Parent)
 	end)
-	spawn(function() --Source for Script20
-		local script = Script20
+	spawn(function() --Source for Script19
+		local script = Script19
 		local button = script.Parent
 		
 		-- Запоминаем исходные значения
@@ -787,8 +700,8 @@ local function createGui(parent)
 		end)
 		
 	end)
-	spawn(function() --Source for Script21
-		local script = Script21
+	spawn(function() --Source for Script20
+		local script = Script20
 		local button = script.Parent
 		local label = script.Parent.Parent:FindFirstChild("Label")
 		
@@ -816,8 +729,8 @@ local function createGui(parent)
 		end)
 		
 	end)
-	spawn(function() --Source for Script29
-		local script = Script29
+	spawn(function() --Source for Script28
+		local script = Script28
 		local UserInputService = game:GetService"UserInputService"
 		
 		function Dragify (Object)
@@ -852,8 +765,8 @@ local function createGui(parent)
 		
 		Dragify(script.Parent)
 	end)
-	spawn(function() --Source for Script32
-		local script = Script32
+	spawn(function() --Source for Script31
+		local script = Script31
 		local button = script.Parent
 		
 		-- Запоминаем исходные значения
@@ -883,8 +796,8 @@ local function createGui(parent)
 		end)
 		
 	end)
-	spawn(function() --Source for Script33
-		local script = Script33
+	spawn(function() --Source for Script32
+		local script = Script32
 		local button = script.Parent
 		local label = script.Parent.Parent:FindFirstChild("Label")
 		
@@ -912,8 +825,8 @@ local function createGui(parent)
 		end)
 		
 	end)
-	spawn(function() --Source for Script34
-		local script = Script34
+	spawn(function() --Source for Script33
+		local script = Script33
 		local button = script.Parent -- Кнопка, к которой прикреплен скрипт
 		local Players = game:GetService("Players")
 		
@@ -931,89 +844,8 @@ local function createGui(parent)
 		end)
 		
 	end)
-	spawn(function() --Source for Script37
-		local script = Script37
-		local Players = game:GetService("Players")
-		local player = Players.LocalPlayer
-		
-		local button = script.Parent -- Это ваша TextButton
-		
-		-- Ждем когда загрузится PlayerGui
-		player:WaitForChild("PlayerGui")
-		
-		-- Функция создания черного экрана
-		local function createBlackScreen()
-			-- Создаем ScreenGui если его нет
-			local screenGui = player.PlayerGui:FindFirstChild("BlackScreenGui")
-			if not screenGui then
-				screenGui = Instance.new("ScreenGui")
-				screenGui.Name = "BlackScreenGui"
-				screenGui.Parent = player.PlayerGui
-			end
-		
-			-- Очищаем предыдущий экран
-			screenGui:ClearAllChildren()
-		
-			-- Создаем черный экран
-			local blackScreen = Instance.new("Frame")
-			blackScreen.Name = "BlackScreen"
-			blackScreen.Size = UDim2.new(1, 0, 1, 0)
-			blackScreen.Position = UDim2.new(0, 0, 0, 0)
-			blackScreen.BackgroundColor3 = Color3.new(0, 0, 0)
-			blackScreen.BackgroundTransparency = 0
-			blackScreen.BorderSizePixel = 0
-			blackScreen.ZIndex = 100
-			blackScreen.Parent = screenGui
-		
-			-- Текст посередине
-			local textLabel = Instance.new("TextLabel")
-			textLabel.Name = "TeleportText"
-			textLabel.Size = UDim2.new(0, 300, 0, 50)
-			textLabel.Position = UDim2.new(0.5, -150, 0.5, -25)
-			textLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-			textLabel.BackgroundTransparency = 1
-			textLabel.Text = "Mango hub is teleporting you..."
-			textLabel.TextColor3 = Color3.new(1, 1, 1)
-			textLabel.TextSize = 20
-			textLabel.Font = Enum.Font.GothamBold
-			textLabel.ZIndex = 101
-			textLabel.Parent = blackScreen
-		
-			-- Анимация многоточия
-			local dots = ""
-			local dotCount = 0
-		
-			local function updateDots()
-				dotCount = (dotCount % 3) + 1
-				dots = string.rep(".", dotCount)
-				textLabel.Text = "Mango hub is teleporting you" .. dots
-			end
-		
-			-- Запускаем анимацию
-			local heartbeatConnection
-			heartbeatConnection = game:GetService("RunService").Heartbeat:Connect(updateDots)
-		
-			-- Удаляем через 3 секунды
-			task.delay(3, function()
-				if heartbeatConnection then
-					heartbeatConnection:Disconnect()
-				end
-				if screenGui and screenGui.Parent then
-					screenGui:Destroy()
-				end
-			end)
-		end
-		
-		-- Подключаем нажатие кнопки
-		button.MouseButton1Click:Connect(function()
-			createBlackScreen()
-		end)
-		
-		print("Скрипт активирован! Нажмите на кнопку для черного экрана")
-		
-	end)
-	spawn(function() --Source for Script43
-		local script = Script43
+	spawn(function() --Source for Script41
+		local script = Script41
 		local UserInputService = game:GetService"UserInputService"
 		
 		function Dragify (Object)
@@ -1048,8 +880,8 @@ local function createGui(parent)
 		
 		Dragify(script.Parent)
 	end)
-	spawn(function() --Source for Script48
-		local script = Script48
+	spawn(function() --Source for Script46
+		local script = Script46
 		local Players = game:GetService("Players")
 		local player = Players.LocalPlayer
 		
@@ -1155,8 +987,8 @@ local function createGui(parent)
 		end
 		
 	end)
-	spawn(function() --Source for Script60
-		local script = Script60
+	spawn(function() --Source for Script58
+		local script = Script58
 		local UserInputService = game:GetService"UserInputService"
 		
 		function Dragify (Object)
@@ -1191,8 +1023,8 @@ local function createGui(parent)
 		
 		Dragify(script.Parent)
 	end)
-	spawn(function() --Source for Script63
-		local script = Script63
+	spawn(function() --Source for Script61
+		local script = Script61
 		local button = script.Parent
 		
 		-- Запоминаем исходные значения
@@ -1222,8 +1054,8 @@ local function createGui(parent)
 		end)
 		
 	end)
-	spawn(function() --Source for Script64
-		local script = Script64
+	spawn(function() --Source for Script62
+		local script = Script62
 		local button = script.Parent
 		local label = script.Parent.Parent:FindFirstChild("Label")
 		
@@ -1251,8 +1083,8 @@ local function createGui(parent)
 		end)
 		
 	end)
-	spawn(function() --Source for Script65
-		local script = Script65
+	spawn(function() --Source for Script63
+		local script = Script63
 		local button = script.Parent
 		local player = game.Players.LocalPlayer
 		local runService = game:GetService("RunService")
