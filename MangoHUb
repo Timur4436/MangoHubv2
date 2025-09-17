@@ -178,6 +178,93 @@ local function createGui(parent)
 	local UICorner27 = Instance.new("UICorner",TextButton22)
 	UICorner27["CornerRadius"] = UDim.new(1, 0)
 	----UICorner27----
+	--Frame28--
+	local Frame28 = Instance.new("Frame",ScreenGui1)
+	Frame28["Name"] = "Frame24"
+	Frame28["Position"] = UDim2.new(0.0410292074, 0, 0.801955998, 0)
+	Frame28["BorderColor3"] = Color3.new(0, 0, 0)
+	Frame28["Size"] = UDim2.new(0.187065363, 0, 0.139364302, 0)
+	Frame28["BorderSizePixel"] = 0
+	Frame28["BackgroundColor3"] = Color3.new(0.105882, 0.105882, 0.105882)
+	----Frame28----
+	--Script29--
+	local Script29 = Instance.new("Script",Frame28)
+	Script29["Name"] = "Dragify"
+	----Script29----
+	--UICorner30--
+	local UICorner30 = Instance.new("UICorner",Frame28)
+	UICorner30["CornerRadius"] = UDim.new(0, 18)
+	----UICorner30----
+	--TextButton31--
+	local TextButton31 = Instance.new("TextButton",Frame28)
+	TextButton31["TextWrapped"] = true
+	TextButton31["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton31["BorderColor3"] = Color3.new(0, 0, 0)
+	TextButton31["Text"] = "Float V2 (Off )"
+	TextButton31["Font"] = Enum.Font.SourceSans
+	TextButton31["TextSize"] = 25
+	TextButton31["Position"] = UDim2.new(0.0855018571, 0, 0.394736856, 0)
+	TextButton31["TextScaled"] = true
+	TextButton31["Size"] = UDim2.new(0.855018616, 0, 0.333333343, 0)
+	TextButton31["BorderSizePixel"] = 0
+	TextButton31["BackgroundColor3"] = Color3.new(0.709804, 0, 0)
+	----TextButton31----
+	--Script32--
+	local Script32 = Instance.new("Script",TextButton31)
+	----Script32----
+	--Script33--
+	local Script33 = Instance.new("Script",TextButton31)
+	----Script33----
+	--UICorner34--
+	local UICorner34 = Instance.new("UICorner",TextButton31)
+	UICorner34["CornerRadius"] = UDim.new(0, 10)
+	----UICorner34----
+	--UITextSizeConstraint35--
+	local UITextSizeConstraint35 = Instance.new("UITextSizeConstraint",TextButton31)
+	UITextSizeConstraint35["MaxTextSize"] = 25
+	----UITextSizeConstraint35----
+	--Script36--
+	local Script36 = Instance.new("Script",TextButton31)
+	----Script36----
+	--TextLabel37--
+	local TextLabel37 = Instance.new("TextLabel",Frame28)
+	TextLabel37["TextWrapped"] = true
+	TextLabel37["TextColor3"] = Color3.new(0.00784314, 0.54902, 0.0431373)
+	TextLabel37["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel37["Text"] = "Ready."
+	TextLabel37["TextSize"] = 19
+	TextLabel37["TextScaled"] = true
+	TextLabel37["Font"] = Enum.Font.SourceSans
+	TextLabel37["BackgroundTransparency"] = 1
+	TextLabel37["Position"] = UDim2.new(0.382899642, 0, 0.692982435, 0)
+	TextLabel37["Name"] = "Label"
+	TextLabel37["Size"] = UDim2.new(0.230483279, 0, 0.307017535, 0)
+	TextLabel37["BorderSizePixel"] = 0
+	TextLabel37["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel37----
+	--UITextSizeConstraint38--
+	local UITextSizeConstraint38 = Instance.new("UITextSizeConstraint",TextLabel37)
+	UITextSizeConstraint38["MaxTextSize"] = 19
+	----UITextSizeConstraint38----
+	--TextLabel39--
+	local TextLabel39 = Instance.new("TextLabel",Frame28)
+	TextLabel39["TextWrapped"] = true
+	TextLabel39["TextColor3"] = Color3.new(0.796079, 0.352941, 0.0392157)
+	TextLabel39["BorderColor3"] = Color3.new(0, 0, 0)
+	TextLabel39["Text"] = "Mango Float V2"
+	TextLabel39["TextSize"] = 29
+	TextLabel39["Font"] = Enum.Font.SourceSans
+	TextLabel39["BackgroundTransparency"] = 1
+	TextLabel39["Position"] = UDim2.new(0.126394048, 0, -0.0438596494, 0)
+	TextLabel39["TextScaled"] = true
+	TextLabel39["Size"] = UDim2.new(0.743494451, 0, 0.438596487, 0)
+	TextLabel39["BorderSizePixel"] = 0
+	TextLabel39["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel39----
+	--UITextSizeConstraint40--
+	local UITextSizeConstraint40 = Instance.new("UITextSizeConstraint",TextLabel39)
+	UITextSizeConstraint40["MaxTextSize"] = 29
+	----UITextSizeConstraint40----
 	spawn(function() --Source for Script3
 		local script = Script3
 		local UserInputService = game:GetService"UserInputService"
@@ -572,6 +659,183 @@ local function createGui(parent)
 				script.Parent.Parent.Frame23.Visible = false
 			end
 		end)
+		
+	end)
+	spawn(function() --Source for Script29
+		local script = Script29
+		local UserInputService = game:GetService"UserInputService"
+		
+		function Dragify (Object)
+			local Button1Down
+		
+			Object.InputBegan:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = true
+		
+					local A = UserInputService:GetMouseLocation()
+		
+					local Difference = Object.AbsolutePosition - A
+		
+					repeat task.wait()
+						local B = UserInputService:GetMouseLocation()
+						local Position = UDim2.fromOffset(
+							B.X + Difference.X + Object.AnchorPoint.X * Object.AbsoluteSize.X, 
+							B.Y + Difference.Y + Object.AnchorPoint.Y * Object.AbsoluteSize.Y
+						)
+		
+						Object.Position = Position
+					until not Button1Down
+				end
+			end)
+		
+			Object.InputEnded:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+					Button1Down = false
+				end
+			end)
+		end
+		
+		Dragify(script.Parent)
+	end)
+	spawn(function() --Source for Script32
+		local script = Script32
+		local button = script.Parent
+		
+		-- Запоминаем исходные значения
+		local originalColor = button.BackgroundColor3
+		local originalText = button.Text
+		
+		-- Значения при активации
+		local activeColor = Color3.fromRGB(0, 255, 0) -- Зелёный
+		local activeText = "Float V2 (On)"
+		
+		-- Переменная-флаг
+		local isActive = false
+		
+		button.MouseButton1Click:Connect(function()
+			-- Меняем состояние
+			isActive = not isActive
+		
+			if isActive then
+				-- Активируем: зелёный цвет и новый текст
+				button.BackgroundColor3 = activeColor
+				button.Text = activeText
+			else
+				-- Деактивируем: исходный цвет и исходный текст
+				button.BackgroundColor3 = originalColor
+				button.Text = originalText
+			end
+		end)
+		
+	end)
+	spawn(function() --Source for Script33
+		local script = Script33
+		local button = script.Parent
+		local label = script.Parent.Parent:FindFirstChild("Label")
+		
+		if not label then
+			warn("Label не найден!")
+			return
+		end
+		
+		-- Запоминаем исходный текст
+		local originalText = label.Text
+		-- Состояние: false = исходный текст, true = изменённый текст
+		local isChanged = false
+		
+		button.MouseButton1Click:Connect(function()
+			-- Меняем состояние на противоположное
+			isChanged = not isChanged
+		
+			if isChanged then
+				-- Меняем текст на новый
+				label.Text = "Floating..."
+			else
+				-- Возвращаем исходный текст
+				label.Text = originalText
+			end
+		end)
+		
+	end)
+	spawn(function() --Source for Script36
+		local script = Script36
+		local button = script.Parent
+		local player = game.Players.LocalPlayer
+		local runService = game:GetService("RunService")
+		
+		local platform = nil
+		local connection = nil
+		local riseSpeed = 10 -- Скорость подъёма
+		
+		-- Функция для создания платформы
+		local function createPlatform()
+			local character = player.Character
+			if not character then return end
+		
+			local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+			if not humanoidRootPart then return end
+		
+			-- Создаём твёрдый парт
+			platform = Instance.new("Part")
+			platform.Name = "KurdHubPlatform"
+			platform.Size = Vector3.new(10, 1, 10)
+			platform.Anchored = true
+			platform.CanCollide = true
+			platform.Transparency = 0
+			platform.BrickColor = BrickColor.new("Really red")
+			platform.Material = Enum.Material.Neon
+		
+			-- Ставим платформу под игрока
+			local playerPosition = humanoidRootPart.Position
+			platform.Position = Vector3.new(playerPosition.X, playerPosition.Y - 5, playerPosition.Z)
+			platform.Parent = workspace
+		
+			-- Поднимаем игрока на платформу
+			humanoidRootPart.CFrame = platform.CFrame + Vector3.new(0, 3, 0)
+		
+			return platform
+		end
+		
+		-- Функция для следования платформы за игроком и подъёма вверх
+		local function startFollowingAndRising()
+			if connection then
+				connection:Disconnect()
+			end
+		
+			connection = runService.Heartbeat:Connect(function()
+				if platform and player.Character then
+					local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
+					if humanoidRootPart then
+						-- Платформа следует за игроком по X и Z
+						local playerPos = humanoidRootPart.Position
+						local currentPos = platform.Position
+		
+						-- Медленно поднимаем платформу вверх
+						platform.Position = Vector3.new(playerPos.X, currentPos.Y + (riseSpeed * runService.Heartbeat:Wait()), playerPos.Z)
+					end
+				end
+			end)
+		end
+		
+		-- Основная функция кнопки
+		local function onButtonClick()
+			if platform then
+				-- Если платформа уже есть - уничтожаем её
+				if connection then
+					connection:Disconnect()
+					connection = nil
+				end
+				platform:Destroy()
+				platform = nil
+		
+			else
+				-- Если платформы нет - создаём и запускаем
+				createPlatform()
+				startFollowingAndRising()
+			end
+		end
+		
+		button.MouseButton1Click:Connect(onButtonClick)
 		
 	end)
 end
