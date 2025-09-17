@@ -7,7 +7,7 @@ local function createGui(parent)
 	--Frame2--
 	local Frame2 = Instance.new("Frame",ScreenGui1)
 	Frame2["Name"] = "Frame23"
-	Frame2["Position"] = UDim2.new(0.316411674, 0, 0.31418094, 0)
+	Frame2["Position"] = UDim2.new(0.709318519, 0, 0.0953545198, 0)
 	Frame2["BorderColor3"] = Color3.new(0, 0, 0)
 	Frame2["Size"] = UDim2.new(0.268428385, 0, 0.414425433, 0)
 	Frame2["BorderSizePixel"] = 0
