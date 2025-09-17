@@ -147,7 +147,7 @@ local function createGui(parent)
 	TextButton22["TextWrapped"] = true
 	TextButton22["TextColor3"] = Color3.new(0, 0, 0)
 	TextButton22["BorderColor3"] = Color3.new(0, 0, 0)
-	TextButton22["Text"] = "Noclip Steal"
+	TextButton22["Text"] = "Esp"
 	TextButton22["TextXAlignment"] = Enum.TextXAlignment.Left
 	TextButton22["Font"] = Enum.Font.SourceSansBold
 	TextButton22["TextSize"] = 25
@@ -679,49 +679,106 @@ local function createGui(parent)
 		local script = Script25
 		local Player = game:GetService("Players").LocalPlayer
 		local RunService = game:GetService("RunService")
+		local TweenService = game:GetService("TweenService")
 		
 		local ESPEnabled = false
 		local ESPObjects = {}
 		
-		-- Функция создания ESP框
-		local function createESP(character)
-			if not character or not character:FindFirstChild("HumanoidRootPart") then return end
+		-- Функция для поиска невидимых игроков
+		local function findInvisiblePlayer(player)
+			if not player or player == Player then return nil end
 		
-			local highlight = Instance.new("Highlight")
-			highlight.Name = "ESP_" .. character.Name
-			highlight.Adornee = character
-			highlight.FillColor = Color3.fromRGB(0, 0, 255) -- Синий цвет
-			highlight.FillTransparency = 0.7
-			highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
-			highlight.OutlineTransparency = 0
-			highlight.Parent = game:GetService("CoreGui")
-		
-			ESPObjects[character] = highlight
-		end
-		
-		-- Функция удаления ESP
-		local function removeESP(character)
-			if ESPObjects[character] then
-				ESPObjects[character]:Destroy()
-				ESPObjects[character] = nil
+			-- Ищем любого потомка игрока в workspace
+			local character = player.Character
+			if character and character:IsDescendantOf(workspace) then
+				return character
 			end
-		end
 		
-		-- Функция обновления ESP
-		local function updateESP()
-			for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-				if player ~= Player and player.Character then
-					if not ESPObjects[player.Character] then
-						createESP(player.Character)
+			-- Если персонаж не найден, ищем в дочерних объектах workspace
+			for _, obj in pairs(workspace:GetChildren()) do
+				if obj:IsA("Model") and obj:FindFirstChild("Humanoid") and obj:FindFirstChild("HumanoidRootPart") then
+					if obj:GetAttribute("PlayerName") == player.Name then
+						return obj
 					end
 				end
 			end
 		
-			-- Удаляем ESP для несуществующих персонажей
-			for character, highlight in pairs(ESPObjects) do
-				if not character or not character.Parent or not character:FindFirstChild("HumanoidRootPart") then
-					removeESP(character)
+			return nil
+		end
+		
+		-- Функция создания ESP с обходом невидимости
+		local function createESP(player)
+			if not player or player == Player then return end
+		
+			local highlight = Instance.new("Highlight")
+			highlight.Name = "ESP_" .. player.Name
+			highlight.FillColor = Color3.fromRGB(0, 120, 255) -- Голубой цвет
+			highlight.FillTransparency = 0.5
+			highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+			highlight.OutlineTransparency = 0
+			highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+		
+			-- Создаем текст с именем игрока
+			local billboard = Instance.new("BillboardGui")
+			billboard.Name = "ESP_Name_" .. player.Name
+			billboard.Size = UDim2.new(0, 200, 0, 50)
+			billboard.StudsOffset = Vector3.new(0, 3, 0)
+			billboard.AlwaysOnTop = true
+			billboard.MaxDistance = 100
+		
+			local textLabel = Instance.new("TextLabel")
+			textLabel.Size = UDim2.new(1, 0, 1, 0)
+			textLabel.BackgroundTransparency = 1
+			textLabel.Text = player.Name
+			textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+			textLabel.TextStrokeTransparency = 0
+			textLabel.TextSize = 14
+			textLabel.Font = Enum.Font.GothamBold
+			textLabel.Parent = billboard
+		
+			ESPObjects[player] = {
+				Highlight = highlight,
+				Billboard = billboard,
+				Player = player
+			}
+		end
+		
+		-- Функция обновления позиции ESP
+		local function updateESP()
+			for player, espData in pairs(ESPObjects) do
+				local character = findInvisiblePlayer(player)
+		
+				if character and character:FindFirstChild("HumanoidRootPart") then
+					local rootPart = character.HumanoidRootPart
+		
+					-- Обновляем позицию Highlight
+					espData.Highlight.Adornee = character
+					espData.Highlight.Parent = game:GetService("CoreGui")
+		
+					-- Обновляем позицию Billboard
+					espData.Billboard.Adornee = rootPart
+					espData.Billboard.Parent = rootPart
+		
+					-- Делаем игрока видимым для нашего ESP
+					if character:FindFirstChild("Head") then
+						character.Head.Transparency = 0.5
+						character.Head.CanCollide = false
+					end
+		
+				else
+					-- Скрываем ESP если игрок не найден
+					espData.Highlight.Adornee = nil
+					espData.Billboard.Adornee = nil
 				end
+			end
+		end
+		
+		-- Функция удаления ESP
+		local function removeESP(player)
+			if ESPObjects[player] then
+				ESPObjects[player].Highlight:Destroy()
+				ESPObjects[player].Billboard:Destroy()
+				ESPObjects[player] = nil
 			end
 		end
 		
@@ -730,26 +787,17 @@ local function createGui(parent)
 			ESPEnabled = not ESPEnabled
 		
 			if ESPEnabled then
-				script.Parent.Text = "ESP: ON"
+				script.Parent.Text = "Anti-Invis ESP: ON"
 				script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 		
-				-- Создаем ESP для всех существующих игроков
+				-- Создаем ESP для всех игроков
 				for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-					if player ~= Player and player.Character then
-						createESP(player.Character)
+					if player ~= Player then
+						createESP(player)
 					end
 				end
 		
-				-- Подключаемся к событию появления новых игроков
-				game:GetService("Players").PlayerAdded:Connect(function(player)
-					player.CharacterAdded:Connect(function(character)
-						if ESPEnabled then
-							createESP(character)
-						end
-					end)
-				end)
-		
-				-- Постоянное обновление
+				-- Постоянное обновление ESP
 				local connection
 				connection = RunService.Heartbeat:Connect(function()
 					if not ESPEnabled then
@@ -764,19 +812,30 @@ local function createGui(parent)
 				script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		
 				-- Удаляем все ESP
-				for character, highlight in pairs(ESPObjects) do
-					removeESP(character)
+				for player, espData in pairs(ESPObjects) do
+					removeESP(player)
 				end
 				ESPObjects = {}
 			end
 		end)
 		
-		-- Автоматическое удаление ESP при выходе игрока
-		game:GetService("Players").PlayerRemoving:Connect(function(player)
-			if player.Character and ESPObjects[player.Character] then
-				removeESP(player.Character)
+		-- Автоматическое управление игроками
+		game:GetService("Players").PlayerAdded:Connect(function(player)
+			if ESPEnabled then
+				createESP(player)
 			end
 		end)
+		
+		game:GetService("Players").PlayerRemoving:Connect(function(player)
+			removeESP(player)
+		end)
+		
+		-- Инициализация при запуске
+		for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+			if player ~= Player then
+				createESP(player)
+			end
+		end
 		
 	end)
 	spawn(function() --Source for Script27
