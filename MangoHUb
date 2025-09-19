@@ -827,111 +827,41 @@ local function createGui(parent)
 		local isHidden = false
 		local originalPositions = {}
 		
-		-- Функция поиска ВСЕХ объектов на нитке у игрока
-		local function findAttachedObjects(player)
-			local attachedObjects = {}
+		-- Функция для поиска REAL Brainrot (который следует за игроком)
+		local function findRealBrainrot(player)
+			if not player or not player.Character then return nil end
 		
-			if not player or not player.Character then return attachedObjects end
-		
-			-- Ищем все нитки (Beam и RopeConstraint) у игрока
-			for _, child in pairs(player.Character:GetDescendants()) do
-				if child:IsA("Beam") or child:IsA("RopeConstraint") then
-					local attachment1 = child.Attachment1
-					if attachment1 and attachment1.Parent then
-						local attachedObject = attachment1.Parent.Parent
-						if attachedObject and attachedObject:IsA("BasePart") then
-							table.insert(attachedObjects, attachedObject)
-						end
+			-- Ищем Brainrot который следует за игроком
+			for _, brainrot in pairs(workspace:GetChildren()) do
+				if brainrot.Name:find("Brainrot") and brainrot:FindFirstChild("Humanoid") then
+					-- Проверяем, следует ли он за нашим игроком
+					local humanoid = brainrot.Humanoid
+					if humanoid:GetAttribute("FollowingPlayer") == player.Name then
+						return brainrot
 					end
 				end
 			end
 		
-			-- Ищем через Attachment
-			for _, attachment in pairs(player.Character:GetDescendants()) do
-				if attachment:IsA("Attachment") then
-					for _, beam in pairs(attachment:GetChildren()) do
-						if beam:IsA("Beam") and beam.Attachment1 then
-							local attachedObject = beam.Attachment1.Parent.Parent
-							if attachedObject and attachedObject:IsA("BasePart") then
-								table.insert(attachedObjects, attachedObject)
-							end
-						end
+			-- Альтернативная проверка по расстоянию
+			for _, brainrot in pairs(workspace:GetChildren()) do
+				if brainrot.Name:find("Brainrot") and brainrot:FindFirstChild("HumanoidRootPart") then
+					local distance = (brainrot.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+					if distance < 10 then -- Если близко к игроку
+						return brainrot
 					end
 				end
 			end
 		
-			return attachedObjects
+			return nil
 		end
 		
-		-- Основная функция переключения
-		button.MouseButton1Click:Connect(function()
-			local player = game.Players.LocalPlayer
-			if not player or not player.Character then 
-				print("Игрок не найден!")
-				return 
-			end
-		
-			isHidden = not isHidden
-			local attachedObjects = findAttachedObjects(player)
-		
-			if #attachedObjects == 0 then
-				print("Нет объектов на нитке у игрока!")
-				return
-			end
-		
-			if isHidden then
-				-- Прячем все объекты под карту
-				for _, obj in pairs(attachedObjects) do
-					originalPositions[obj] = obj.Position
-					obj.Anchored = true
-					obj.Position = Vector3.new(obj.Position.X, -100, obj.Position.Z)
-					print("Объект " .. obj.Name .. " опущен под карту!")
-				end
-		
-				button.Text = "Поднять объекты"
-				print("Все объекты опущены под карту!")
-		
-			else
-				-- Поднимаем все объекты обратно
-				for _, obj in pairs(attachedObjects) do
-					if originalPositions[obj] then
-						obj.Position = originalPositions[obj]
-					else
-						-- Если позиция не сохранена, поднимаем рядом с игроком
-						obj.Position = player.Character.HumanoidRootPart.Position + Vector3.new(0, 5, 0)
-					end
-					obj.Anchored = false
-					print("Объект " .. obj.Name .. " поднят наверх!")
-				end
-		
-				button.Text = "Опустить объекты"
-				print("Все объекты подняты наверх!")
-			end
-		end)
-		
-		-- Дебаг функция
-		local function debugInfo()
-			local player = game.Players.LocalPlayer
-			if player and player.Character then
-				local attachedObjects = findAttachedObjects(player)
-		
-				print("=== ДЕБАГ ИНФОРМАЦИЯ ===")
-				print("Найдено объектов на нитке: " .. #attachedObjects)
-				for i, obj in pairs(attachedObjects) do
-					print(i .. ". " .. obj.Name .. " | Позиция: " .. tostring(obj.Position))
-				end
-				print("========================")
-			end
-		end
-		
-		-- Клавиша для дебага (P)
-		game:GetService("UserInputService").InputBegan:Connect(function(input)
-			if input.KeyCode == Enum.KeyCode.P then
-				debugInfo()
-			end
-		end)
-		
-		print("Скрипт активирован! Нажмите P для информации о привязанных объектах")
+		-- Функция для создания фейковой нитки (если в игре её нет)
+		local function createFakeRope(player, brainrot)
+			-- Attachments для визуальной нитки
+			local playerAttachment = Instance.new("Attachment")
+			playerAttachment.Name = "FakeRopeAttachment"
+			playerAttachment.Parent = player.Character.HumanoidRootPart
+			playerAttachment.Position = Vector
 		
 	end)
 	spawn(function() --Source for Script33
