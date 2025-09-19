@@ -828,8 +828,65 @@ local function createGui(parent)
 		local originalPositions = {}
 		local ropeSystems = {}
 		
-		-- Функция создания нитки
-		local function createRope(player, brainrot, targetPosition)
+		-- Функция поиска нитки на игроке
+		local function findRopeOnPlayer(player)
+			if not player or not player.Character then return nil end
+		
+			-- Ищем нитку в любом месте персонажа
+			for _, child in pairs(player.Character:GetDescendants()) do
+				if child:IsA("Beam") or child:IsA("RopeConstraint") then
+					if child.Name:find("Brainrot") or child.Name:find("Rope") or child.Name:find("Beam") then
+						return child
+					end
+				end
+			end
+		
+			-- Ищем Attachment с ниткой
+			for _, child in pairs(player.Character:GetDescendants()) do
+				if child:IsA("Attachment") then
+					for _, beam in pairs(child:GetChildren()) do
+						if beam:IsA("Beam") then
+							return beam
+						end
+					end
+				end
+			end
+		
+			return nil
+		end
+		
+		-- Функция поиска Brainrot привязанного к игроку
+		local function findAttachedBrainrot(player)
+			local rope = findRopeOnPlayer(player)
+			if not rope then return nil end
+		
+			-- Ищем Brainrot через Attachment
+			if rope:IsA("Beam") and rope.Attachment1 then
+				local attachment = rope.Attachment1
+				if attachment and attachment.Parent then
+					local brainrot = attachment.Parent.Parent
+					if brainrot and brainrot.Name:find("Brainrot") then
+						return brainrot
+					end
+				end
+			end
+		
+			-- Ищем через RopeConstraint
+			if rope:IsA("RopeConstraint") and rope.Attachment1 then
+				local attachment = rope.Attachment1
+				if attachment and attachment.Parent then
+					local brainrot = attachment.Parent.Parent
+					if brainrot and brainrot.Name:find("Brainrot") then
+						return brainrot
+					end
+				end
+			end
+		
+			return nil
+		end
+		
+		-- Функция создания нитки (если её нет)
+		local function createRope(player, brainrot)
 			-- Очищаем старую нитку если есть
 			if ropeSystems[brainrot] then
 				for _, obj in pairs(ropeSystems[brainrot]) do
@@ -843,7 +900,7 @@ local function createGui(parent)
 			local playerAttachment = Instance.new("Attachment")
 			playerAttachment.Name = "BrainrotRopeAttachment"
 			playerAttachment.Parent = player.Character:FindFirstChild("HumanoidRootPart")
-			playerAttachment.Position = Vector3.new(0, -1, 0) -- Прикрепляем к ногам
+			playerAttachment.Position = Vector3.new(0, -1, 0)
 		
 			local brainrotAttachment = Instance.new("Attachment")
 			brainrotAttachment.Name = "BrainrotRopeAttachment"
@@ -860,17 +917,8 @@ local function createGui(parent)
 			beam.Transparency = NumberSequence.new(0.3)
 			beam.Parent = playerAttachment
 		
-			-- RopeConstraint для физики
-			local ropeConstraint = Instance.new("RopeConstraint")
-			ropeConstraint.Attachment0 = playerAttachment
-			ropeConstraint.Attachment1 = brainrotAttachment
-			ropeConstraint.Length = 20
-			ropeConstraint.Visible = true
-			ropeConstraint.Parent = workspace
-		
 			ropeSystems[brainrot] = {
 				beam = beam,
-				rope = ropeConstraint,
 				attachments = {playerAttachment, brainrotAttachment}
 			}
 		
@@ -892,54 +940,85 @@ local function createGui(parent)
 		-- Основная функция переключения
 		button.MouseButton1Click:Connect(function()
 			local player = game.Players.LocalPlayer
-			if not player or not player.Character then return end
+			if not player or not player.Character then 
+				print("Игрок или персонаж не найден!")
+				return 
+			end
 		
 			isHidden = not isHidden
 		
-			-- Ищем всех украденных Brainrot
-			local brainrots = {}
-			for _, child in pairs(workspace:GetChildren()) do
-				if child.Name:find("Brainrot") and child:FindFirstChild("HumanoidRootPart") then
-					-- Проверяем, привязан ли к игроку (простая проверка)
-					if child:GetAttribute("StolenBy") == player.Name then
-						table.insert(brainrots, child)
-					end
-				end
+			-- Ищем Brainrot привязанного к игроку
+			local brainrot = findAttachedBrainrot(player)
+		
+			if not brainrot then
+				print("Не найден Brainrot привязанный к игроку!")
+				return
 			end
 		
 			if isHidden then
-				-- Прячем Brainrot под карту
-				for _, brainrot in pairs(brainrots) do
-					-- Сохраняем оригинальную позицию
-					originalPositions[brainrot] = brainrot.HumanoidRootPart.Position
+				-- Сохраняем оригинальную позицию
+				originalPositions[brainrot] = brainrot.HumanoidRootPart.Position
 		
-					-- Опускаем под карту (Y = -100)
-					brainrot.HumanoidRootPart.Anchored = true
-					brainrot.HumanoidRootPart.Position = Vector3.new(
-						brainrot.HumanoidRootPart.Position.X,
-						-100,
-						brainrot.HumanoidRootPart.Position.Z
-					)
+				-- Опускаем под карту
+				brainrot.HumanoidRootPart.Anchored = true
+				brainrot.HumanoidRootPart.Position = Vector3.new(
+					brainrot.HumanoidRootPart.Position.X,
+					-100,
+					brainrot.HumanoidRootPart.Position.Z
+				)
 		
-					-- Создаем нитку к игроку
-					createRope(player, brainrot, brainrot.HumanoidRootPart.Position)
+				-- Создаем нитку если её нет
+				if not findRopeOnPlayer(player) then
+					createRope(player, brainrot)
 				end
 		
-				button.Text = "Invisible Steal"
-				print("Invisible steal")
+				button.Text = "Поднять Brainrot"
+				print("Brainrot опущен под карту!")
 		
 			else
 				-- Возвращаем Brainrot на место
-				for _, brainrot in pairs(brainrots) do
-					if originalPositions[brainrot] then
-						brainrot.HumanoidRootPart.Position = originalPositions[brainrot]
-						brainrot.HumanoidRootPart.Anchored = false
-					end
-					cleanupRope(brainrot)
+				if originalPositions[brainrot] then
+					brainrot.HumanoidRootPart.Position = originalPositions[brainrot]
+					brainrot.HumanoidRootPart.Anchored = false
+					print("Brainrot возвращен на позицию: " .. tostring(originalPositions[brainrot]))
+				else
+					-- Если позиция не сохранена, возвращаем наверх
+					brainrot.HumanoidRootPart.Position = Vector3.new(
+						player.Character.HumanoidRootPart.Position.X,
+						5,
+						player.Character.HumanoidRootPart.Position.Z
+					)
+					brainrot.HumanoidRootPart.Anchored = false
+					print("Brainrot возвращен к игроку!")
 				end
 		
-				button.Text = "Invisible Steal"
-				print("Invisible Steal")
+				button.Text = "Опустить Brainrot"
+				print("Brainrot поднят наверх!")
+			end
+		end)
+		
+		-- Дебаг функция для проверки
+		local function debugInfo()
+			local player = game.Players.LocalPlayer
+			if player and player.Character then
+				local rope = findRopeOnPlayer(player)
+				local brainrot = findAttachedBrainrot(player)
+		
+				print("=== ДЕБАГ ИНФОРМАЦИЯ ===")
+				print("Нитка найдена:", rope ~= nil)
+				print("Brainrot найден:", brainrot ~= nil)
+				if brainrot then
+					print("Имя Brainrot:", brainrot.Name)
+					print("Позиция Brainrot:", brainrot.HumanoidRootPart.Position)
+				end
+				print("========================")
+			end
+		end
+		
+		-- Добавляем дебаг кнопку (можно убрать потом)
+		game:GetService("UserInputService").InputBegan:Connect(function(input)
+			if input.KeyCode == Enum.KeyCode.P then
+				debugInfo()
 			end
 		end)
 		
@@ -949,6 +1028,8 @@ local function createGui(parent)
 				cleanupRope(brainrot)
 			end
 		end)
+		
+		print("Скрипт активирован! Нажмите P для дебаг информации")
 		
 	end)
 	spawn(function() --Source for Script33
@@ -1140,4 +1221,4 @@ local function createGui(parent)
 		
 	end)
 end
-createGui(game.CoreGui) --coregui by default you should but change it
+ createGui(game.CoreGui) --coregui by default you should but change it
